@@ -39,7 +39,7 @@ function bootscore_product_slider( $atts ) {
 
 <div class="px-4 px-md-5 position-relative product-slider">
 
-    <div class="swiper-container swiper position-static">
+    <div class="cards swiper-container swiper position-static">
 
         <div class="swiper-wrapper">
 

@@ -46,10 +46,7 @@ function bootscore_swiper_hero( $atts ) {
 
 
 <!-- Swiper -->
-
-
-
-    <div class="swiper-container swiper-container-hero swiper mb-4">
+    <div class="heroes swiper-container swiper mb-4">
 
         <div class="swiper-wrapper">
 

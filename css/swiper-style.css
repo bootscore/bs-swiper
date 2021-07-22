@@ -117,19 +117,18 @@
 
 /* Hero */
 
-
-.swiper-container-hero .swiper-pagination-bullet {
+.heroes .swiper-pagination-bullet {
     background: #fff;
     opacity: .5;
 }
 
-.swiper-container-hero .swiper-pagination-bullet-active {
+.sheroes .swiper-pagination-bullet-active {
     opacity: 1 !important;
     background-color: #fff;
 }
 
 @media (min-width: 992px) {
-    .swiper-container-hero .card {
+    .heroes .card {
         position: absolute;
         bottom: 2rem;
         right: 2rem;
@@ -138,7 +137,7 @@
 }
 
 @media (max-width: 991px) {
-    .swiper-container-hero .card {
+    .heroes .card {
         border-radius: 0;
     }
 }

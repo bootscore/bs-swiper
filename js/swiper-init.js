@@ -2,13 +2,13 @@
 //Multiple Swiper instances per page https://raddy.co.uk/blog/multiple-instances-of-swiperjs-on-the-same-page-with-the-same-settings/
 
 // Cards
-const bSSwiper = document.querySelectorAll('.swiper-container');
+const bSSwiper = document.querySelectorAll('.cards');
 
         for (i = 0; i < bSSwiper.length; i++) {
 
-            bSSwiper[i].classList.add('swiper-container-' + i);
+            bSSwiper[i].classList.add('cards-' + i);
 
-            var slider = new Swiper('.swiper-container-' + i, {
+            var slider = new Swiper('.cards-' + i, {
 
                 /* Options */
                 slidesPerView: 1,
@@ -43,13 +43,13 @@ const bSSwiper = document.querySelectorAll('.swiper-container');
 
 
 // Hero
-const bSSwiperHero = document.querySelectorAll('.swiper-container-hero');
+const bSSwiperHero = document.querySelectorAll('.heroes');
 
         for (i = 0; i < bSSwiperHero.length; i++) {
 
-            bSSwiperHero[i].classList.add('swiper-container-hero-' + i);
+            bSSwiperHero[i].classList.add('heroes-' + i);
 
-            var slider = new Swiper('.swiper-container-hero-' + i, {
+            var slider = new Swiper('.heroes-' + i, {
 
                 /* Options */
                 slidesPerView: 1,
