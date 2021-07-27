@@ -113,20 +113,20 @@ function bs_swiper_get_template( $template_name, $args = array(), $tempate_path 
  * @since 1.0.0
  */
 
-function bs_swiper() {
+function bs_swiper_card() {
 
 	return bs_swiper_get_template( 'sc-swiper-card.php' );
 
 }
-add_action('wp_head', 'bs_swiper');
+add_action('wp_head', 'bs_swiper_card');
 
 
-function bs_swiper_products() {
+function bs_swiper_card_product() {
 
     return bs_swiper_get_template( 'sc-swiper-card-product.php' );
 
 }
-add_action('wp_head', 'bs_swiper_products');
+add_action('wp_head', 'bs_swiper_card_product');
 
 
 function bs_swiper_hero() {

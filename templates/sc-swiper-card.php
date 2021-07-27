@@ -19,7 +19,7 @@ Page Slider Shortcode
 */
 
 
-// Post Slider Shortcode
+// Card Slider Shortcode
 add_shortcode( 'bs-swiper-card', 'bootscore_swiper' );
 function bootscore_swiper( $atts ) {
 	ob_start();
@@ -29,7 +29,9 @@ function bootscore_swiper( $atts ) {
 		'orderby' => 'date',
 		'posts' => -1,
 		'category' => '',
-        'post_parent'    => '',
+        'post_parent'    => '', // parent-id child-pages
+        'cat_parent'    => '', // parent-taxonomy-id CPT
+		'tax' => '' // CPT taxonomy
         
 	), $atts ) );
 	$options = array(
@@ -41,6 +43,24 @@ function bootscore_swiper( $atts ) {
         'post_parent' => $post_parent,
         
 	);
+    
+    // CPT - Check if taxonomy and terms were defined
+	if ( $tax != '' && $cat_parent != '' ) {
+		$terms = explode( ',', trim( $cat_parent ) );
+		$terms = array_map( 'trim', $terms );
+		$terms = array_unique( $terms );
+		$terms = array_filter( $terms );
+		$options['tax_query'] = array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => $tax,
+				'field'    => 'term_id',
+				'terms'    => $terms,
+				'operator' => 'IN'
+			)
+		);
+	}
+    
 	$query = new WP_Query( $options );
 	if ( $query->have_posts() ) { ?>
 
