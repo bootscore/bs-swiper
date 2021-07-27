@@ -11,16 +11,16 @@
 
 
 Post Slider Shortcode 
-[bs-swiper type="post" category="blog, equal-height" order="DESC" orderby="date" posts="12"]
+[bs-swiper-card type="post" category="blog, equal-height" order="DESC" orderby="date" posts="12"]
 
 Page Slider Shortcode
-[bs-swiper type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
 
 */
 
 
 // Post Slider Shortcode
-add_shortcode( 'bs-swiper', 'bootscore_swiper' );
+add_shortcode( 'bs-swiper-card', 'bootscore_swiper' );
 function bootscore_swiper( $atts ) {
 	ob_start();
 	extract( shortcode_atts( array (
@@ -47,7 +47,7 @@ function bootscore_swiper( $atts ) {
 
 <!-- Swiper -->
 
-<div class="px-4 px-md-5 position-relative">
+<div class="px-5 position-relative">
 
     <div class="cards swiper-container swiper position-static">
 

@@ -10,12 +10,12 @@
  * @version     1.0.0
 
 Product Slider Shortcode
-[bs-product-slider order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
+[bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
 */
 
 
 // Product Slider Shortcode
-add_shortcode( 'bs-product-slider', 'bootscore_product_slider' );
+add_shortcode( 'bs-swiper-card-product', 'bootscore_product_slider' );
 function bootscore_product_slider( $atts ) {
 	ob_start();
 	extract( shortcode_atts( array (
@@ -37,7 +37,7 @@ function bootscore_product_slider( $atts ) {
 
 <!-- Swiper -->
 
-<div class="px-4 px-md-5 position-relative product-slider">
+<div class="px-5 position-relative product-slider">
 
     <div class="cards swiper-container swiper position-static">
 

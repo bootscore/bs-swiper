@@ -1,70 +1,49 @@
-
-
-
-
-
-/* Swiper Style */
-
-.swiper-wrapper {
-    cursor: grab;
-}
-
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-    left: 1px !important;
-}
-
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-    right: 1px !important;
-}
-
-.swiper-pagination-bullet {
-    background: var(--bs-secondary);
-    opacity: .5;
-}
-
-.swiper-pagination-bullet-active {
-    opacity: 1 !important;
-    background-color: var(--bs-primary);
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    content: none;
-}
-
-.swiper-button-next::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f054";
+/* Cards */
+.cards .swiper-button-next, .cards .swiper-button-prev {
     color: var(--bs-primary);
-    position: absolute;
-    font-size: 2rem;
-    right: 0;
 }
 
-.swiper-button-prev::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f053";
-    color: var(--bs-primary);
-    position: absolute;
-    font-size: 2rem;
-    left: 0;
+.cards .swiper-pagination-bullet {
+    background: var(--bs-dark);
 }
 
-.post-slider .swiper-button-next:focus,
-.post-slider .swiper-button-prev:focus,
-.product-slider .swiper-button-next:focus,
-.product-slider .swiper-button-prev:focus {
-    outline: none;
-    box-shadow: none;
+.cards .swiper-pagination-bullet-active {
+    background: var(--bs-primary);
 }
 
-.product-card a:hover {
-    text-decoration: none;
+/* Cards END */
+
+
+/* Hero */
+
+.heroes .swiper-button-next, .heroes .swiper-button-prev {
+    color: var(--bs-white);
 }
+
+.heroes .swiper-pagination-bullet, .heroes .swiper-pagination-bullet-active {
+    background: var(--bs-white);
+}
+
+@media (min-width: 992px) {
+    .heroes .card {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        width: 40%;
+    }
+}
+
+@media (max-width: 991px) {
+    .heroes .card {
+        border-radius: 0;
+    }
+}
+
+/* Hero END */
+
+
+
+/* Products */
 
 .products .card .star-rating,
 .card .star-rating {
@@ -85,7 +64,7 @@
 
 .product-card .star-rating::before {
     content: "\73\73\73\73\73";
-    color: #d3ced2;
+    color: var(--bs-gray);
     float: left;
     top: 0;
     left: 0;
@@ -108,38 +87,4 @@
     left: 0;
 }
 
-.swiper-pagination-bullet-active:focus {
-    outline: none;
-}
-
-/* Swiper Style END */
-
-
-/* Hero */
-
-.heroes .swiper-pagination-bullet {
-    background: #fff;
-    opacity: .5;
-}
-
-.sheroes .swiper-pagination-bullet-active {
-    opacity: 1 !important;
-    background-color: #fff;
-}
-
-@media (min-width: 992px) {
-    .heroes .card {
-        position: absolute;
-        bottom: 2rem;
-        right: 2rem;
-        width: 40%;
-    }
-}
-
-@media (max-width: 991px) {
-    .heroes .card {
-        border-radius: 0;
-    }
-}
-
-/* Hero END */
+/* Products END */

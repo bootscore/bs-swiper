@@ -1,8 +1,8 @@
 <?php
 /*Plugin Name: bS5 Swiper
-Plugin URI: https://bootscore.me/plugins/bs-post-product-slider/
+Plugin URI: https://bootscore.me/plugins/bs-swiper/
 Description: Post / Child Page / Product slider for bootScore 5 theme https://bootscore.me. Use Shortcode [bs-post-slider type="post" category="sample-category" order="ASC" orderby="title" posts="12"] to display posts, [bs-post-slider type="page" post_parent="1891" order="ASC" orderby="title" posts="6"] to display child pages or [bs-product-slider order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"] to show WooCommerce products. Check readme.txt in PlugIn folder for options.
-Version: 5.0.1.0
+Version: 5.0.0.0
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
 License: GPLv2
@@ -115,7 +115,7 @@ function bs_swiper_get_template( $template_name, $args = array(), $tempate_path 
 
 function bs_swiper() {
 
-	return bs_swiper_get_template( 'sc-swiper.php' );
+	return bs_swiper_get_template( 'sc-swiper-card.php' );
 
 }
 add_action('wp_head', 'bs_swiper');
@@ -123,7 +123,7 @@ add_action('wp_head', 'bs_swiper');
 
 function bs_swiper_products() {
 
-    return bs_swiper_get_template( 'sc-swiper-products.php' );
+    return bs_swiper_get_template( 'sc-swiper-card-product.php' );
 
 }
 add_action('wp_head', 'bs_swiper_products');

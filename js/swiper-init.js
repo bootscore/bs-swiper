@@ -12,8 +12,9 @@ const bSSwiper = document.querySelectorAll('.cards');
 
                 /* Options */
                 slidesPerView: 1,
-                spaceBetween: 10,
-                // init: false,
+                spaceBetween: 20,
+                loop: true,
+                grabCursor: true,
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
@@ -25,15 +26,12 @@ const bSSwiper = document.querySelectorAll('.cards');
                 breakpoints: {
                     768: {
                         slidesPerView: 2,
-                        spaceBetween: 30,
                     },
                     992: {
                         slidesPerView: 3,
-                        spaceBetween: 30,
                     },
                     1400: {
                         slidesPerView: 4,
-                        spaceBetween: 30,
                     },
                 }
 
@@ -53,8 +51,8 @@ const bSSwiperHero = document.querySelectorAll('.heroes');
 
                 /* Options */
                 slidesPerView: 1,
-                spaceBetween: 0,
-                // init: false,
+                loop: true,
+                grabCursor: true,
                 autoplay: {
                     delay: 4000,
                 },
