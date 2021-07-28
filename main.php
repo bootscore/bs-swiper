@@ -5,8 +5,17 @@ Description: Post / Child Page / Product slider for bootScore 5 theme https://bo
 Version: 5.0.0.0
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
-License: GPLv2
+License: MIT License
 */
+
+
+// Update checker
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://dev.bootscore.me/wp-content/plugins/bs5-swiper/plugin-update-checker/plugin.json',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'bs5-swiper'
+);
 
 
 // Register Styles and Scripts

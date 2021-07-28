@@ -1,9 +1,9 @@
 <?php
 /*
 
- * Post/Page slider template.
+ * Post/Page/CPT Card slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs5-swiper/sc-post-slider.php
+ * This template can be overriden by copying this file to your-theme/bs5-swiper/sc-swiper-card.php
  *
  * @author 		Bastian Kreiter
  * @package 	bS5 Swiper
@@ -14,7 +14,10 @@ Post Slider Shortcode
 [bs-swiper-card type="post" category="blog, equal-height" order="DESC" orderby="date" posts="12"]
 
 Page Slider Shortcode
-[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+[bs-swiper-card type="page" post_parent="PARENT-PAGE-ID" order="ASC" orderby="title" posts="6"]
+
+CPT Slider Shortcode
+[bs-swiper-card type="isotope" tax="isotope_category" cat_parent="PARENT-TAX-ID" order="DESC" orderby="date" posts="10"]
 
 */
 

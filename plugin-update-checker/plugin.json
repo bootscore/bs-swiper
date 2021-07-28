@@ -1,0 +1,8 @@
+ {
+ 	"name" : "bS5 Swiper",
+ 	"version" : "5.0.0.0",
+ 	"download_url" : "https://files.bootscore.me/plugins/bs-swiper/bootstrap-5/bs5-swiper.zip",
+ 	"sections" : {
+ 		"description" : "Plugin description here. You can use HTML."
+ 	}
+ }

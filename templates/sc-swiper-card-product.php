@@ -3,14 +3,15 @@
 
  * Product slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs5-post-product-slider/sc-product-slider.php
+ * This template can be overriden by copying this file to your-theme/bs5-post-product-slider/sc-swiper-card-product.php
  *
  * @author 		Bastian Kreiter
- * @package 	bS5 Post/Product Slider
+ * @package 	bS5 Product Slider
  * @version     1.0.0
 
 Product Slider Shortcode
 [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
+
 */
 
 

@@ -1,9 +1,9 @@
 <?php
 /*
 
- * Post/Page slider template.
+ * Post/Page/CPT Hero slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs5-swiper/sc-post-slider.php
+ * This template can be overriden by copying this file to your-theme/bs5-swiper/sc-swiper-hero.php
  *
  * @author 		Bastian Kreiter
  * @package 	bS5 Swiper
@@ -14,7 +14,10 @@ Post Slider Shortcode
 [bs-swiper-hero type="post" category="blog, equal-height" order="DESC" orderby="date" posts="12"]
 
 Page Slider Shortcode
-[bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+[bs-swiper-hero type="page" post_parent="PARENT-PAGE-ID" order="ASC" orderby="title" posts="6"]
+
+CPT Slider Shortcode
+[bs-swiper-hero type="isotope" tax="isotope_category" cat_parent="PARENT-TAX-ID" order="DESC" orderby="date" posts="10"]
 
 */
 
@@ -29,7 +32,9 @@ function bootscore_swiper_hero( $atts ) {
 		'orderby' => 'date',
 		'posts' => -1,
 		'category' => '',
-        'post_parent'    => '',
+        'post_parent'    => '', // parent-id child-pages
+        'cat_parent'    => '', // parent-taxonomy-id CPT
+		'tax' => '' // CPT taxonomy
         
 	), $atts ) );
 	$options = array(
@@ -41,6 +46,24 @@ function bootscore_swiper_hero( $atts ) {
         'post_parent' => $post_parent,
         
 	);
+    
+    // CPT - Check if taxonomy and terms were defined
+	if ( $tax != '' && $cat_parent != '' ) {
+		$terms = explode( ',', trim( $cat_parent ) );
+		$terms = array_map( 'trim', $terms );
+		$terms = array_unique( $terms );
+		$terms = array_filter( $terms );
+		$options['tax_query'] = array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => $tax,
+				'field'    => 'term_id',
+				'terms'    => $terms,
+				'operator' => 'IN'
+			)
+		);
+	}    
+    
 	$query = new WP_Query( $options );
 	if ( $query->have_posts() ) { ?>
 
