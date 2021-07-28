@@ -82,3 +82,9 @@ Use shortcode to display your products in a page:
 - orderby: date or title
 - posts: number of posts to display
 - category: category slug, seperated by comma for multiple categories
+
+## License & Credits
+
+- bs5-swiper, MIT License https://github.com/craftwerkberlin/bs5-swiper/blob/main/LICENSE
+- swiper.js, nolimits4web, MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
+- Plugin Update Checker, YahnisElsts, https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt
