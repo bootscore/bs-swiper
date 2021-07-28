@@ -69,3 +69,16 @@ Use shortcode to show custom post types:
 - order: ASC or DESC
 - orderby: date or title
 - posts: number of posts to display 
+
+### Products
+
+Use shortcode to display your products in a page:
+
+`[bs-swiper-card-product order="DESC" orderby="date" posts="12" category="sample-category, test-category"]`
+
+#### Options:
+
+- order: ASC or DESC
+- orderby: date or title
+- posts: number of posts to display
+- category: category slug, seperated by comma for multiple categories
