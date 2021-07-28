@@ -9,13 +9,13 @@ Stable tag: 5.0.0.0
 License: MIT License
 License URI: https://github.com/craftwerkberlin/bs5-swiper/blob/main/LICENSE
 
-Posts, Pages, Custom Post Types or WooCommerce Products Slider for bootScore 5 WordPress theme, made with Swiper, Copyright 2021 Bastian Kreiter.
+Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme. Copyright 2021 Bastian Kreiter.
 
 
 == Credits ==
 
-Swiper: https://swiperjs.com/, MIT License, http://www.idangero.us/swiper/, Copyright 2015, Vladimir Kharlampidi
-
+    - Swiper: https://swiperjs.com/, MIT License, http://www.idangero.us/swiper/, Copyright 2015, Vladimir Kharlampidi
+    - Update Checker https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt, Copyright 2017, Jānis Elsts
 
 == Installation ==
 
