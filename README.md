@@ -31,7 +31,7 @@ Use shortcode to show posts:
 
 #### Options:
 
-- category: category slug
+- category: category slug, separated by comma for multiple categories
 - order: ASC or DESC
 - orderby: date or title
 - posts: number of posts to display
@@ -80,10 +80,10 @@ Use shortcode to display your products in a page:
 
 #### Options:
 
+- category: category slug, separated by comma for multiple categories
 - order: ASC or DESC
 - orderby: date or title
 - posts: number of posts to display
-- category: category slug, seperated by comma for multiple categories
 
 ## License & Credits
 
