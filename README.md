@@ -34,19 +34,38 @@ Use shortcode to show posts:
 - orderby: date or title
 - posts: number of posts to display
 
-## Pages
+### Pages
 
 Use shortcode to show child pages:
 
-### Cards:
+#### Cards:
 `[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
 
-### Heroes:
+#### Heroes:
 `[bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
 
-### Options:
+#### Options:
 
 - post_parent: ID of parent page
 - order: ASC or DESC
 - orderby: date or title
 - posts: number of pages to display
+
+### Custom Post Types
+
+Use shortcode to show custom post types:
+
+#### Cards:
+`[bs-swiper-card type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
+
+#### Heroes:
+`[bs-swiper-hero type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
+
+#### Options:
+
+- type: type of custom post type
+- tax: taxonomy
+- cat_parent: ID of parent taxonomy
+- order: ASC or DESC
+- orderby: date or title
+- posts: number of posts to display 
