@@ -10,12 +10,10 @@
 .cards .swiper-pagination-bullet-active {
     background: var(--bs-primary);
 }
-
 /* Cards END */
 
 
-/* Hero */
-
+/* Heroes */
 .heroes .swiper-button-next, .heroes .swiper-button-prev {
     color: var(--bs-white);
 }
@@ -23,28 +21,10 @@
 .heroes .swiper-pagination-bullet, .heroes .swiper-pagination-bullet-active {
     background: var(--bs-white);
 }
-
-@media (min-width: 992px) {
-    .heroes .card {
-        position: absolute;
-        bottom: 2rem;
-        right: 2rem;
-        width: 40%;
-    }
-}
-
-@media (max-width: 991px) {
-    .heroes .card {
-        border-radius: 0;
-    }
-}
-
-/* Hero END */
-
+/* Heroes END */
 
 
 /* Products */
-
 .products .card .star-rating,
 .card .star-rating {
     float: none;
@@ -86,5 +66,4 @@
     position: absolute;
     left: 0;
 }
-
 /* Products END */

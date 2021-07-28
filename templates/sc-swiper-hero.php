@@ -22,7 +22,7 @@ CPT Slider Shortcode
 */
 
 
-// Post Slider Shortcode
+// Hero Slider Shortcode
 add_shortcode( 'bs-swiper-hero', 'bootscore_swiper_hero' );
 function bootscore_swiper_hero( $atts ) {
 	ob_start();
@@ -69,56 +69,61 @@ function bootscore_swiper_hero( $atts ) {
 
 
 <!-- Swiper -->
-    <div class="heroes swiper-container swiper mb-4">
+<div class="heroes swiper-container swiper mb-4">
 
-        <div class="swiper-wrapper">
+    <div class="swiper-wrapper">
 
-            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-            <div class="swiper-slide h-100">
-                <!-- Featured Image-->
-                <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
+        <div class="swiper-slide h-100">
 
-                <div class="card card-body border-0 bg-primary text-white p-xl-5">
+            <!-- Featured Image-->
+            <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
 
-                    <?php bootscore_category_badge(); ?>
+            <div class="position-absolute top-0 end-0 bottom-0 start-0">
 
-                    <!-- Title -->
-                    <h2 class="blog-post-title">
-                        <a class="h1 text-white" href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
-                    </h2>
+                <div class="container h-100 d-flex flex-column">
 
-                    <!-- Excerpt & Read more -->
-                    <div class="card-text lead">
-                        <?php the_excerpt(); ?>
+                    <div class="mt-auto text-white mb-5 text-center">
+
+                        <?php bootscore_category_badge(); ?>
+
+                        <!-- Title -->
+                        <h2 class="blog-post-title">
+                            <a class="text-white" href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h2>
+
+                        <!-- Excerpt & Read more -->
+                        <div class="card-text">
+                            <?php the_excerpt(); ?>
+                        </div>
+
+                        <a class="read-more btn btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+
+                        <!-- Tags -->
+                        <?php bootscore_tags(); ?>
+
                     </div>
+                </div>
 
-                    <div class="mt-auto">
-                        <a class="read-more btn btn-lg btn-outline-light w-100 mb-4 mb-lg-0" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-                    </div>
-                    <!-- Tags -->
-                    <?php bootscore_tags(); ?>
+            </div>
 
-                </div><!-- .card -->
+        </div><!-- .swiper-slide -->
 
-            </div><!-- .swiper-slide -->
+        <?php endwhile; wp_reset_postdata(); ?>
 
-            <?php endwhile; wp_reset_postdata(); ?>
+    </div> <!-- .swiper-wrapper -->
 
-        </div> <!-- .swiper-wrapper -->
-
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next end-0"></div>
-        <div class="swiper-button-prev start-0"></div>
-        
-
-    </div><!-- swiper-container -->
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next d-none d-lg-block"></div>
+    <div class="swiper-button-prev d-none d-lg-block"></div>
 
 
+</div><!-- swiper-container -->
 
 <!-- Swiper End -->
 
@@ -127,4 +132,4 @@ function bootscore_swiper_hero( $atts ) {
 	}	
 }
 
-// Post Slider Shortcode End
+// Hero Slider Shortcode End

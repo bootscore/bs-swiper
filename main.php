@@ -12,7 +12,7 @@ License: MIT License
 // Update checker
 require 'update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://dev.bootscore.me/wp-content/plugins/bs5-swiper/update/plugin.json',
+	'https://bootscore.me/wp-content/plugins/bs5-swiper/update/plugin.json',
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'bs5-swiper'
 );
@@ -21,9 +21,9 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 // Register Styles and Scripts
 function swiper_scripts() {
     
-    wp_enqueue_script( 'swiper-min-js', plugins_url( '/js/swiper-bundle.min.js' , __FILE__ ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'swiper-min-js', plugins_url( '/js/swiper-bundle.min.js' , __FILE__ ), array(), false, true );
     
-    wp_enqueue_script( 'swiper-init-js', plugins_url( '/js/swiper-init.js' , __FILE__ ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'swiper-init-js', plugins_url( '/js/swiper-init.js' , __FILE__ ), array(), false, true );
     
     wp_register_style( 'swiper-min-css', plugins_url('css/swiper-bundle.min.css', __FILE__) );
     wp_enqueue_style( 'swiper-min-css' );

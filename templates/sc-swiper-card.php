@@ -139,4 +139,4 @@ function bootscore_swiper( $atts ) {
 	}	
 }
 
-// Post Slider Shortcode End
+// Card Slider Shortcode End
