@@ -11,3 +11,42 @@ Documentation: https://bootscore.me/documentation/bs-swiper/
 1. In your admin panel, go to Plugins > and click the Add New button.
 2. Click Upload Plugin and Choose File, then select the Plugin's .zip file. Click Install Now.
 3. Click Activate to use your new Plugin right away.
+
+## Usage
+
+### Posts
+
+Use shortcode to show posts:
+
+#### Cards: 
+
+`[bs-swiper-card type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
+
+
+#### Heroes:
+
+`[bs-swiper-hero type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
+
+#### Options:
+
+- category: category slug
+- order: ASC or DESC
+- orderby: date or title
+- posts: number of posts to display
+
+## Pages
+
+Use shortcode to show child pages:
+
+### Cards:
+`[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
+
+### Heroes:
+`[bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
+
+### Options:
+
+- post_parent: ID of parent page
+- order: ASC or DESC
+- orderby: date or title
+- posts: number of pages to display
