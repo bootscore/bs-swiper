@@ -10,9 +10,9 @@ License: MIT License
 
 
 // Update checker
-require 'plugin-update-checker/plugin-update-checker.php';
+require 'update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://dev.bootscore.me/wp-content/plugins/bs5-swiper/plugin-update-checker/plugin.json',
+	'https://dev.bootscore.me/wp-content/plugins/bs5-swiper/update/plugin.json',
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'bs5-swiper'
 );
