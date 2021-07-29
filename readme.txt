@@ -99,7 +99,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
-    = 5.0.0.0 - August XX 2020 =
+    = 5.0.0.0 - July 29 2021 =
     
         * Initial release
         
