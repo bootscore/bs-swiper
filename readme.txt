@@ -5,7 +5,7 @@ Contributors: craftwerk
 Requires at least: 4.5
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.0.0.0
+Stable tag: 5.0.0.1
 License: MIT License
 License URI: https://github.com/craftwerkberlin/bs5-swiper/blob/main/LICENSE
 
@@ -98,6 +98,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.0.0.1 - August 02 2021 =
+    
+        * Removed source map in swiper-bundle.min.js
 
     = 5.0.0.0 - July 29 2021 =
     

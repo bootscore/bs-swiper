@@ -2,7 +2,7 @@
 /*Plugin Name: bS5 Swiper
 Plugin URI: https://bootscore.me/plugins/bs-swiper/
 Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme. <a href="https://bootscore.me/documentation/bs-swiper/">Documentation</a> | <a href="https://bootscore.me/shop/products/free/bs-swiper/">Changelog</a>
-Version: 5.0.0.0
+Version: 5.0.0.1
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
 License: MIT License
