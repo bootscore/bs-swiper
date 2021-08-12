@@ -8,7 +8,7 @@ Documentation: https://bootscore.me/documentation/bs-swiper/
 
 ## Installation
 
-1. Download the zip file right here by pressing the green `code` button above or get plugin through the official [store](https://bootscore.me/shop/products/theme/bs-swiper/) (free). 
+1. Download the zip file right here by pressing the green `code` button above or get plugin through the official [store](https://bootscore.me/shop/products/theme/bs5-swiper/) (free). 
 2. **If you download via Github**, unzip file and remove `-main` branch from folder name and zip again. Folder name must be `bs5-swiper`, otherwise template override in child-theme will not work.
 3. In your admin panel, go to Plugins > and click the Add New button.
 4. Click Upload Plugin and Choose File, then select the Plugin's .zip file. Click Install Now.
