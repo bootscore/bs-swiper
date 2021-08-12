@@ -56,6 +56,43 @@ const bSSwiperHero = document.querySelectorAll('.heroes');
                 autoplay: {
                     delay: 4000,
                 },
+                
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+            });
+
+        }
+
+
+// Hero Fade
+const bSSwiperHeroFade = document.querySelectorAll('.heroes-fade');
+
+        for (i = 0; i < bSSwiperHeroFade.length; i++) {
+
+            bSSwiperHeroFade[i].classList.add('heroes-fade-' + i);
+
+            var slider = new Swiper('.heroes-fade-' + i, {
+
+                /* Options */
+                slidesPerView: 1,
+                loop: true,
+                grabCursor: true,
+                speed: 1500,
+                effect: 'fade',
+                  fadeEffect: {
+                    crossFade: true
+                  },
+                autoplay: {
+                    delay: 4000,
+                },
+                
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,

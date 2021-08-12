@@ -1,8 +1,8 @@
  {
  	"name" : "bS5 Swiper",
- 	"version" : "5.0.0.1",
+ 	"version" : "5.0.0.2",
  	"download_url" : "https://files.bootscore.me/plugins/bs-swiper/bootstrap-5/bs5-swiper.zip",
  	"sections" : {
- 		"description" : "Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme."
+ 		"description" : "Added new hero-fade template"
  	}
  }

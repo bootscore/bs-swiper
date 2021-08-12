@@ -5,7 +5,7 @@ Contributors: craftwerk
 Requires at least: 4.5
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.0.0.1
+Stable tag: 5.0.0.2
 License: MIT License
 License URI: https://github.com/craftwerkberlin/bs5-swiper/blob/main/LICENSE
 
@@ -36,6 +36,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         
         Heroes:
         [bs-swiper-hero type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]
+        
+        Heroes Fade:
+        [bs-swiper-hero-fade type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]
 
         Options:
 
@@ -54,6 +57,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         
         Heroes:
         [bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+        
+        Heroes Fade:
+        [bs-swiper-hero-fade type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
 
         Options:
 
@@ -72,6 +78,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         
         Heroes:
         [bs-swiper-hero type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]
+        
+        Heroes Fade:
+        [bs-swiper-hero-fade type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]
 
         Options:
 
@@ -98,6 +107,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.0.0.2 - August 12 2021 =
+    
+        * Added new hero-fade template
 
     = 5.0.0.1 - August 02 2021 =
     

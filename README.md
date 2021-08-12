@@ -24,10 +24,15 @@ Use shortcode to show posts:
 
 `[bs-swiper-card type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
 
-
 #### Heroes:
 
+##### Slide
+
 `[bs-swiper-hero type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
+
+##### Fade
+
+`[bs-swiper-hero-fade type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
 
 #### Options:
 
@@ -44,7 +49,14 @@ Use shortcode to show child pages:
 `[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
 
 #### Heroes:
+
+##### Slide
+
 `[bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
+
+##### Fade
+
+`[bs-swiper-hero-fade type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
 
 #### Options:
 
@@ -58,10 +70,18 @@ Use shortcode to show child pages:
 Use shortcode to show custom post types:
 
 #### Cards:
+
 `[bs-swiper-card type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
 
 #### Heroes:
+
+##### Slide
+
 `[bs-swiper-hero type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
+
+##### Fade
+
+`[bs-swiper-hero-fade type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
 
 #### Options:
 
