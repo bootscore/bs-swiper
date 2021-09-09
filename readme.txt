@@ -7,7 +7,7 @@ Tested up to: 5.8.1
 Requires PHP: 5.6
 Stable tag: 5.0.0.3
 License: MIT License
-License URI: https://github.com/craftwerkberlin/bs-swiper/blob/main/LICENSE
+License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
 Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme. Copyright 2021 Bastian Kreiter.
 
