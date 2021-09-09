@@ -121,6 +121,6 @@ The copied file will now override the bS Swiper template file. Change cards, cla
 
 ## License & Credits
 
-- bS Swiper, MIT License https://github.com/crftwrk/bs-swiper/blob/main/LICENSE
+- bS Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 - swiper.js, nolimits4web, MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
 - Plugin Update Checker, YahnisElsts, https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt
