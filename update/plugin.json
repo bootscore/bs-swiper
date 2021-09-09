@@ -1,8 +1,8 @@
  {
  	"name" : "bS Swiper",
  	"version" : "5.0.0.3",
- 	"download_url" : "https://files.bootscore.me/plugins/bs-swiper/bootstrap-5/bs-swiper-main.zip",
+ 	"download_url" : "https://github.com/bootscore/bs-swiper/archive/refs/heads/main.zip",
  	"sections" : {
- 		"description" : "Changed plugin and repository name, update to swiper 7.0.4"
+ 		"description" : "Changed update download link"
  	}
  }
