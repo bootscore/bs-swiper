@@ -3,10 +3,10 @@
 
  * Post/Page/CPT Card slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs5-swiper/sc-swiper-card.php
+ * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card.php
  *
  * @author 		Bastian Kreiter
- * @package 	bS5 Swiper
+ * @package 	bS Swiper
  * @version     1.0.0
 
 

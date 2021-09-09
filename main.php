@@ -1,8 +1,8 @@
 <?php
-/*Plugin Name: bS5 Swiper
+/*Plugin Name: bS Swiper
 Plugin URI: https://bootscore.me/plugins/bs-swiper/
-Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme. <a href="https://bootscore.me/documentation/bs-swiper/">Documentation</a> | <a href="https://bootscore.me/shop/products/free/bs5-swiper/">Changelog</a>
-Version: 5.0.0.2
+Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore theme. <a href="https://bootscore.me/documentation/bs-swiper/">Documentation</a> | <a href="https://bootscore.me/shop/products/free/bs5-swiper/">Changelog</a>
+Version: 5.0.0.3
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
 License: MIT License
@@ -12,9 +12,9 @@ License: MIT License
 // Update checker
 require 'update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://bootscore.me/wp-content/plugins/bs5-swiper/update/plugin.json',
+	'https://bootscore.me/wp-content/plugins/bs-swiper-main/update/plugin.json',
 	__FILE__, //Full path to the main plugin file or functions.php.
-	'bs5-swiper'
+	'bs-swiper-main'
 );
 
 
@@ -42,9 +42,9 @@ add_action('wp_enqueue_scripts','swiper_scripts');
  *
  * Locate the called template.
  * Search Order:
- * 1. /themes/theme/bs5-swiper/$template_name
+ * 1. /themes/theme/bs-swiper-main/$template_name
  * 2. /themes/theme/$template_name
- * 3. /plugins/bs5-swiper/templates/$template_name.
+ * 3. /plugins/bs-swiper-main/templates/$template_name.
  *
  * @since 1.0.0
  *
@@ -55,9 +55,9 @@ add_action('wp_enqueue_scripts','swiper_scripts');
  */
 function bs_swiper_locate_template( $template_name, $template_path = '', $default_path = '' ) {
 
-	// Set variable to search in bs5-swiper folder of theme.
+	// Set variable to search in bs-swiper-main folder of theme.
 	if ( ! $template_path ) :
-		$template_path = 'bs5-swiper/';
+		$template_path = 'bs-swiper-main/';
 	endif;
 
 	// Set default plugin templates path.

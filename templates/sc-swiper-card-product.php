@@ -3,10 +3,10 @@
 
  * Product slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs5-post-product-slider/sc-swiper-card-product.php
+ * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card-product.php
  *
  * @author 		Bastian Kreiter
- * @package 	bS5 Product Slider
+ * @package 	bS Product Slider
  * @version     1.0.0
 
 Product Slider Shortcode

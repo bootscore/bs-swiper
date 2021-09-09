@@ -1,13 +1,13 @@
-=== bS5 Swiper ===
+=== bS Swiper ===
 
 Contributors: craftwerk
 
 Requires at least: 4.5
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.0.0.2
+Stable tag: 5.0.0.3
 License: MIT License
-License URI: https://github.com/craftwerkberlin/bs5-swiper/blob/main/LICENSE
+License URI: https://github.com/craftwerkberlin/bs-swiper/blob/main/LICENSE
 
 Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme. Copyright 2021 Bastian Kreiter.
 
@@ -107,6 +107,11 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.0.0.3 - September 09 2021 =
+    
+        * Update to swiper 7.0.4
+        * Changed repository and plugin name
 
     = 5.0.0.2 - August 12 2021 =
     

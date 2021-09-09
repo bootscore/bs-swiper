@@ -3,10 +3,10 @@
 
  * Post/Page/CPT Hero fade slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs5-swiper/sc-swiper-hero.php
+ * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-hero.php
  *
  * @author 		Bastian Kreiter
- * @package 	bS5 Swiper
+ * @package 	bS Swiper
  * @version     1.0.0
 
 

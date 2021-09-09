@@ -1,8 +1,8 @@
  {
- 	"name" : "bS5 Swiper",
- 	"version" : "5.0.0.2",
- 	"download_url" : "https://files.bootscore.me/plugins/bs-swiper/bootstrap-5/bs5-swiper.zip",
+ 	"name" : "bS Swiper",
+ 	"version" : "5.0.0.3",
+ 	"download_url" : "https://files.bootscore.me/plugins/bs-swiper/bootstrap-5/bs-swiper-main.zip",
  	"sections" : {
- 		"description" : "Added new hero-fade template"
+ 		"description" : "Changed plugin and repository name, update to swiper 7.0.4"
  	}
  }
