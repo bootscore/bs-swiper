@@ -1,6 +1,6 @@
 === bS Swiper ===
 
-Contributors: craftwerk
+Contributors: The bootScore Contributors
 
 Requires at least: 4.5
 Tested up to: 5.8.1
