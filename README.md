@@ -37,7 +37,7 @@ Use shortcode to show posts:
 
 - category: category slug, separated by comma for multiple categories
 - order: ASC or DESC
-- orderby: date or title
+- orderby: date, title, or rand
 - posts: number of posts to display
 
 ### Pages
@@ -61,7 +61,7 @@ Use shortcode to show child pages:
 
 - post_parent: ID of parent page
 - order: ASC or DESC
-- orderby: date or title
+- orderby: date, title, or rand
 - posts: number of pages to display
 
 ### Custom Post Types
@@ -88,7 +88,7 @@ Use shortcode to show custom post types:
 - tax: taxonomy
 - cat_parent: ID of parent taxonomy
 - order: ASC or DESC
-- orderby: date or title
+- orderby: date, title, or rand
 - posts: number of posts to display 
 
 ### Products
@@ -101,7 +101,7 @@ Use shortcode to display your products in a page:
 
 - category: category slug, separated by comma for multiple categories
 - order: ASC or DESC
-- orderby: date or title
+- orderby: date, title, or rand
 - posts: number of posts to display
 
 ## Overriding templates via theme
