@@ -1,8 +1,8 @@
  {
  	"name" : "bS Swiper",
- 	"version" : "5.0.0.3",
+ 	"version" : "5.0.0.4",
  	"download_url" : "https://github.com/bootscore/bs-swiper/archive/refs/heads/main.zip",
  	"sections" : {
- 		"description" : "Changed update download link"
+ 		"description" : "Update Swiper 7.0.9, added class bg-dark to heroes"
  	}
  }

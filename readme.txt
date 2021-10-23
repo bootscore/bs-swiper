@@ -5,7 +5,7 @@ Contributors: The bootScore Contributors
 Requires at least: 4.5
 Tested up to: 5.8.1
 Requires PHP: 5.6
-Stable tag: 5.0.0.3
+Stable tag: 5.0.0.4
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
@@ -107,6 +107,11 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.0.0.4 - October 23 2021 =
+    
+        * Added bg-dark class to heroes
+        * Update Swiper 7.0.9
 
     = 5.0.0.3 - September 09 2021 =
     
