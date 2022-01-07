@@ -110,7 +110,13 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
     = 5.1.0.0 - January 10 2022 =
     
-        * 
+        * [NEW] Added shortcode to show single items by id
+        * [NEW] Added shortcode for custom post types by terms-slug
+        * [REMOVED] Shortcode for CPT by parent terms id
+        * [CHANGED] Template sc-swiper-card.php
+        * [CHANGED] Template sc-swiper-hero.php
+        * [CHANGED] Template sc-swiper-hero-fade.php
+        * [UPDATE] Swiper 7.3.4
 
     = 5.0.0.4 - October 23 2021 =
     
