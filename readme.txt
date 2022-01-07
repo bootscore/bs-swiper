@@ -29,28 +29,28 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
     = Posts =
 
-        Use shortcode to show posts:
+        Use shortcode to show posts somewhere:
 
         Cards:
-        [bs-swiper-card type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]
+        [bs-swiper-card type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
         
         Heroes:
-        [bs-swiper-hero type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]
+        [bs-swiper-hero type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
         
         Heroes Fade:
-        [bs-swiper-hero-fade type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]
+        [bs-swiper-hero-fade type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
 
         Options:
 
         category: category slug
         order: ASC or DESC
         orderby: date or title
-        posts: number of posts to display
+        posts: amount of posts to show
         
         
     = Pages =
 
-        Use shortcode to show child pages:
+        Use shortcode to show child pages somewhere:
 
         Cards:
         [bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
@@ -66,44 +66,44 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         post_parent: ID of parent page
         order: ASC or DESC
         orderby: date or title
-        posts: number of pages to display
+        posts: amount of pages to show
         
         
     = Custom Post Types =
 
-        Use shortcode to show custom post types:
+        Use shortcode to show custom post types somewhere:
 
         Cards:
-        [bs-swiper-card type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]
+        [bs-swiper-card type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
         
         Heroes:
-        [bs-swiper-hero type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]
+        [bs-swiper-hero type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
         
         Heroes Fade:
-        [bs-swiper-hero-fade type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]
+        [bs-swiper-hero-fade type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
 
         Options:
 
         type: type of custom post type
         tax: taxonomy
-        cat_parent: ID of parent taxonomy
+        terms: terms-slug - multiple terms separated by comma
         order: ASC or DESC
         orderby: date or title
-        posts: number of posts to display     
-
+        posts: amount of posts to show 
 
     = Products =
 
-        Use shortcode to display your products in a page:
+        Use shortcode to show products somewhere:
 
-        [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="sample-category, test-category"]
+        [bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]
 
         Options:
 
+        category: category-slug, multiple categories separated by comma
         order: ASC or DESC
         orderby: date or title
         posts: number of posts to display
-        category: category slug, seperated by comma for multiple categories
+        
 
 
 == Changelog ==
