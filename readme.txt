@@ -44,7 +44,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         category: category slug
         order: ASC or DESC
-        orderby: date or title
+        orderby: date, title or rand
         posts: amount of posts to show
         
         
@@ -65,7 +65,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         post_parent: ID of parent page
         order: ASC or DESC
-        orderby: date or title
+        orderby: date, title or rand
         posts: amount of pages to show
         
         
@@ -88,7 +88,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         tax: taxonomy
         terms: terms-slug - multiple terms separated by comma
         order: ASC or DESC
-        orderby: date or title
+        orderby: date, title or rand
         posts: amount of posts to show 
 
     = Products =
@@ -101,7 +101,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         category: category-slug, multiple categories separated by comma
         order: ASC or DESC
-        orderby: date or title
+        orderby: date, title or rand
         posts: number of posts to display
         
 
