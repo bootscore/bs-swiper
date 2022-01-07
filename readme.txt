@@ -1,15 +1,15 @@
 === bS Swiper ===
 
-Contributors: The bootScore Contributors
+Contributors: Bastian Kreiter, torricelli
 
 Requires at least: 4.5
-Tested up to: 5.8.1
+Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 5.0.0.4
+Stable tag: 5.1.0.0
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
-Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore 5 theme. Copyright 2021 Bastian Kreiter.
+Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore theme. Copyright 2021 - 2022 bootScore.
 
 
 == Credits ==
@@ -107,6 +107,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.1.0.0 - January 10 2022 =
+    
+        * 
 
     = 5.0.0.4 - October 23 2021 =
     

@@ -7,7 +7,7 @@
  *
  * @author 		Bastian Kreiter
  * @package 	bS Product Slider
- * @version     1.0.0
+ * @version     5.1.0.0
 
 Product Slider Shortcode
 [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
@@ -18,7 +18,8 @@ Product Slider Shortcode
 // Product Slider Shortcode
 add_shortcode( 'bs-swiper-card-product', 'bootscore_product_slider' );
 function bootscore_product_slider( $atts ) {
-	ob_start();
+	
+  ob_start();
 	extract( shortcode_atts( array (
 		'type' => 'product',
 		'order' => 'date',
@@ -26,13 +27,15 @@ function bootscore_product_slider( $atts ) {
 		'posts' => -1,
 		'category' => '',
 	), $atts ) );
-	$options = array(
+	
+    $options = array(
 		'order' => $order,
 		'orderby' => $orderby,
 		'posts_per_page' => $posts,
         'product_cat'    => $category,
 	);
-	$query = new WP_Query( $options );
+	
+  $query = new WP_Query( $options );
 	if ( $query->have_posts() ) { ?>
 
 
