@@ -19,7 +19,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - `bs-swiper-card` shows items in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
 - `bs-swiper-hero` shows items in a hero slider with auto-slide effect. Items must have a featured-image.
 - `bs-swiper-hero-fade` shows items in a hero slider with auto-fade effect. Items must have a featured-image.
-- `bs-swiper-card-product` shows WooCommerce products in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
+- `bs-swiper-card-product` shows only WooCommerce products in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
 
 ## Posts
 
