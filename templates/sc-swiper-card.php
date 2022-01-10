@@ -7,24 +7,29 @@
  *
  * @author 		Bastian Kreiter
  * @package 	bS Swiper
- * @version     1.0.0
+ * @version     5.1.0.0
 
 
-Post Slider Shortcode 
-[bs-swiper-card type="post" category="blog, equal-height" order="DESC" orderby="date" posts="12"]
+Posts: 
+[bs-swiper-card type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
 
-Page Slider Shortcode
-[bs-swiper-card type="page" post_parent="PARENT-PAGE-ID" order="ASC" orderby="title" posts="6"]
+Child-pages: 
+[bs-swiper-card type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
 
-CPT Slider Shortcode
-[bs-swiper-card type="isotope" tax="isotope_category" cat_parent="PARENT-TAX-ID" order="DESC" orderby="date" posts="10"]
+Custom post types:
+[bs-swiper-card type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
 
+Single items:
+[bs-swiper-card type="post" id="1, 15"]
+[bs-swiper-card type="page" id="2, 25"]
+[bs-swiper-card type="isotope" id="33, 31"]
 */
 
 
 // Card Slider Shortcode
 add_shortcode( 'bs-swiper-card', 'bootscore_swiper' );
 function bootscore_swiper( $atts ) {
+	
 	ob_start();
 	extract( shortcode_atts( array (
 		'type' => 'post',
@@ -32,11 +37,12 @@ function bootscore_swiper( $atts ) {
 		'orderby' => 'date',
 		'posts' => -1,
 		'category' => '',
-        'post_parent'    => '', // parent-id child-pages
-        'cat_parent'    => '', // parent-taxonomy-id CPT
-		'tax' => '' // CPT taxonomy
-        
+        'post_parent'    => '',
+		'tax' => '',
+		'terms' => '',
+		'id' => ''
 	), $atts ) );
+
 	$options = array(
 		'post_type' => $type,
 		'order' => $order,
@@ -44,26 +50,31 @@ function bootscore_swiper( $atts ) {
 		'posts_per_page' => $posts,
 		'category_name' => $category,
         'post_parent' => $post_parent,
-        
 	);
-    
-    // CPT - Check if taxonomy and terms were defined
-	if ( $tax != '' && $cat_parent != '' ) {
-		$terms = explode( ',', trim( $cat_parent ) );
+
+	$tax = trim( $tax );
+	$terms = trim( $terms );
+	if ( $tax != '' && $terms != '' ) {
+		$terms = explode( ',', $terms );
 		$terms = array_map( 'trim', $terms );
-		$terms = array_unique( $terms );
 		$terms = array_filter( $terms );
-		$options['tax_query'] = array(
-			'relation' => 'AND',
-			array(
-				'taxonomy' => $tax,
-				'field'    => 'term_id',
-				'terms'    => $terms,
-				'operator' => 'IN'
-			)
-		);
+		$terms = array_unique( $terms );
+		unset( $options['category_name'] );
+		$options['tax_query'] = array( array(
+            'taxonomy' => $tax,
+            'field'    => 'name',
+            'terms'    => $terms,
+        ) );
 	}
-    
+
+	if ( $id != '' ) {
+		$ids = explode( ',', $id );
+		$ids = array_map( 'intval', $ids );
+		$ids = array_filter( $ids );
+		$ids = array_unique( $ids );
+		$options['post__in'] = $ids;
+	}
+
 	$query = new WP_Query( $options );
 	if ( $query->have_posts() ) { ?>
 

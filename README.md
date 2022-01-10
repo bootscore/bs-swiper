@@ -1,126 +1,116 @@
 # bS Swiper
 
-WordPress plugin to show posts, child-pages, custom post types or WooCommerce products in a swiper.js carousel in bootScore theme.
+WordPress plugin to show posts, pages, custom-post-types or WooCommerce products in a swiper.js carousel in bootScore theme.
 
-Demo: https://bootscore.me/plugins/bs-swiper/
+- Demo and documentation: https://bootscore.me/documentation/bs-swiper/
 
-Documentation: https://bootscore.me/documentation/bs-swiper/
+<img src="https://lh3.googleusercontent.com/pw/AM-JKLWiXYRnKEw159nO7pwFb4ntUSLVFvmlb8jvSaz__ucMtM26cCHhEXAwHSc58oh1FKGg99sY6sxyw1ycm5fuGUimM-lYZ2Z2yrh-imU4EE_vQhu8pwFaP4fK8yeXQdSyZowyGgwSNBR83WvRajr4M8e-Kw=w1200-h941-no" alt="bs-swiper">
 
 ## Installation
-
-1. Download the zip file right here by pressing the green `code` button above or get plugin through the official [store](https://bootscore.me/shop/products/theme/bs5-swiper/) (free). 
+1. Download latest release [bs-swiper-main.zip](https://github.com/bootscore/bs-swiper/releases). 
 2. In your admin panel, go to Plugins > and click the Add New button.
 3. Click Upload Plugin and Choose File, then select the Plugin's .zip file. Click Install Now.
 4. Click Activate to use your new Plugin right away.
 
 ## Usage
+Select template you want to use by replacing `bs-swiper-*` placeholder in shortcode examples.
 
-### Posts
+- `bs-swiper-card` shows items in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
+- `bs-swiper-hero` shows items in a hero slider with auto-slide effect. Items must have a featured-image.
+- `bs-swiper-hero-fade` shows items in a hero slider with auto-fade effect. Items must have a featured-image.
+- `bs-swiper-card-product` shows only WooCommerce products in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
 
-Use shortcode to show posts:
+## Posts
 
-#### Cards: 
+### Shortcode to show posts by category
+`[bs-swiper-* type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]`   
 
-`[bs-swiper-card type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
-
-#### Heroes:
-
-##### Slide
-
-`[bs-swiper-hero type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
-
-##### Fade
-
-`[bs-swiper-hero-fade type="post" category="water, classic, markup" order="DESC" orderby="date" posts="12"]`
-
-#### Options:
-
-- category: category slug, separated by comma for multiple categories
+#### Options
+- category: category-slug, multiple categories separated by comma
 - order: ASC or DESC
 - orderby: date, title, or rand
-- posts: number of posts to display
+- posts: amount of posts to show
 
-### Pages
+### Shortcode to show posts by tags
+`[bs-swiper-* type="post" tax="post_tag" terms="bikes, motorbikes" order="DESC" orderby="date" posts="5"]`
 
-Use shortcode to show child pages:
-
-#### Cards:
-`[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
-
-#### Heroes:
-
-##### Slide
-
-`[bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
-
-##### Fade
-
-`[bs-swiper-hero-fade type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]`
-
-#### Options:
-
-- post_parent: ID of parent page
+#### Options
+- tax: taxonomy (post_tag)
+- terms: tags-slug, multiple terms separated by comma
 - order: ASC or DESC
 - orderby: date, title, or rand
-- posts: number of pages to display
+- posts: amount of posts to show
 
-### Custom Post Types
+### Shortcode to show single posts by id
+`[bs-swiper-* type="post" id="1, 15"]`
 
-Use shortcode to show custom post types:
+#### Options
+- id: id of post, multiple ids separated by comma 
 
-#### Cards:
+## Pages
 
-`[bs-swiper-card type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
+### Shortcode to show child-pages by parent-page id
+`[bs-swiper-* type="page" post_parent="21" order="ASC" orderby="title" posts="6"]`
 
-#### Heroes:
+Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
-##### Slide
+#### Options
+- post_parent: id of parent page
+- order: ASC or DESC
+- orderby: date, title, or rand
+- posts: amount of pages to show
 
-`[bs-swiper-hero type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
+### Shortcode to show single pages by id
+`[bs-* type="page" id="2, 25"]`
 
-##### Fade
+#### Options
+- id: id of page, multiple ids separated by comma 
 
-`[bs-swiper-hero-fade type="isotope" tax="isotope_category" cat_parent="224" order="DESC" orderby="date" posts="10"]`
+## Custom Post Types
+
+### Shortcode to show custom-post-types by terms
+`[bs-swiper-* type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]`
 
 #### Options:
-
-- type: type of custom post type
+- type: type of custom-post-type
 - tax: taxonomy
-- cat_parent: ID of parent taxonomy
+- terms: terms-slug, multiple terms separated by comma
 - order: ASC or DESC
 - orderby: date, title, or rand
-- posts: number of posts to display 
+- posts: amount of custom post types to show 
 
-### Products
+### Shortcode to show single custom-post-types by id
+`[bs-* type="isotope" id="33, 31"]`
 
-Use shortcode to display your products in a page:
+#### Options
+- id: id of custom-post-type, multiple ids separated by comma 
 
-`[bs-swiper-card-product order="DESC" orderby="date" posts="12" category="sample-category, test-category"]`
+## WooCommerce Products
+
+### Shortcode to show products
+`[bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]`
 
 #### Options:
-
-- category: category slug, separated by comma for multiple categories
+- category: category slug, multiple categories separated by comma
 - order: ASC or DESC
 - orderby: date, title, or rand
-- posts: number of posts to display
+- posts: amount of products to show 
 
 ## Overriding templates via theme
+Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
 
-Template files can be found within the /bs-swiper-main/templates/ plugin directory.
-
-Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named /bs-swiper-main keeping the same file structure but removing the /templates/ subdirectory. Path must be `/your-theme/bs-swiper-main/[file].php`.
+Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named **/bs-swiper-main/** keeping the same file structure but removing the **/templates/** subdirectory. Path must be **/your-theme/bs-swiper-main/[file].php**.
 
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
-### Templates that can be overwritten:
-
+### Templates that can be overridden
 - sc-swiper-card.php
 - sc-swiper-card-product.php
 - sc-swiper-hero.php
 - sc-swiper-hero-fade.php
 
 ## License & Credits
-
 - bS Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 - swiper.js, nolimits4web, MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
 - Plugin Update Checker, YahnisElsts, MIT License https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt
+
