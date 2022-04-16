@@ -3,9 +3,9 @@
 Contributors: Bastian Kreiter, torricelli
 
 Requires at least: 4.5
-Tested up to: 5.9
+Tested up to: 5.9.3
 Requires PHP: 5.6
-Stable tag: 5.1.0.1
+Stable tag: 5.1.0.2
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
@@ -107,6 +107,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.1.0.2 - April 16 2022 =
+    
+        * [UPDATE] Swiper 8.1.1
 
     = 5.1.0.1 - February 03 2022 =
     

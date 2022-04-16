@@ -1,17 +1,16 @@
 /* Cards */
 .cards .swiper-button-next,
 .cards .swiper-button-prev {
-    color: var(--bs-primary);
+  color: var(--bs-primary);
 }
 
 .cards .swiper-pagination-bullet {
-    background: var(--bs-dark);
+  background: var(--bs-dark);
 }
 
 .cards .swiper-pagination-bullet-active {
-    background: var(--bs-primary);
+  background: var(--bs-primary);
 }
-
 /* Cards END */
 
 
@@ -20,60 +19,58 @@
 .heroes .swiper-button-prev,
 .heroes-fade .swiper-button-next,
 .heroes-fade .swiper-button-prev {
-    color: var(--bs-white);
+  color: var(--bs-white);
 }
 
 .heroes .swiper-pagination-bullet,
 .heroes .swiper-pagination-bullet-active,
 .heroes-fade .swiper-pagination-bullet,
 .heroes-fade .swiper-pagination-bullet-active {
-    background: var(--bs-white);
+  background: var(--bs-white);
 }
-
 /* Heroes END */
 
 
 /* Products */
 .products .card .star-rating,
 .card .star-rating {
-    float: none;
-    margin: 1rem auto;
+  float: none;
+  margin: 1rem auto;
 }
 
 .product-card .star-rating {
-    float: right;
-    overflow: hidden;
-    position: relative;
-    height: 1em;
-    line-height: 1;
-    font-size: 1em;
-    width: 5.4em;
-    font-family: star;
+  float: right;
+  overflow: hidden;
+  position: relative;
+  height: 1em;
+  line-height: 1;
+  font-size: 1em;
+  width: 5.4em;
+  font-family: star;
 }
 
 .product-card .star-rating::before {
-    content: "\73\73\73\73\73";
-    color: var(--bs-gray);
-    float: left;
-    top: 0;
-    left: 0;
-    position: absolute;
+  content: "\73\73\73\73\73";
+  color: var(--bs-gray);
+  float: left;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .product-card .star-rating span {
-    overflow: hidden;
-    float: left;
-    top: 0;
-    left: 0;
-    position: absolute;
-    padding-top: 1.5em;
+  overflow: hidden;
+  float: left;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding-top: 1.5em;
 }
 
 .product-card .star-rating span::before {
-    content: "\53\53\53\53\53";
-    top: 0;
-    position: absolute;
-    left: 0;
+  content: "\53\53\53\53\53";
+  top: 0;
+  position: absolute;
+  left: 0;
 }
-
 /* Products END */
