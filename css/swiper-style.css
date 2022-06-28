@@ -13,7 +13,6 @@
 }
 /* Cards END */
 
-
 /* Heroes */
 .heroes .swiper-button-next,
 .heroes .swiper-button-prev,
@@ -29,7 +28,6 @@
   background: var(--bs-white);
 }
 /* Heroes END */
-
 
 /* Products */
 .products .card .star-rating,
