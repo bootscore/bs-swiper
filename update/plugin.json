@@ -1,8 +1,8 @@
  {
  	"name" : "bS Swiper",
- 	"version" : "5.1.0.3",
- 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/5.1.0.3/bs-swiper-main.zip",
+ 	"version" : "5.1.0.4",
+ 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/5.1.0.4/bs-swiper-main.zip",
  	"sections" : {
- 		"description" : "Update Swiper 8.2.3"
+ 		"description" : "Update Swiper 8.2.5"
  	}
  }
