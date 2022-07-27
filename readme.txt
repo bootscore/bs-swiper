@@ -108,6 +108,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
+    = 5.1.0.5 - July 27 2022 =
+    
+        * [UPDATE] Swiper 8.3.2
+
     = 5.1.0.4 - June 28 2022 =
     
         * [UPDATE] Swiper 8.2.5
