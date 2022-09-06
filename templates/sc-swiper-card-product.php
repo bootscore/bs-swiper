@@ -41,7 +41,7 @@ function bootscore_product_slider($atts) {
 
     <!-- Swiper -->
 
-    <div class="px-5 position-relative product-slider">
+    <div class="px-5 position-relative product-slider woocommerce">
 
       <div class="cards swiper-container swiper position-static">
 
