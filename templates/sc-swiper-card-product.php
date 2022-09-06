@@ -7,7 +7,7 @@
  *
  * @author 		Bastian Kreiter
  * @package 	bS Product Slider
- * @version     5.1.0.0
+ * @version     5.1.0.6
 
 Product Slider Shortcode
 [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
@@ -41,7 +41,7 @@ function bootscore_product_slider($atts) {
 
     <!-- Swiper -->
 
-    <div class="px-5 position-relative product-slider">
+    <div class="px-5 position-relative product-slider woocommerce">
 
       <div class="cards swiper-container swiper position-static">
 
