@@ -7,7 +7,7 @@
  *
  * @author 		Bastian Kreiter
  * @package 	bS Product Slider
- * @version     5.1.0.0
+ * @version     5.1.0.6
 
 Product Slider Shortcode
 [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
