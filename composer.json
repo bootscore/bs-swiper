@@ -11,9 +11,9 @@
     "readme": "README.md",
     "homepage": "https://bootscore.me/",
     "support": {
-      "issues": "https://github.com/bootscore/bootscore/issues",
+      "issues": "https://github.com/bootscore/bs-swiper/issues",
       "forum": "https://github.com/bootscore/bootscore/discussions",
-      "source": "https://github.com/bootscore/bootscore",
+      "source": "https://github.com/bootscore/bs-swiper",
       "docs": "https://bootscore.me/documentation/bs-swiper/"
     },
     "minimum-stability": "stable",
