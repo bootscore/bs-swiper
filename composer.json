@@ -19,10 +19,15 @@
     "minimum-stability": "stable",
     "keywords": [
       "wordpress",
-      "theme",
+      "plugin",
       "bootscore",
       "bootstrap",
       "bootcommerce",
-      "woocommerce"
+      "woocommerce", 
+      "swiper.js",
+      "swiper",
+      "slideshow",
+      "carousel",
+      "slider"
     ]
 }
