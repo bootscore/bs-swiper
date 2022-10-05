@@ -1,6 +1,6 @@
 {
-    "name": "bootscore/bootcommerce-child",
-    "description": "WooCommerce child theme for bootscore",
+    "name": "bootscore/bs-swiper",
+    "description": "Swiper slider for bootscore",
     "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
