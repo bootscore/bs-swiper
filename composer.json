@@ -1,7 +1,7 @@
 {
     "name": "bootscore/bootcommerce-child",
     "description": "WooCommerce child theme for bootscore",
-    "type": "wordpress-theme",
+    "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
         {
