@@ -1,11 +1,11 @@
 === bS Swiper ===
 
-Contributors: Bastian Kreiter, torricelli
+Contributors: Bastian Kreiter, torricelli, Sean Emerson
 
 Requires at least: 4.5
-Tested up to: 6.0.2
+Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 5.1.0.6
+Stable tag: 5.1.0.7
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
@@ -34,6 +34,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         Cards:
         [bs-swiper-card type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
         
+        Cards Autoplay:
+        [bs-swiper-card-autoplay type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
+        
         Heroes:
         [bs-swiper-hero type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
         
@@ -55,6 +58,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         Cards:
         [bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
         
+        Cards Autoplay:
+        [bs-swiper-card-autoplay type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+        
         Heroes:
         [bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
         
@@ -75,6 +81,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         Cards:
         [bs-swiper-card type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+        
+        Cards Autoplay:
+        [bs-swiper-card-autoplay type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
         
         Heroes:
         [bs-swiper-hero type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
@@ -108,6 +117,12 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
+    = 5.1.0.7 - December 21 2022 =
+
+        * [NEW] Add composer.json
+        * [NEW] Add card autoplay template
+        * [UPDATE] Update Swiper 8.4.5
+        
     = 5.1.0.6 - September 06 2022 =
     
         * [IMPROVEMENT] Fix product star rating
