@@ -126,6 +126,13 @@ function bs_swiper_card() {
 add_action('wp_head', 'bs_swiper_card');
 
 
+// Cards Autoplay
+function bs_swiper_card_autoplay() {
+  return bs_swiper_get_template('sc-swiper-card-autoplay.php');
+}
+add_action('wp_head', 'bs_swiper_card_autoplay');
+
+
 // Products
 function bs_swiper_card_product() {
   return bs_swiper_get_template('sc-swiper-card-product.php');

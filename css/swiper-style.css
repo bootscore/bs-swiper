@@ -1,14 +1,18 @@
 /* Cards */
 .cards .swiper-button-next,
-.cards .swiper-button-prev {
+.cards .swiper-button-prev,
+.cards-autoplay .swiper-button-next,
+.cards-autoplay .swiper-button-prev {
   color: var(--bs-primary);
 }
 
-.cards .swiper-pagination-bullet {
+.cards .swiper-pagination-bullet,
+.cards-autoplay .swiper-pagination-bullet {
   background: var(--bs-dark);
 }
 
-.cards .swiper-pagination-bullet-active {
+.cards .swiper-pagination-bullet-active,
+.cards-autoplay .swiper-pagination-bullet-active {
   background: var(--bs-primary);
 }
 /* Cards END */
