@@ -16,6 +16,7 @@ WordPress plugin to show posts, pages, custom-post-types or WooCommerce products
 Select template you want to use by replacing `bs-swiper-*` placeholder in shortcode examples.
 
 - `bs-swiper-card` shows items in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
+- `bs-swiper-card-autoplay` shows items in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards with autoplay.
 - `bs-swiper-hero` shows items in a hero slider with auto-slide effect. Items must have a featured-image.
 - `bs-swiper-hero-fade` shows items in a hero slider with auto-fade effect. Items must have a featured-image.
 - `bs-swiper-card-product` shows only WooCommerce products in 4 (xxl), 3 (lg), 2 (md) and 1 (sm) column cards.
@@ -105,6 +106,7 @@ The copied file will now override the bS Swiper template file. Change cards, cla
 
 ### Templates that can be overridden
 - sc-swiper-card.php
+- sc-swiper-card-autoplay.php
 - sc-swiper-card-product.php
 - sc-swiper-hero.php
 - sc-swiper-hero-fade.php

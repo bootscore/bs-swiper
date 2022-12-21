@@ -39,6 +39,49 @@ for (i = 0; i < bSSwiper.length; i++) {
 }
 
 
+// Cards Autoplay
+const bSSwiperAutoplay = document.querySelectorAll('.cards-autoplay');
+
+for (i = 0; i < bSSwiperAutoplay.length; i++) {
+
+  bSSwiperAutoplay[i].classList.add('cards-autoplay-' + i);
+
+  var slider = new Swiper('.cards-autoplay-' + i, {
+
+    /* Options */
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
+    },
+    disableOnInteraction: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    }
+
+  });
+
+}
+
+
 // Hero
 const bSSwiperHero = document.querySelectorAll('.heroes');
 
@@ -55,7 +98,6 @@ for (i = 0; i < bSSwiperHero.length; i++) {
     autoplay: {
       delay: 4000,
     },
-
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -91,7 +133,6 @@ for (i = 0; i < bSSwiperHeroFade.length; i++) {
     autoplay: {
       delay: 4000,
     },
-
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
