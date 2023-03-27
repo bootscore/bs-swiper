@@ -90,39 +90,44 @@ function bootscore_swiper_autoplay($atts) {
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
             <div class="swiper-slide card h-auto mb-5">
-              <!-- Featured Image-->
-              <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
+
+              <?php if ( has_post_thumbnail() ) : ?>
+                <a href="<?php the_permalink(); ?>">
+                  <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
+                </a>
+              <?php endif; ?>
 
               <div class="card-body d-flex flex-column">
 
                 <?php bootscore_category_badge(); ?>
 
-                <!-- Title -->
-                <h2 class="blog-post-title">
-                  <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                  </a>
-                </h2>
-                <!-- Meta -->
-                <?php if ('post' === get_post_type()) : ?>
-                  <small class="text-muted mb-2">
-                    <?php
-                    bootscore_date();
-                    bootscore_author();
-                    bootscore_comments();
-                    bootscore_edit();
-                    ?>
-                  </small>
-                <?php endif; ?>
-                <!-- Excerpt & Read more -->
-                <div class="card-text">
-                  <?php the_excerpt(); ?>
-                </div>
+                <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                  <?php the_title('<h2 class="blog-post-title h5">', '</h2>'); ?>
+                </a>
 
-                <div class="mt-auto">
-                  <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-                </div>
-                <!-- Tags -->
+                <?php if ('post' === get_post_type()) : ?>
+                  <p class="meta small mb-2 text-muted">
+                    <?php
+                      bootscore_date();
+                      bootscore_author();
+                      bootscore_comments();
+                      bootscore_edit();
+                    ?>
+                  </p>
+                <?php endif; ?>
+
+                <p class="card-text">
+                  <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                    <?php echo strip_tags(get_the_excerpt()); ?>
+                  </a>
+                </p>
+
+                <p class="card-text mt-auto">
+                  <a class="read-more" href="<?php the_permalink(); ?>">
+                    <?php _e('Read more »', 'bootscore'); ?>
+                  </a>
+                </p>
+
                 <?php bootscore_tags(); ?>
 
               </div>
