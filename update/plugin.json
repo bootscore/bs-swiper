@@ -1,8 +1,8 @@
  {
  	"name" : "bS Swiper",
- 	"version" : "5.1.0.7",
- 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v.5.1.0.7/bs-swiper-main.zip",
+ 	"version" : "5.2.0",
+ 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v5.2.0/bs-swiper-main.zip",
  	"sections" : {
- 		"description" : "Add composer.json and new card-autoplay template."
+ 		"description" : "Improved loop cards"
  	}
  }

@@ -5,9 +5,9 @@
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card.php
  *
- * @author 		Bastian Kreiter
+ * @author 		bootScore
  * @package 	bS Swiper
- * @version     5.1.0.0
+ * @version     5.2.0
 
 
 Posts: 
