@@ -12,7 +12,7 @@ for (i = 0; i < bSSwiper.length; i++) {
     /* Options */
     slidesPerView: 1,
     spaceBetween: 20,
-    loop: true,
+    //loop: true, // Disable infinity loop Swiper v9 https://swiperjs.com/migration-guide-v9
     grabCursor: true,
     pagination: {
       el: '.swiper-pagination',
@@ -51,7 +51,7 @@ for (i = 0; i < bSSwiperAutoplay.length; i++) {
     /* Options */
     slidesPerView: 1,
     spaceBetween: 20,
-    loop: true,
+    //loop: true, // Disable infinity loop Swiper v9 https://swiperjs.com/migration-guide-v9
     grabCursor: true,
     autoplay: {
       delay: 3000,
