@@ -90,7 +90,7 @@ function bootscore_swiper_autoplay($atts) {
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
             <div class="swiper-slide card h-auto mb-5">
-   
+
               <?php if ( has_post_thumbnail() ) : ?>
                 <a href="<?php the_permalink(); ?>">
                   <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
