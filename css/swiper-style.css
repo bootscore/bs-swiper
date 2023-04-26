@@ -8,7 +8,7 @@
 
 .cards .swiper-pagination-bullet,
 .cards-autoplay .swiper-pagination-bullet {
-  background: var(--bs-dark);
+  background: var(--bs-body-color);
 }
 
 .cards .swiper-pagination-bullet-active,
