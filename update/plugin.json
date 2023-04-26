@@ -1,8 +1,8 @@
  {
  	"name" : "bS Swiper",
- 	"version" : "5.2.0",
- 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v5.2.0/bs-swiper-main.zip",
+ 	"version" : "5.2.1",
+ 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v5.2.1/bs-swiper-main.zip",
  	"sections" : {
- 		"description" : "Improved loop cards"
+ 		"description" : "Replace PHP echo's with shorthand"
  	}
  }

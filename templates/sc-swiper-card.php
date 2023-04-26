@@ -7,7 +7,7 @@
  *
  * @author 		bootScore
  * @package 	bS Swiper
- * @version     5.2.0
+ * @version     5.2.1
 
 
 Posts: 
@@ -118,7 +118,7 @@ function bootscore_swiper($atts) {
 
                 <p class="card-text">
                   <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
-                    <?php echo strip_tags(get_the_excerpt()); ?>
+                    <?= strip_tags(get_the_excerpt()); ?>
                   </a>
                 </p>
 
