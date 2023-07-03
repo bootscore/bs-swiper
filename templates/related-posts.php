@@ -34,8 +34,7 @@ function bootscore_related_posts()
   $related_cats_post = new WP_Query($query_args);
 ?>
 
-  <div class="related-posts">
-
+  <div class="related-posts mb-3">
     <hr>
     <h2 class="h4 text-center my-4"><?php _e('You might also like', 'bootscore'); ?></h2>
     <div class="px-lg-5 position-relative">
@@ -72,7 +71,6 @@ function bootscore_related_posts()
 
       </div><!-- .swiper-container -->
     </div><!-- .px-lg-5.position-relative -->
-
   </div><!-- .related-posts -->
 <?php
             // Restore original Post Data
