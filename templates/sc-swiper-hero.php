@@ -7,7 +7,7 @@
  *
  * @author 		bootScore
  * @package 	bS Swiper
- * @version     5.2.0
+ * @version   5.2.0
 
 Posts: 
 [bs-swiper-hero type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]

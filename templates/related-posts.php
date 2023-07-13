@@ -6,7 +6,7 @@
  *
  * @author 		bootScore
  * @package 	bS Swiper
- * @version     5.3.0
+ * @version   5.3.0
 */
 
 function bootscore_related_posts() {
