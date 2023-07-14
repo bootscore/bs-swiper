@@ -53,9 +53,9 @@ function bootscore_related_posts() {
 
               <div class="card-body d-flex flex-column">
 
-                <?php the_title('<h3 class="card-title h6">', '</h3>'); ?>
+                <?php the_title('<h3 class="card-title h6 text-truncate">', '</h3>'); ?>
 
-                <p class="card-text small d-block text-truncate">
+                <p class="card-text small text-truncate">
                   <?= strip_tags(get_the_excerpt()); ?>
                 </p>
 
@@ -64,7 +64,6 @@ function bootscore_related_posts() {
                     <?php _e('Read more »', 'bootscore'); ?>
                   </a>
                 </p>
-
 
               </div>
 
