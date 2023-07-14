@@ -48,28 +48,23 @@ function bootscore_related_posts() {
             <div class="swiper-slide card h-auto mb-5">
 
               <?php if ( has_post_thumbnail() ) : ?>
-                <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
-                </a>
+                <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
               <?php endif; ?>
 
               <div class="card-body d-flex flex-column">
 
-                <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
-                  <?php the_title('<h3 class="blog-post-title h6">', '</h3>'); ?>
-                </a>
+                <?php the_title('<h3 class="card-title h6">', '</h3>'); ?>
 
-                <p class="card-text small">
-                  <a class="text-body text-decoration-none d-block text-truncate" href="<?php the_permalink(); ?>">
-                    <?= strip_tags(get_the_excerpt()); ?>
-                  </a>
+                <p class="card-text small d-block text-truncate">
+                  <?= strip_tags(get_the_excerpt()); ?>
                 </p>
 
                 <p class="card-text small mt-auto">
-                  <a class="read-more" href="<?php the_permalink(); ?>">
+                  <a class="read-more stretched-link" href="<?php the_permalink(); ?>">
                     <?php _e('Read more »', 'bootscore'); ?>
                   </a>
                 </p>
+
 
               </div>
 
