@@ -97,6 +97,9 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - orderby: date, title, or rand
 - posts: amount of products to show 
 
+## Related posts
+
+
 ## Overriding templates via theme
 Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
 
