@@ -97,16 +97,16 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - orderby: date, title, or rand
 - posts: amount of products to show 
 
-## Related posts
+## Related posts (v5.3.0)
 bootScore v5.3.1 added a hook to all `single-*.php`'s:
 
 ```php
 <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
 ```
 
-bS Swiper hooks related posts there showing the latest 12 posts from the same category. Means that the category should have at least 4 posts to show the related posts correctly.
+bS Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
 
-Related posts can simply hidden by removing the hook in your child's `single-*.php` or using a single line of CSS:
+Related posts can simply be hidden by removing the hook in your child's `single-*.php` or by using a single line of CSS:
 
 ```css
 .related-posts {
