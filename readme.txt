@@ -194,4 +194,3 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
     
         * Initial release
         
-        
