@@ -98,12 +98,13 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - posts: amount of products to show 
 
 ## Related posts
-Since bootScore 5.3.1 there is a hook in all `single-*.php`'s:
+bootScore v5.3.1 added a hook to all `single-*.php`'s:
 
 ```php
 <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
 ```
 
+bS Swiper hooks related posts there showing the latest 12 posts from the same category.
 
 
 
@@ -117,7 +118,7 @@ Edit files in an upgrade-safe way using overrides. Copy the template into a dire
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
 ### Templates that can be overridden
-- related posts
+- related-posts.php
 - sc-swiper-card.php
 - sc-swiper-card-autoplay.php
 - sc-swiper-card-product.php
