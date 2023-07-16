@@ -7,7 +7,7 @@
  *
  * @author 		bootScore
  * @package 	bS Swiper
- * @version     5.2.0
+ * @version     5.3.0
 
 Product Slider Shortcode
 [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
