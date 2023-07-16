@@ -7,7 +7,7 @@
  *
  * @author 		bootScore
  * @package 	bS Swiper
- * @version     5.2.0
+ * @version     5.3.0
 
 Product Slider Shortcode
 [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
@@ -49,7 +49,7 @@ function bootscore_product_slider($atts) {
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-            <div <?php wc_product_class('swiper-slide card h-auto mb-5 d-flex text-center product-card', $product); ?>>
+            <div <?php wc_product_class('swiper-slide card h-auto mb-5 d-flex text-center product-card'); ?>>
               <?php
               /**
                * Hook: woocommerce_before_shop_loop_item.
