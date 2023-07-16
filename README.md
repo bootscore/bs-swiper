@@ -104,11 +104,15 @@ bootScore v5.3.1 added a hook to all `single-*.php`'s:
 <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
 ```
 
-bS Swiper hooks related posts there showing the latest 12 posts from the same category.
+bS Swiper hooks related posts there showing the latest 12 posts from the same category. Means that the category should have at least 4 posts to show the related posts correctly.
 
+Related posts can simply hidden by removing the hook in your child's `single-*.php` or using a single line of CSS:
 
-
-
+```css
+.related-posts {
+  display: none;
+}
+```
 
 ## Overriding templates via theme
 Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
