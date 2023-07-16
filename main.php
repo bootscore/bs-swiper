@@ -152,3 +152,10 @@ function bs_swiper_hero_fade() {
   return bs_swiper_get_template('sc-swiper-hero-fade.php');
 }
 add_action('wp_head', 'bs_swiper_hero_fade');
+
+
+// Related Posts
+function bs_swiper_related_posts() {
+  return bs_swiper_get_template('related-posts.php');
+}
+add_action('wp_head', 'bs_swiper_related_posts');
