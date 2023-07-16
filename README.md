@@ -108,6 +108,7 @@ Edit files in an upgrade-safe way using overrides. Copy the template into a dire
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
 ### Templates that can be overridden
+- related posts
 - sc-swiper-card.php
 - sc-swiper-card-autoplay.php
 - sc-swiper-card-product.php
