@@ -117,9 +117,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
-    = 5.3.0 - July 18 2023 =
+    = 5.3.0 - August 09 2023 =
     
         * [FEATURE] Related posts template #31
+        * [IMPROVEMENT] Change --bs-primary to --bs-link-color (Dark Mode) 5b3e48c
         * [BUGFIX] Undefined variable in sc-product.php #33
 
     = 5.2.1 - April 26 2023 =
