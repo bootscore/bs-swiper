@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Adds related posts to single_*.php. Needs at least  bootScore 5.3.1
  *
@@ -7,6 +8,7 @@
  * @author 		bootScore
  * @package 	bS Swiper
  * @version     5.3.0
+ *
 */
 
 function bootscore_related_posts() {
