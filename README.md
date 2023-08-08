@@ -1,6 +1,6 @@
 # bS Swiper
 
-WordPress plugin to show posts, pages, custom post btypes or WooCommerce products in a swiper.js carousel in bootScore theme.
+WordPress plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in bootScore theme.
 
 - Demo and documentation: https://bootscore.me/documentation/bs-swiper/
 
