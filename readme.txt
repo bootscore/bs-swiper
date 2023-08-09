@@ -2,10 +2,10 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson
 
-Requires at least: 4.5
-Tested up to: 6.2.2
-Requires PHP: 5.6
 Stable tag: 5.3.0
+Tested up to: 6.3
+Requires at least: 5.0
+Requires PHP: 5.6
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
