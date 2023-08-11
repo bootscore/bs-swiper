@@ -1,12 +1,14 @@
 <?php
+
 /*
  * Adds related posts to single_*.php. Needs at least  bootScore 5.3.1
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/related-posts.php
  *
- * @author 		bootScore
- * @package 	bS Swiper
- * @version     5.3.0
+ * @author   bootScore
+ * @package  bS Swiper
+ * @version  5.3.0
+ *
 */
 
 function bootscore_related_posts() {

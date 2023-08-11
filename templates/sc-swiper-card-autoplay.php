@@ -1,28 +1,29 @@
 <?php
-/*
 
+/*
+ *
  * Post/Page/CPT Card Autoplay slider template.
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card.php
  *
- * @author 		bootScore
- * @package 	bS Swiper
- * @version     5.2.1
-
-
-Posts: 
-[bs-swiper-card-autoplay type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
-
-Child-pages: 
-[bs-swiper-card-autoplay type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
-
-Custom post types:
-[bs-swiper-card-autoplay type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
-
-Single items:
-[bs-swiper-card-autoplay type="post" id="1, 15"]
-[bs-swiper-card-autoplay type="page" id="2, 25"]
-[bs-swiper-card-autoplay type="isotope" id="33, 31"]
+ * @author   bootScore
+ * @package  bS Swiper
+ * @version  5.3.0
+ *
+ * Posts: 
+ * [bs-swiper-card-autoplay type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
+ *
+ * Child-pages: 
+ * [bs-swiper-card-autoplay type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
+ *
+ * Custom post types:
+ * [bs-swiper-card-autoplay type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+ *
+ * Single items:
+ * [bs-swiper-card-autoplay type="post" id="1, 15"]
+ * [bs-swiper-card-autoplay type="page" id="2, 25"]
+ * [bs-swiper-card-autoplay type="isotope" id="33, 31"]
+ *
 */
 
 

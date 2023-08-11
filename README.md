@@ -1,6 +1,6 @@
 # bS Swiper
 
-WordPress plugin to show posts, pages, custom-post-types or WooCommerce products in a swiper.js carousel in bootScore theme.
+WordPress plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in bootScore theme.
 
 - Demo and documentation: https://bootscore.me/documentation/bs-swiper/
 
@@ -97,6 +97,23 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - orderby: date, title, or rand
 - posts: amount of products to show 
 
+## Related posts (v5.3.0)
+bootScore v5.3.1 added a hook to all `single-*.php`'s:
+
+```php
+<?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
+```
+
+bS Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
+
+Related posts can simply be hidden by removing the hook in your child's `single-*.php` or by using a single line of CSS:
+
+```css
+.related-posts {
+  display: none;
+}
+```
+
 ## Overriding templates via theme
 Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
 
@@ -105,6 +122,7 @@ Edit files in an upgrade-safe way using overrides. Copy the template into a dire
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
 ### Templates that can be overridden
+- related-posts.php
 - sc-swiper-card.php
 - sc-swiper-card-autoplay.php
 - sc-swiper-card-product.php

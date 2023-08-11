@@ -1,17 +1,18 @@
 <?php
-/*
 
+/*
+ *
  * Product slider template.
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card-product.php
  *
- * @author 		bootScore
- * @package 	bS Swiper
- * @version     5.3.0
-
-Product Slider Shortcode
-[bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
-
+ * @author   bootScore
+ * @package  bS Swiper
+ * @version  5.3.0
+ *
+ * Product Slider Shortcode
+ * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
+ *
 */
 
 
