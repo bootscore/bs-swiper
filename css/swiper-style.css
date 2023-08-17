@@ -15,7 +15,7 @@
 .cards-autoplay .swiper-pagination-bullet-active {
   background: var(--bs-link-color);
 }
-/* Cards END */
+
 
 /* Heroes */
 .heroes .swiper-button-next,
@@ -31,4 +31,13 @@
 .heroes-fade .swiper-pagination-bullet-active {
   background: var(--bs-white);
 }
-/* Heroes END */
+
+.heroes .tags-heading,
+.heroes-fade .tags-heading {
+  display: none;
+}
+
+.heroes .tags-links,
+.heroes-fade .tags-links {
+  margin-top: 1rem;
+}
