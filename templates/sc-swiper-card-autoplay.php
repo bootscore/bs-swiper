@@ -8,7 +8,7 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.3.0
+ * @version  5.4.0
  *
  * Posts: 
  * [bs-swiper-card-autoplay type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -25,6 +25,10 @@
  * [bs-swiper-card-autoplay type="isotope" id="33, 31"]
  *
 */
+
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 
 // Card Slider Shortcode
@@ -81,7 +85,6 @@ function bootscore_swiper_autoplay($atts) {
 
 
     <!-- Swiper -->
-
     <div class="px-5 position-relative">
 
       <div class="cards-autoplay swiper-container swiper position-static">
@@ -149,12 +152,9 @@ function bootscore_swiper_autoplay($atts) {
       </div><!-- swiper-container -->
 
     </div>
-
     <!-- Swiper End -->
 
 <?php $myvariable = ob_get_clean();
     return $myvariable;
   }
 }
-
-// Card Slider Shortcode End

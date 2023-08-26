@@ -8,7 +8,7 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.3.0
+ * @version  5.4.0
  *
  * Posts: 
  * [bs-swiper-hero type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -25,6 +25,10 @@
  * [bs-swiper-hero type="isotope" id="33, 31"]
  *
 */
+
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 
 // Hero Slider Shortcode
@@ -137,12 +141,9 @@ function bootscore_swiper_hero($atts) {
 
 
     </div><!-- swiper-container -->
-
     <!-- Swiper End -->
 
 <?php $myvariable = ob_get_clean();
     return $myvariable;
   }
 }
-
-// Hero Slider Shortcode End

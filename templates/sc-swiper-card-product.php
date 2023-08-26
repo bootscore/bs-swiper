@@ -8,12 +8,16 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.3.0
+ * @version  5.4.0
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
  *
 */
+
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 
 // Product Slider Shortcode
@@ -41,7 +45,6 @@ function bootscore_product_slider($atts) {
 
 
     <!-- Swiper -->
-
     <div class="px-5 position-relative product-slider woocommerce">
 
       <div class="cards swiper-container swiper position-static">
@@ -111,12 +114,9 @@ function bootscore_product_slider($atts) {
 
 
     </div><!-- px-5 position-relative mb-5 -->
-
     <!-- Swiper End -->
 
 <?php $myvariable = ob_get_clean();
     return $myvariable;
   }
 }
-
-// Product Slider Shortcode End
