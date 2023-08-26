@@ -117,7 +117,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
-    = 5.3.0 - August 26 2023 =
+    = 5.3.1 - August 26 2023 =
 
         * [IMPROVEMENT] Deny direct access #40
         * [BUGFIX] Tags badges in heroes e5399d6
