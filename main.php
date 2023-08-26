@@ -2,7 +2,7 @@
 /*Plugin Name: bS Swiper
 Plugin URI: https://bootscore.me/plugins/bs-swiper/
 Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore theme. <a href="https://bootscore.me/documentation/bs-swiper/">Documentation</a> | <a href="https://bootscore.me/documentation/bs-swiper/#Changelog">Changelog</a>
-Version: 5.3.0
+Version: 5.3.1
 Tested up to: 6.3
 Requires at least: 5.0
 Requires PHP: 5.6
