@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson
 
-Stable tag: 5.3.0
+Stable tag: 5.3.1
 Tested up to: 6.3
 Requires at least: 5.0
 Requires PHP: 5.6
@@ -116,6 +116,12 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+    = 5.3.0 - August 26 2023 =
+
+        * [IMPROVEMENT] Deny direct access #40
+        * [BUGFIX] Tags badges in heroes e5399d6
+        * [UPDATE] Plugin update checker 5.2 #41
 
     = 5.3.0 - August 11 2023 =
     
