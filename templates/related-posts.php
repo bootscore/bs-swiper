@@ -1,6 +1,7 @@
 <?php
 
 /*
+ *
  * Adds related posts to single_*.php. Needs at least  bootScore 5.3.1
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/related-posts.php
