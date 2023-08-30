@@ -38,6 +38,7 @@ function bootscore_product_slider($atts) {
     'orderby' => $orderby,
     'posts_per_page' => $posts,
     'product_cat'    => $category,
+    'post_type' => $type,
   );
 
   $query = new WP_Query($options);
