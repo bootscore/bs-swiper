@@ -11,7 +11,7 @@
  * @version  5.3.1
  *
  * Product Slider Shortcode
- * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
+ * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false"]
  *
 */
 
@@ -31,6 +31,7 @@ function bootscore_product_slider($atts) {
     'orderby' => 'date',
     'posts' => -1,
     'category' => '',
+    'featured' => '',
   ), $atts));
 
   $options = array(
@@ -39,6 +40,15 @@ function bootscore_product_slider($atts) {
     'posts_per_page' => $posts,
     'product_cat'    => $category,
   );
+
+  if ($featured == 'true') {
+    $options['tax_query'][] = array(
+      'taxonomy' => 'product_visibility',
+      'field'    => 'name',
+      'terms'    => 'featured',
+      'operator' => 'IN',
+    );
+  }
 
   $query = new WP_Query($options);
   if ($query->have_posts()) { ?>
