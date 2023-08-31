@@ -1,6 +1,6 @@
 === bS Swiper ===
 
-Contributors: Bastian Kreiter, torricelli, Sean Emerson
+Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
 Stable tag: 5.3.2
 Tested up to: 6.3
