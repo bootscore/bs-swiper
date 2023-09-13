@@ -8,7 +8,7 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.3.1
+ * @version  5.4.0
  *
  * Posts: 
  * [bs-swiper-hero type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -125,7 +125,7 @@ function bootscore_swiper_hero($atts) {
                   <!-- Excerpt & Read more -->
                   <?php if ($excerpt == 'true') : ?>
                     <p class="card-text">
-                      <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                      <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
                         <?= strip_tags(get_the_excerpt()); ?>
                       </a>
                     </p>
