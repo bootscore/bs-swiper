@@ -2,10 +2,10 @@
 /*Plugin Name: bS Swiper
 Plugin URI: https://bootscore.me/plugins/bs-swiper/
 Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore theme. <a href="https://bootscore.me/documentation/bs-swiper/">Documentation</a> | <a href="https://bootscore.me/documentation/bs-swiper/#Changelog">Changelog</a>
-Version: 5.3.2
-Tested up to: 6.3
+Version: 5.4.0
+Tested up to: 6.3.1
 Requires at least: 5.0
-Requires PHP: 5.6
+Requires PHP: 7.4
 Author: bootScore
 Author URI: https://bootscore.me
 License: MIT License
@@ -16,7 +16,9 @@ License: MIT License
 defined( 'ABSPATH' ) || exit;
 
 
-// Update checker
+/**
+ * Update checker
+ */
 require 'update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
   'https://bootscore.me/wp-content/plugins/bs-swiper-main/update/plugin.json',
@@ -25,7 +27,9 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 
-// Register Styles and Scripts
+/**
+ * Register styles and scripts
+ */
 function swiper_scripts() {
 
   wp_enqueue_script('swiper-min-js', plugins_url('/js/swiper-bundle.min.js', __FILE__), array(), false, true);
@@ -40,7 +44,6 @@ function swiper_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'swiper_scripts');
-
 
 
 /**
