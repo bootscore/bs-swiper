@@ -31,8 +31,3 @@
 .heroes-fade .swiper-pagination-bullet-active {
   background: var(--bs-white);
 }
-
-.heroes .tags-heading,
-.heroes-fade .tags-heading {
-  display: none;
-}

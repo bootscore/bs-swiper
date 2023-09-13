@@ -100,7 +100,7 @@ function bootscore_swiper_hero($atts) {
 
         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-          <div class="swiper-slide h-100 bg-dark">
+          <div class="swiper-slide h-100 bg-dark tags-heading-none">
 
             <!-- Featured Image-->
             <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
