@@ -36,8 +36,3 @@
 .heroes-fade .tags-heading {
   display: none;
 }
-
-.heroes .tags-links,
-.heroes-fade .tags-links {
-  margin-top: 1rem;
-}

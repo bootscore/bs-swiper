@@ -123,16 +123,18 @@ function bootscore_swiper_hero_fade($atts) {
                   </h2>
 
                   <!-- Excerpt & Read more -->
-                <?php if ($excerpt == 'true') : ?>
+                  <?php if ($excerpt == 'true') : ?>
+                    <p class="card-text">
+                      <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
+                        <?= strip_tags(get_the_excerpt()); ?>
+                      </a>
+                    </p>
+                  <?php endif; ?>
+
                   <p class="card-text">
-                    <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
-                      <?= strip_tags(get_the_excerpt()); ?>
-                    </a>
+                    <a class="read-more btn btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                   </p>
-                <?php endif; ?>
-
-                  <a class="read-more btn btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-
+                           
                   <!-- Tags -->
                   <?php if ($tags == 'true') : ?>
                     <?php bootscore_tags(); ?>
