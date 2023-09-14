@@ -24,7 +24,9 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ## Posts
 
 ### Shortcode to show posts by category
-`[bs-swiper-* type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]`   
+````
+[bs-swiper-* type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
+```   
 
 #### Options
 - category="" category-slug, multiple categories separated by comma
@@ -36,10 +38,12 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - categories="false" hide categories
 
 ### Shortcode to show posts by tags
-`[bs-swiper-* type="post" tax="post_tag" terms="bikes, motorbikes" order="DESC" orderby="date" posts="5"]`
+```
+[bs-swiper-* type="post" tax="post_tag" terms="bikes, motorbikes" order="DESC" orderby="date" posts="5"]
+```
 
 #### Options
-- tax="" taxonomy (post_tag)
+- `tax=""` taxonomy (post_tag)
 - terms="" tags-slug, multiple terms separated by comma
 - order="" ASC or DESC
 - orderby="" date, title, or rand
@@ -85,7 +89,7 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 #### Options:
 - type="" type of custom-post-type
-- tax="" taxonomy
+- `tax=""` taxonomy
 - terms="" terms-slug, multiple terms separated by comma
 - order="" ASC or DESC
 - orderby="" date, title, or rand
