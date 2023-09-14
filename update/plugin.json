@@ -1,8 +1,8 @@
  {
  	"name" : "bS Swiper",
- 	"version" : "5.3.2",
- 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v5.3.2/bs-swiper-main.zip",
+ 	"version" : "5.4.0",
+ 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v5.4.0/bs-swiper-main.zip",
  	"sections" : {
- 		"description" : "Downgrade to update checker 4"
+ 		"description" : "Added ability to disable excerpt, categories and tags badge. Fix product shortcode triggering error when category is empty"
  	}
  }

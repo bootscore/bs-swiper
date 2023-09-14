@@ -8,7 +8,7 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.3.1
+ * @version  5.4.0
  *
  * Posts: 
  * [bs-swiper-hero type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -23,7 +23,7 @@
  * [bs-swiper-hero type="post" id="1, 15"]
  * [bs-swiper-hero type="page" id="2, 25"]
  * [bs-swiper-hero type="isotope" id="33, 31"]
-* 
+ * 
  * Optional:
  * Add the following attributes to disable excerpt, tags, or categories
  * excerpt="false"
@@ -100,7 +100,7 @@ function bootscore_swiper_hero($atts) {
 
         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-          <div class="swiper-slide h-100 bg-dark">
+          <div class="swiper-slide h-100 bg-dark tags-heading-none">
 
             <!-- Featured Image-->
             <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
@@ -125,14 +125,16 @@ function bootscore_swiper_hero($atts) {
                   <!-- Excerpt & Read more -->
                   <?php if ($excerpt == 'true') : ?>
                     <p class="card-text">
-                      <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                      <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
                         <?= strip_tags(get_the_excerpt()); ?>
                       </a>
                     </p>
                   <?php endif; ?>
-
-                  <a class="read-more btn btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-
+                  
+                  <p class="card-text">
+                    <a class="read-more btn btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                  </p>
+  
                   <!-- Tags -->
                   <?php if ($tags == 'true') : ?>
                     <?php bootscore_tags(); ?>
