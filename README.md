@@ -29,7 +29,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ```   
 
 #### Options
-- category="" category-slug, multiple categories separated by comma
+- `category=""` category-slug, multiple categories separated by comma
 - order="" ASC or DESC
 - orderby="" date, title, or rand
 - posts="" amount of posts to show
@@ -53,7 +53,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - categories="false" hide categories
 
 ### Shortcode to show single posts by id
-````
+```
 [bs-swiper-* type="post" id="1, 15"]
 ```
 
@@ -120,7 +120,7 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options:
-- category="" category slug, multiple categories separated by comma
+- `category=""` category slug, multiple categories separated by comma
 - order="" ASC or DESC
 - orderby="" date, title, or rand
 - posts="" amount of products to show 
