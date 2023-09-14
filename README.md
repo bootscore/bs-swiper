@@ -24,7 +24,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ## Posts
 
 ### Shortcode to show posts by category
-````
+```
 [bs-swiper-* type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
 ```   
 
