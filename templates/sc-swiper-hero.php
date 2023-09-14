@@ -23,7 +23,7 @@
  * [bs-swiper-hero type="post" id="1, 15"]
  * [bs-swiper-hero type="page" id="2, 25"]
  * [bs-swiper-hero type="isotope" id="33, 31"]
-* 
+ * 
  * Optional:
  * Add the following attributes to disable excerpt, tags, or categories
  * excerpt="false"

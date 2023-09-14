@@ -49,9 +49,9 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         order="" ASC or DESC
         orderby="" date, title or rand
         posts="" amount of posts to show
-        categories="false" – hide categories badges
-        excerpt="false" – hide excerpt
-        tags="false" – hide tags badges
+        categories="false" hide categories badges
+        excerpt="false" hide excerpt
+        tags="false" hide tags badges
         
         
     = Pages =
@@ -76,7 +76,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         order="" ASC or DESC
         orderby="" date, title or rand
         posts="" amount of pages to show
-        excerpt="false" – hide excerpt
+        excerpt="false" hide excerpt
         
         
     = Custom Post Types =
@@ -103,7 +103,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         order="" ASC or DESC
         orderby="" date, title or rand
         posts="" amount of posts to show 
-        excerpt="false" – hide excerpt
+        excerpt="false" hide excerpt
 
     = Products =
 
