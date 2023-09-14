@@ -33,7 +33,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - posts="" amount of posts to show
 - excerpt="false" hide excerpt
 - tags="false" hide tags
-- categories="false" hite categories
+- categories="false" hide categories
 
 ### Shortcode to show posts by tags
 `[bs-swiper-* type="post" tax="post_tag" terms="bikes, motorbikes" order="DESC" orderby="date" posts="5"]`
@@ -46,7 +46,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - posts="" amount of posts to show
 - excerpt="false" hide excerpt
 - tags="false" hide tags
-- categories="false" hite categories
+- categories="false" hide categories
 
 ### Shortcode to show single posts by id
 `[bs-swiper-* type="post" id="1, 15"]`
@@ -55,7 +55,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - id="" id of post, multiple ids separated by comma 
 - excerpt="false" hide excerpt
 - tags="false" hide tags
-- categories="false" hite categories
+- categories="false" hide categories
 
 ## Pages
 
