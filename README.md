@@ -66,7 +66,8 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ## Pages
 
 ### Shortcode to show child-pages by parent-page id
-```[bs-swiper-* type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
+```
+[bs-swiper-* type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
 ```
 
 Showing child-pages in parent-page is very useful to avoid empty parent-pages.
