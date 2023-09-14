@@ -27,26 +27,35 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 `[bs-swiper-* type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]`   
 
 #### Options
-- category: category-slug, multiple categories separated by comma
-- order: ASC or DESC
-- orderby: date, title, or rand
-- posts: amount of posts to show
+- category="" category-slug, multiple categories separated by comma
+- order="" ASC or DESC
+- orderby="" date, title, or rand
+- posts="" amount of posts to show
+- excerpt="false" hide excerpt
+- tags="false" hide tags
+- categories="false" hite categories
 
 ### Shortcode to show posts by tags
 `[bs-swiper-* type="post" tax="post_tag" terms="bikes, motorbikes" order="DESC" orderby="date" posts="5"]`
 
 #### Options
-- tax: taxonomy (post_tag)
-- terms: tags-slug, multiple terms separated by comma
-- order: ASC or DESC
-- orderby: date, title, or rand
-- posts: amount of posts to show
+- tax="" taxonomy (post_tag)
+- terms="" tags-slug, multiple terms separated by comma
+- order="" ASC or DESC
+- orderby="" date, title, or rand
+- posts="" amount of posts to show
+- excerpt="false" hide excerpt
+- tags="false" hide tags
+- categories="false" hite categories
 
 ### Shortcode to show single posts by id
 `[bs-swiper-* type="post" id="1, 15"]`
 
 #### Options
-- id: id of post, multiple ids separated by comma 
+- id="" id of post, multiple ids separated by comma 
+- excerpt="false" hide excerpt
+- tags="false" hide tags
+- categories="false" hite categories
 
 ## Pages
 
@@ -56,16 +65,18 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 #### Options
-- post_parent: id of parent page
-- order: ASC or DESC
-- orderby: date, title, or rand
-- posts: amount of pages to show
+- post_parent="" id of parent page
+- order="" ASC or DESC
+- orderby="" date, title, or rand
+- posts="" amount of pages to show
+- excerpt="false" hide excerpt
 
 ### Shortcode to show single pages by id
 `[bs-* type="page" id="2, 25"]`
 
 #### Options
-- id: id of page, multiple ids separated by comma 
+- id="" id of page, multiple ids separated by comma 
+- excerpt="false" hide excerpt
 
 ## Custom Post Types
 
@@ -73,18 +84,20 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 `[bs-swiper-* type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]`
 
 #### Options:
-- type: type of custom-post-type
-- tax: taxonomy
-- terms: terms-slug, multiple terms separated by comma
-- order: ASC or DESC
-- orderby: date, title, or rand
-- posts: amount of custom post types to show 
+- type="" type of custom-post-type
+- tax="" taxonomy
+- terms="" terms-slug, multiple terms separated by comma
+- order="" ASC or DESC
+- orderby="" date, title, or rand
+- posts="" amount of custom post types to show 
+- excerpt="false" hide excerpt
 
 ### Shortcode to show single custom-post-types by id
 `[bs-* type="isotope" id="33, 31"]`
 
 #### Options
-- id: id of custom-post-type, multiple ids separated by comma 
+- id="" id of custom-post-type, multiple ids separated by comma 
+- excerpt="false" hide excerpt
 
 ## WooCommerce Products
 
@@ -92,10 +105,11 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 `[bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]`
 
 #### Options:
-- category: category slug, multiple categories separated by comma
-- order: ASC or DESC
-- orderby: date, title, or rand
-- posts: amount of products to show 
+- category="" category slug, multiple categories separated by comma
+- order="" ASC or DESC
+- orderby="" date, title, or rand
+- posts="" amount of products to show 
+- featured="true" shortcode it will pull featured products.
 
 ## Related posts (v5.3.0)
 bootScore v5.3.1 added a hook to all `single-*.php`'s:

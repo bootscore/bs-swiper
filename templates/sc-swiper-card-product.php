@@ -11,7 +11,10 @@
  * @version  5.4.0
  *
  * Product Slider Shortcode
- * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false"]
+ * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins"]
+ *
+ * Optional:
+ * featured="true" Shortcode it will pull featured products.
  *
 */
 
