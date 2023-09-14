@@ -53,7 +53,9 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 - categories="false" hide categories
 
 ### Shortcode to show single posts by id
-`[bs-swiper-* type="post" id="1, 15"]`
+````
+[bs-swiper-* type="post" id="1, 15"]
+```
 
 #### Options
 - id="" id of post, multiple ids separated by comma 
@@ -64,7 +66,8 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ## Pages
 
 ### Shortcode to show child-pages by parent-page id
-`[bs-swiper-* type="page" post_parent="21" order="ASC" orderby="title" posts="6"]`
+```[bs-swiper-* type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
+```
 
 Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
@@ -76,7 +79,9 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - excerpt="false" hide excerpt
 
 ### Shortcode to show single pages by id
-`[bs-* type="page" id="2, 25"]`
+```
+[bs-* type="page" id="2, 25"]
+```
 
 #### Options
 - id="" id of page, multiple ids separated by comma 
@@ -85,7 +90,9 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ## Custom Post Types
 
 ### Shortcode to show custom-post-types by terms
-`[bs-swiper-* type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]`
+```
+[bs-swiper-* type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+```
 
 #### Options:
 - type="" type of custom-post-type
@@ -97,7 +104,9 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - excerpt="false" hide excerpt
 
 ### Shortcode to show single custom-post-types by id
-`[bs-* type="isotope" id="33, 31"]`
+```
+[bs-* type="isotope" id="33, 31"]
+```
 
 #### Options
 - id="" id of custom-post-type, multiple ids separated by comma 
@@ -106,7 +115,9 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ## WooCommerce Products
 
 ### Shortcode to show products
-`[bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]`
+```
+[bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]
+```
 
 #### Options:
 - category="" category slug, multiple categories separated by comma
