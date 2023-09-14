@@ -44,7 +44,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 
 #### Options
 - `tax=""` taxonomy (post_tag)
-- terms="" tags-slug, multiple terms separated by comma
+- `terms=""` tags-slug, multiple terms separated by comma
 - `order=""` ASC or DESC
 - `orderby=""` date, title, or rand
 - `posts=""` amount of posts to show
@@ -72,7 +72,7 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 #### Options
-- post_parent="" id of parent page
+- `post_parent=""` id of parent page
 - `order=""` ASC or DESC
 - `orderby=""` date, title, or rand
 - `posts=""` amount of pages to show
@@ -95,9 +95,9 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options:
-- type="" type of custom-post-type
+- `type=""` type of custom-post-type
 - `tax=""` taxonomy
-- terms="" terms-slug, multiple terms separated by comma
+- `terms=""` terms-slug, multiple terms separated by comma
 - `order=""` ASC or DESC
 - `orderby=""` date, title, or rand
 - `posts=""` amount of custom post types to show 
