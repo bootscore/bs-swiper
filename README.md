@@ -30,12 +30,12 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 
 #### Options
 - `category=""` category-slug, multiple categories separated by comma
-- order="" ASC or DESC
-- orderby="" date, title, or rand
-- posts="" amount of posts to show
-- excerpt="false" hide excerpt
-- tags="false" hide tags
-- categories="false" hide categories
+- `order=""` ASC or DESC
+- `orderby=""` date, title, or rand
+- `posts=""` amount of posts to show
+- `excerpt="false"` hide excerpt
+- `tags="false"` hide tags
+- `categories="false"` hide categories
 
 ### Shortcode to show posts by tags
 ```
@@ -45,12 +45,12 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 #### Options
 - `tax=""` taxonomy (post_tag)
 - terms="" tags-slug, multiple terms separated by comma
-- order="" ASC or DESC
-- orderby="" date, title, or rand
-- posts="" amount of posts to show
-- excerpt="false" hide excerpt
-- tags="false" hide tags
-- categories="false" hide categories
+- `order=""` ASC or DESC
+- `orderby=""` date, title, or rand
+- `posts=""` amount of posts to show
+- `excerpt="false"` hide excerpt
+- `tags="false"` hide tags
+- `categories="false"` hide categories
 
 ### Shortcode to show single posts by id
 ```
@@ -58,10 +58,10 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ```
 
 #### Options
-- id="" id of post, multiple ids separated by comma 
-- excerpt="false" hide excerpt
-- tags="false" hide tags
-- categories="false" hide categories
+- `id=""` id of post, multiple ids separated by comma 
+- `excerpt="false"` hide excerpt
+- `tags="false"` hide tags
+- `categories="false"` hide categories
 
 ## Pages
 
@@ -73,10 +73,10 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 #### Options
 - post_parent="" id of parent page
-- order="" ASC or DESC
-- orderby="" date, title, or rand
-- posts="" amount of pages to show
-- excerpt="false" hide excerpt
+- `order=""` ASC or DESC
+- `orderby=""` date, title, or rand
+- `posts=""` amount of pages to show
+- `excerpt="false"` hide excerpt
 
 ### Shortcode to show single pages by id
 ```
@@ -84,8 +84,8 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options
-- id="" id of page, multiple ids separated by comma 
-- excerpt="false" hide excerpt
+- `id=""` id of page, multiple ids separated by comma 
+- `excerpt="false"` hide excerpt
 
 ## Custom Post Types
 
@@ -98,10 +98,10 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - type="" type of custom-post-type
 - `tax=""` taxonomy
 - terms="" terms-slug, multiple terms separated by comma
-- order="" ASC or DESC
-- orderby="" date, title, or rand
-- posts="" amount of custom post types to show 
-- excerpt="false" hide excerpt
+- `order=""` ASC or DESC
+- `orderby=""` date, title, or rand
+- `posts=""` amount of custom post types to show 
+- `excerpt="false"` hide excerpt
 
 ### Shortcode to show single custom-post-types by id
 ```
@@ -109,8 +109,8 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options
-- id="" id of custom-post-type, multiple ids separated by comma 
-- excerpt="false" hide excerpt
+- `id=""` id of custom-post-type, multiple ids separated by comma 
+- `excerpt="false"` hide excerpt
 
 ## WooCommerce Products
 
@@ -121,10 +121,10 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 #### Options:
 - `category=""` category slug, multiple categories separated by comma
-- order="" ASC or DESC
-- orderby="" date, title, or rand
-- posts="" amount of products to show 
-- featured="true" shortcode it will pull featured products.
+- `order=""` ASC or DESC
+- `orderby=""` date, title, or rand
+- `posts=""` amount of products to show 
+- `featured="true"` shortcode it will pull featured products.
 
 ## Related posts (v5.3.0)
 bootScore v5.3.1 added a hook to all `single-*.php`'s:
@@ -151,12 +151,12 @@ Edit files in an upgrade-safe way using overrides. Copy the template into a dire
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
 ### Templates that can be overridden
-- related-posts.php
-- sc-swiper-card.php
-- sc-swiper-card-autoplay.php
-- sc-swiper-card-product.php
-- sc-swiper-hero.php
-- sc-swiper-hero-fade.php
+- `related-posts.php`
+- `sc-swiper-card.php`
+- `sc-swiper-card-autoplay.php`
+- `sc-swiper-card-product.php`
+- `sc-swiper-hero.php`
+- `sc-swiper-hero-fade.php`
 
 ## License & Credits
 - bS Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
