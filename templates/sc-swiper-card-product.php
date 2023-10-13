@@ -8,10 +8,13 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.3.1
+ * @version  5.4.0
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false" oos="true"]
+ *
+ * Optional:
+ * featured="true" Shortcode it will pull featured products.
  *
 */
 
@@ -40,6 +43,7 @@ function bootscore_product_slider($atts) {
     'orderby' => $orderby,
     'posts_per_page' => $posts,
     'product_cat'    => $category,
+    'post_type' => $type,
   );
 
   if ($featured == 'true') {

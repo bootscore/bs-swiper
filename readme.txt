@@ -1,11 +1,11 @@
 === bS Swiper ===
 
-Contributors: Bastian Kreiter, torricelli, Sean Emerson
+Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.3.2
-Tested up to: 6.3
+Stable tag: 5.4.0
+Tested up to: 6.3.1
 Requires at least: 5.0
-Requires PHP: 5.6
+Requires PHP: 7.4
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
@@ -45,10 +45,13 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         Options:
 
-        category: category slug
-        order: ASC or DESC
-        orderby: date, title or rand
-        posts: amount of posts to show
+        category="" category-slug
+        order="" ASC or DESC
+        orderby="" date, title or rand
+        posts="" amount of posts to show
+        categories="false" hide categories badges
+        excerpt="false" hide excerpt
+        tags="false" hide tags badges
         
         
     = Pages =
@@ -69,10 +72,11 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         Options:
 
-        post_parent: ID of parent page
-        order: ASC or DESC
-        orderby: date, title or rand
-        posts: amount of pages to show
+        post_parent="" ID of parent page
+        order="" ASC or DESC
+        orderby="" date, title or rand
+        posts="" amount of pages to show
+        excerpt="false" hide excerpt
         
         
     = Custom Post Types =
@@ -93,12 +97,13 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         Options:
 
-        type: type of custom post type
-        tax: taxonomy
-        terms: terms-slug - multiple terms separated by comma
-        order: ASC or DESC
-        orderby: date, title or rand
-        posts: amount of posts to show 
+        type="" type of custom post type
+        tax="" taxonomy
+        terms="" terms-slug - multiple terms separated by comma
+        order="" ASC or DESC
+        orderby="" date, title or rand
+        posts="" amount of posts to show 
+        excerpt="false" hide excerpt
 
     = Products =
 
@@ -108,14 +113,20 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
         Options:
 
-        category: category-slug, multiple categories separated by comma
-        order: ASC or DESC
-        orderby: date, title or rand
-        posts: number of posts to display
+        category="" category-slug, multiple categories separated by comma
+        order="" ASC or DESC
+        orderby="" date, title or rand
+        posts="" number of posts to display
         
 
 
 == Changelog ==
+
+    = 5.4.0 - September 14 2023 =
+    
+        * [FEATURE] Added featured products attribute #49
+        * [FEATURE] Added ability to disable excerpt, categories and tags badges #51
+        * [BUGFIX] Product shortcode triggering error when category is empty #48
 
     = 5.3.2 - August 27 2023 =
 
