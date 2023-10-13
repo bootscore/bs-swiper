@@ -14,7 +14,8 @@
  * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false" oos="true"]
  *
  * Optional:
- * featured="true" Shortcode it will pull featured products.
+ * featured="true" will pull featured products.
+ * oos="false" will hide out of stock products.
  *
 */
 
