@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.4.0
-Tested up to: 6.3.1
+Stable tag: 5.5.0
+Tested up to: 6.3.2
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -117,10 +117,15 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         order="" ASC or DESC
         orderby="" date, title or rand
         posts="" number of posts to display
+        oos="" true, false -  will hide/show out of stock products.
         
 
 
 == Changelog ==
+
+    = 5.5.0 - October 16 2023 =
+
+        * [FEATURE] Attribute for handling OOS products #54
 
     = 5.4.0 - September 14 2023 =
     
