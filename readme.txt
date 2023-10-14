@@ -4,7 +4,6 @@ Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
 Stable tag: 5.5.0
 Tested up to: 6.3.2
-Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
