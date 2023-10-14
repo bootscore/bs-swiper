@@ -128,7 +128,7 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - `featured="true"` shortcode it will pull featured products.
 - `oos="false"` will hide out of stock products.
 
-## Related posts (v5.3.0)
+## Related posts
 bootScore v5.3.1 added a hook to all `single-*.php`'s:
 
 ```php
