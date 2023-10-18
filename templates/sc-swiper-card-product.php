@@ -11,11 +11,11 @@
  * @version  5.5.0
  *
  * Product Slider Shortcode
- * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false" oos="true"]
+ * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false" outofstock="true"]
  *
  * Optional:
  * featured="true" will pull featured products.
- * oos="false" will hide out of stock products.
+ * outofstock="false" will hide out of stock products.
  *
 */
 
@@ -36,7 +36,7 @@ function bootscore_product_slider($atts) {
     'posts' => -1,
     'category' => '',
     'featured' => '',
-    'oos' => '',
+    'outofstock' => '',
   ), $atts));
 
   $options = array(
@@ -56,7 +56,7 @@ function bootscore_product_slider($atts) {
     );
   }
 
-  if ($oos == 'false') {
+  if ($outofstock == 'false') {
     $options['meta_query'] = array(
       array(
         'key' => '_stock_status',
