@@ -117,7 +117,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         order="" ASC or DESC
         orderby="" date, title or rand
         posts="" number of posts to display
-        oos="" true, false -  will hide/show out of stock products.
+        outofstock="" true, false -  will hide/show out of stock products.
         
 
 
