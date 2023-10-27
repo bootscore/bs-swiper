@@ -39,7 +39,7 @@ function bootscore_product_slider($atts) {
     'order'      => 'DESC',
     'orderby'    => 'date',
     'limit'      => 12,
-		'ids'        => '',
+    'ids'        => '',
     'category'   => '',
     'featured'   => '',
     'outofstock' => '',
@@ -54,8 +54,8 @@ function bootscore_product_slider($atts) {
   );
 
   if ($atts['ids']) {
-		$options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['ids'])));
-	}
+    $options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['ids'])));
+  }
 
   if ($atts['featured'] == 'true') {
     $options['tax_query'][] = array(
