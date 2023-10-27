@@ -11,11 +11,16 @@
  * @version  5.5.0
  *
  * Product Slider Shortcode
- * [bs-swiper-card-product order="DESC" orderby="date" posts="12" category="theme, child-themes, free, plugins" featured="false" outofstock="true"]
+ * [bs-swiper-card-product]
  *
  * Optional:
- * featured="true" will pull featured products.
- * outofstock="false" will hide out of stock products.
+ * posts="12"                Specify how many products will be shown         (Default: 12)
+ * orderby="date"            Specify how products will be ordered by         (Default: date)
+ * order="DESC"              Specify if products will be ordered ASC or DESC (Default: DESC)
+ * featured="true"           Will pull featured products                     (Default: false)
+ * outofstock="false"        Will show out of stock products                 (Default: true)
+ * category="theme, plugins" Will pull products matching these categories    (Default: '')
+ * ids="1, 2, 3"             Will show products matching these ids           (Default: '')
  *
 */
 
@@ -29,25 +34,30 @@ add_shortcode('bs-swiper-card-product', 'bootscore_product_slider');
 function bootscore_product_slider($atts) {
 
   ob_start();
-  extract(shortcode_atts(array(
-    'type' => 'product',
-    'order' => 'date',
-    'orderby' => 'date',
-    'posts' => -1,
-    'category' => '',
-    'featured' => '',
+  $atts = shortcode_atts(array(
+    'type'       => 'product',
+    'order'      => 'DESC',
+    'orderby'    => 'date',
+    'limit'      => 12,
+		'ids'        => '',
+    'category'   => '',
+    'featured'   => '',
     'outofstock' => '',
-  ), $atts));
+  ), $atts);
 
   $options = array(
-    'order' => $order,
-    'orderby' => $orderby,
-    'posts_per_page' => $posts,
-    'product_cat'    => $category,
-    'post_type' => $type,
+    'order'          => sanitize_text_field($atts['order']),
+    'orderby'        => sanitize_text_field($atts['orderby']),
+    'posts_per_page' => is_numeric($atts['limit']) ? (int) $atts['limit'] : 12,
+    'product_cat'    => sanitize_text_field($atts['category']),
+    'post_type'      => sanitize_text_field($atts['type']),
   );
 
-  if ($featured == 'true') {
+  if ($atts['ids']) {
+		$options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['ids'])));
+	}
+
+  if ($atts['featured'] == 'true') {
     $options['tax_query'][] = array(
       'taxonomy' => 'product_visibility',
       'field'    => 'name',
@@ -56,7 +66,7 @@ function bootscore_product_slider($atts) {
     );
   }
 
-  if ($outofstock == 'false') {
+  if ($atts['outofstock'] == 'false') {
     $options['meta_query'] = array(
       array(
         'key' => '_stock_status',
