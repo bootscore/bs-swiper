@@ -127,7 +127,7 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - `orderby="date"` - `date`, `title` or `rand`. Specify how products will be ordered by (Default: `date`)
 - `order="DESC"` - Specify if products will be ordered `ASC` or `DESC` (Default: `DESC`)
 - `featured="true"` - Will pull featured products (Default: `false`)
-- `outofstock="true"` - Will show out of stock products (Default: `false`)
+- `outofstock="false"` - Will hide out of stock products (Default: `true`)
 
 
 ## Related posts
