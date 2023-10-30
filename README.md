@@ -117,7 +117,7 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 ### Shortcode to show products
 ```
-[bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]
+[bs-swiper-card-product]
 ```
 
 #### Options:
@@ -127,6 +127,14 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - `posts=""` amount of products to show 
 - `featured="true"` shortcode it will pull featured products.
 - `outofstock="false"` will hide out of stock products.
+
+- `posts="12"`               Specify how many products will be shown, `-1` shows all         (Default: 12)
+ * orderby="date"            Specify how products will be ordered by         (Default: date)
+ * order="DESC"              Specify if products will be ordered ASC or DESC (Default: DESC)
+ * featured="true"           Will pull featured products                     (Default: false)
+ * outofstock="false"        Will show out of stock products                 (Default: true)
+ * category="cars, boats"    Will pull products matching these categories    (Default: '')
+ * id="1, 2, 3"              Will show products matching these ids           (Default: '')
 
 ## Related posts
 bootScore v5.3.1 added a hook to all `single-*.php`'s:
