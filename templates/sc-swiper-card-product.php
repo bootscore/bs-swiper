@@ -20,7 +20,7 @@
  * featured="true"           Will pull featured products                     (Default: false)
  * outofstock="false"        Will show out of stock products                 (Default: true)
  * category="theme, plugins" Will pull products matching these categories    (Default: '')
- * id="1, 2, 3"             Will show products matching these ids            (Default: '')
+ * id="1, 2, 3"              Will show products matching these ids            (Default: '')
  *
 */
 
