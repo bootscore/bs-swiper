@@ -121,13 +121,6 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options:
-- `category=""` category slug, multiple categories separated by comma
-- `order=""` ASC or DESC
-- `orderby=""` date, title, or rand
-- `posts=""` amount of products to show 
-- `featured="true"` shortcode it will pull featured products.
-- `outofstock="false"` will hide out of stock products.
-
 - `category="cars, boats"` Category slug, multiple categories separated by comma. Will pull products matching these categories (Default: `''`)
 - `id="1, 2, 3"` id of product, multiple ids separated by comma. Will show products matching these ids (Default: `''`)
 - `posts="12"` Specify how many products will be shown, `-1` shows all (Default: `12`)
