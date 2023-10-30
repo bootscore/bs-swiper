@@ -38,7 +38,7 @@ function bootscore_product_slider($atts) {
     'type'       => 'product',
     'order'      => 'DESC',
     'orderby'    => 'date',
-    'limit'      => 12,
+    'posts' => -1,
     'id'        => '',
     'category'   => '',
     'featured'   => '',
@@ -48,7 +48,7 @@ function bootscore_product_slider($atts) {
   $options = array(
     'order'          => sanitize_text_field($atts['order']),
     'orderby'        => sanitize_text_field($atts['orderby']),
-    'posts_per_page' => is_numeric($atts['limit']) ? (int) $atts['limit'] : 12,
+    'posts_per_page' => sanitize_text_field($atts['posts']),
     'product_cat'    => sanitize_text_field($atts['category']),
     'post_type'      => sanitize_text_field($atts['type']),
   );
