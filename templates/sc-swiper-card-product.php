@@ -8,7 +8,7 @@
  *
  * @author   bootScore
  * @package  bS Swiper
- * @version  5.5.0
+ * @version  5.6.0
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product]
@@ -20,7 +20,7 @@
  * featured="true"           Will pull featured products                     (Default: false)
  * outofstock="false"        Will show out of stock products                 (Default: true)
  * category="theme, plugins" Will pull products matching these categories    (Default: '')
- * ids="1, 2, 3"             Will show products matching these ids           (Default: '')
+ * id="1, 2, 3"             Will show products matching these ids            (Default: '')
  *
 */
 
@@ -39,7 +39,7 @@ function bootscore_product_slider($atts) {
     'order'      => 'DESC',
     'orderby'    => 'date',
     'limit'      => 12,
-    'ids'        => '',
+    'id'        => '',
     'category'   => '',
     'featured'   => '',
     'outofstock' => '',
@@ -53,8 +53,8 @@ function bootscore_product_slider($atts) {
     'post_type'      => sanitize_text_field($atts['type']),
   );
 
-  if ($atts['ids']) {
-    $options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['ids'])));
+  if ($atts['id']) {
+    $options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['id'])));
   }
 
   if ($atts['featured'] == 'true') {
