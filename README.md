@@ -128,6 +128,15 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - `featured="true"` shortcode it will pull featured products.
 - `outofstock="false"` will hide out of stock products.
 
+- `category="cars, boats"` Category slug, multiple categories separated by comma. Will pull products matching these categories (Default: `''`)
+- `id="1, 2, 3"` id of product, multiple ids separated by comma. Will show products matching these ids (Default: `''`)
+- `posts="12"` Specify how many products will be shown, `-1` shows all (Default: `12`)
+- `orderby="date"` `date`, `title` or `rand`. Specify how products will be ordered by (Default: `date`)
+- `order="DESC"` Specify if products will be ordered `ASC` or `DESC` (Default: `DESC`)
+- `featured="true"` Will pull featured products (Default: `false`)
+- `outofstock="true"` Will show out of stock products (Default: `false`)
+
+
 ## Related posts
 bootScore v5.3.1 added a hook to all `single-*.php`'s:
 
