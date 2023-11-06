@@ -29,13 +29,13 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ```   
 
 #### Options
-- `category=""` category-slug, multiple categories separated by comma
-- `order=""` ASC or DESC
-- `orderby=""` date, title, or rand
-- `posts=""` amount of posts to show
-- `excerpt="false"` hide excerpt
-- `tags="false"` hide tags
-- `categories="false"` hide categories
+- `category=""` - category-slug, multiple categories separated by comma
+- `order=""` - ASC or DESC
+- `orderby=""` - date, title, or rand
+- `posts=""` - amount of posts to show
+- `excerpt="false"` - hide excerpt
+- `tags="false"` - hide tags
+- `categories="false"` - hide categories
 
 ### Shortcode to show posts by tags
 ```
@@ -43,14 +43,14 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ```
 
 #### Options
-- `tax=""` taxonomy (post_tag)
-- `terms=""` tags-slug, multiple terms separated by comma
-- `order=""` ASC or DESC
-- `orderby=""` date, title, or rand
-- `posts=""` amount of posts to show
-- `excerpt="false"` hide excerpt
-- `tags="false"` hide tags
-- `categories="false"` hide categories
+- `tax=""` - taxonomy (post_tag)
+- `terms=""` - tags-slug, multiple terms separated by comma
+- `order=""` - ASC or DESC
+- `orderby=""` - date, title, or rand
+- `posts=""` - amount of posts to show
+- `excerpt="false"` - hide excerpt
+- `tags="false"` - hide tags
+- `categories="false"` - hide categories
 
 ### Shortcode to show single posts by id
 ```
@@ -58,10 +58,10 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 ```
 
 #### Options
-- `id=""` id of post, multiple ids separated by comma 
-- `excerpt="false"` hide excerpt
-- `tags="false"` hide tags
-- `categories="false"` hide categories
+- `id=""` - id of post, multiple ids separated by comma 
+- `excerpt="false"` - hide excerpt
+- `tags="false"` - hide tags
+- `categories="false"` - hide categories
 
 ## Pages
 
@@ -73,11 +73,11 @@ Select template you want to use by replacing `bs-swiper-*` placeholder in shortc
 Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 
 #### Options
-- `post_parent=""` id of parent page
-- `order=""` ASC or DESC
-- `orderby=""` date, title, or rand
-- `posts=""` amount of pages to show
-- `excerpt="false"` hide excerpt
+- `post_parent=""` - id of parent page
+- `order=""` - ASC or DESC
+- `orderby=""` - date, title, or rand
+- `posts=""` - amount of pages to show
+- `excerpt="false"` - hide excerpt
 
 ### Shortcode to show single pages by id
 ```
@@ -85,8 +85,8 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options
-- `id=""` id of page, multiple ids separated by comma 
-- `excerpt="false"` hide excerpt
+- `id=""` - id of page, multiple ids separated by comma 
+- `excerpt="false"` - hide excerpt
 
 ## Custom Post Types
 
@@ -96,13 +96,13 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options:
-- `type=""` type of custom-post-type
-- `tax=""` taxonomy
-- `terms=""` terms-slug, multiple terms separated by comma
-- `order=""` ASC or DESC
-- `orderby=""` date, title, or rand
-- `posts=""` amount of custom post types to show 
-- `excerpt="false"` hide excerpt
+- `type=""` - type of custom-post-type
+- `tax=""` - taxonomy
+- `terms=""` - terms-slug, multiple terms separated by comma
+- `order=""` - ASC or DESC
+- `orderby=""` - date, title, or rand
+- `posts=""` - amount of custom post types to show 
+- `excerpt="false"` - hide excerpt
 
 ### Shortcode to show single custom-post-types by id
 ```
@@ -110,8 +110,8 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 ```
 
 #### Options
-- `id=""` id of custom-post-type, multiple ids separated by comma 
-- `excerpt="false"` hide excerpt
+- `id=""` - id of custom-post-type, multiple ids separated by comma 
+- `excerpt="false"` - hide excerpt
 
 ## WooCommerce Products
 
