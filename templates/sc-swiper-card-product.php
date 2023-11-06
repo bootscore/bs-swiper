@@ -16,7 +16,7 @@
  * Optional:
  * category="cars, boats"    Will pull products matching these categories    (Default: '')
  * id="1, 2, 3"              Will show products matching these ids           (Default: '')
- * posts="12"                Specify how many products will be shown         (Default: 12)
+ * posts="12"                Specify how many products will be shown         (Default: -1)
  * orderby="date"            Specify how products will be ordered by         (Default: date)
  * order="DESC"              Specify if products will be ordered ASC or DESC (Default: DESC)
  * featured="true"           Will pull featured products                     (Default: false)
@@ -38,8 +38,8 @@ function bootscore_product_slider($atts) {
     'type'       => 'product',
     'order'      => 'DESC',
     'orderby'    => 'date',
-    'posts' => -1,
-    'id'        => '',
+    'posts'      => -1,
+    'id'         => '',
     'category'   => '',
     'featured'   => '',
     'outofstock' => '',
