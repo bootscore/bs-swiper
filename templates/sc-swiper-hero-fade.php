@@ -42,7 +42,7 @@ add_shortcode('bs-swiper-hero-fade', 'bootscore_swiper_hero_fade');
 function bootscore_swiper_hero_fade($atts) {
 
   ob_start();
-  extract(shortcode_atts(array(
+  $atts = shortcode_atts(array(
     'type' => 'post',
     'order' => 'date',
     'orderby' => 'date',
@@ -55,19 +55,19 @@ function bootscore_swiper_hero_fade($atts) {
     'excerpt' => 'true',
     'tags' => 'true',
     'categories' => 'true',
-  ), $atts));
+  ), $atts);
 
   $options = array(
-    'post_type' => $type,
-    'order' => $order,
-    'orderby' => $orderby,
-    'posts_per_page' => $posts,
-    'category_name' => $category,
-    'post_parent' => $post_parent,
+    'post_type' => sanitize_text_field($atts['type']),
+    'order' => sanitize_text_field($atts['order']),
+    'orderby' => sanitize_text_field($atts['orderby']),
+    'posts_per_page' => is_numeric($atts['posts']) ? (int) $atts['posts'] : -1,
+    'category_name' => sanitize_text_field($atts['category']),
+    'post_parent' => is_numeric($atts['post_parent']) ? (int) $atts['post_parent'] : '',
   );
 
-  $tax = trim($tax);
-  $terms = trim($terms);
+  $tax = trim(sanitize_text_field($atts['tax']));
+  $terms = trim(sanitize_text_field($atts['terms']));
   if ($tax != '' && $terms != '') {
     $terms = explode(',', $terms);
     $terms = array_map('trim', $terms);
@@ -81,8 +81,8 @@ function bootscore_swiper_hero_fade($atts) {
     ));
   }
 
-  if ($id != '') {
-    $ids = explode(',', $id);
+  if ($atts['id'] != '') {
+    $ids = explode(',', sanitize_text_field($atts['id']));
     $ids = array_map('intval', $ids);
     $ids = array_filter($ids);
     $ids = array_unique($ids);
@@ -111,7 +111,7 @@ function bootscore_swiper_hero_fade($atts) {
 
                 <div class="mt-auto text-white mb-5 text-center">
 
-                  <?php if ($categories == 'true') : ?>
+                  <?php if ($atts['categories'] == 'true') : ?>
                     <?php bootscore_category_badge(); ?>
                   <?php endif; ?>
 
@@ -123,7 +123,7 @@ function bootscore_swiper_hero_fade($atts) {
                   </h2>
 
                   <!-- Excerpt & Read more -->
-                  <?php if ($excerpt == 'true') : ?>
+                  <?php if ($atts['excerpt'] == 'true') : ?>
                     <p class="card-text">
                       <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
                         <?= strip_tags(get_the_excerpt()); ?>
@@ -136,7 +136,7 @@ function bootscore_swiper_hero_fade($atts) {
                   </p>
                            
                   <!-- Tags -->
-                  <?php if ($tags == 'true') : ?>
+                  <?php if ($atts['tags'] == 'true') : ?>
                     <?php bootscore_tags(); ?>
                   <?php endif; ?>
 
