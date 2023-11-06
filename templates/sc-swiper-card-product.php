@@ -48,7 +48,7 @@ function bootscore_product_slider($atts) {
   $options = array(
     'order'          => sanitize_text_field($atts['order']),
     'orderby'        => sanitize_text_field($atts['orderby']),
-    'posts_per_page' => sanitize_text_field($atts['posts']),
+    'posts_per_page' => is_numeric($atts['posts']) ? (int) $atts['posts'] : -1,
     'product_cat'    => sanitize_text_field($atts['category']),
     'post_type'      => sanitize_text_field($atts['type']),
   );
