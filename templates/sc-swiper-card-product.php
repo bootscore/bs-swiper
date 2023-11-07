@@ -33,8 +33,7 @@ defined('ABSPATH') || exit;
 
 // Product Slider Shortcode
 add_shortcode('bs-swiper-card-product', 'bootscore_product_slider');
-function bootscore_product_slider($atts)
-{
+function bootscore_product_slider($atts) {
 
   ob_start();
   $atts = shortcode_atts(array(
