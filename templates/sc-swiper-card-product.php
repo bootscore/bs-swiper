@@ -14,47 +14,60 @@
  * [bs-swiper-card-product]
  *
  * Optional:
- * category="cars, boats"    Will pull products matching these categories    (Default: '')
- * id="1, 2, 3"              Will show products matching these ids           (Default: '')
- * posts="12"                Specify how many products will be shown         (Default: 12)
- * orderby="date"            Specify how products will be ordered by         (Default: date)
  * order="DESC"              Specify if products will be ordered ASC or DESC (Default: DESC)
- * featured="true"           Will pull featured products                     (Default: false)
- * outofstock="false"        Will hide out of stock products                 (Default: true)
+ * orderby="date"            Specify how products will be ordered by         (Default: date)
+ * posts="12"                Specify how many products will be shown         (Default: -1)
+ * id="1, 2, 3"              Will show products matching these ids           (Default: '')
+ * category="cars, boats"    Will pull products matching these categories    (Default: '')
+ * brand="brand1, brand2"    Will pull products matching these brands        (Default: '')
+ * featured="true"           Will pull featured products                     (Default: '')
+ * outofstock="true"         Will show out of stock products                 (Default: '')
+ * onsale="true"             Will show only onsale products                  (Default: '')
  *
 */
 
 
 // Exit if accessed directly
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 
 // Product Slider Shortcode
 add_shortcode('bs-swiper-card-product', 'bootscore_product_slider');
-function bootscore_product_slider($atts) {
+function bootscore_product_slider($atts)
+{
 
   ob_start();
   $atts = shortcode_atts(array(
     'type'       => 'product',
     'order'      => 'DESC',
     'orderby'    => 'date',
-    'limit'      => 12,
-    'id'        => '',
+    'posts'      => -1,
+    'id'         => '',
     'category'   => '',
+    'brand'      => '',
     'featured'   => '',
     'outofstock' => '',
+    'onsale'     => '',
   ), $atts);
 
   $options = array(
     'order'          => sanitize_text_field($atts['order']),
     'orderby'        => sanitize_text_field($atts['orderby']),
-    'posts_per_page' => is_numeric($atts['limit']) ? (int) $atts['limit'] : 12,
+    'posts_per_page' => is_numeric($atts['posts']) ? (int) $atts['posts'] : -1,
     'product_cat'    => sanitize_text_field($atts['category']),
     'post_type'      => sanitize_text_field($atts['type']),
   );
 
   if ($atts['id']) {
     $options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['id'])));
+  }
+
+  if ($atts['brand']) {
+    $options['tax_query'][] = array(
+      'taxonomy' => 'brand',
+      'field'    => 'slug',
+      'terms'    => array_map('trim', explode(',', sanitize_text_field($atts['brand']))),
+    );
   }
 
   if ($atts['featured'] == 'true') {
@@ -66,13 +79,31 @@ function bootscore_product_slider($atts) {
     );
   }
 
-  if ($atts['outofstock'] == 'false') {
+  if ($atts['outofstock'] != 'true') {
     $options['meta_query'] = array(
       array(
         'key' => '_stock_status',
         'value' => 'instock',
         'compare' => '=',
       )
+    );
+  }
+
+  if ($atts['onsale'] == 'true') {
+    $options['meta_query'][] = array(
+      'relation' => 'OR',
+      array(
+        'key'           => '_sale_price',
+        'value'         => 0,
+        'compare'       => '>',
+        'type'          => 'numeric'
+      ),
+      array(
+        'key'           => '_min_variation_sale_price',
+        'value'         => 0,
+        'compare'       => '>',
+        'type'          => 'numeric'
+      ),
     );
   }
 
