@@ -17,6 +17,7 @@
  * order="DESC"              Specify if products will be ordered ASC or DESC (Default: DESC)
  * orderby="date"            Specify how products will be ordered by         (Default: date)
  * posts="12"                Specify how many products will be shown         (Default: -1)
+ * showhidden="true"         Shows products hidden from catalog              (Default: false)
  * id="1, 2, 3"              Will show products matching these ids           (Default: '')
  * category="cars, boats"    Will pull products matching these categories    (Default: '')
  * brand="brand1, brand2"    Will pull products matching these brands        (Default: '')
@@ -41,6 +42,7 @@ function bootscore_product_slider($atts) {
     'order'      => 'DESC',
     'orderby'    => 'date',
     'posts'      => -1,
+    'showhidden' => false,
     'id'         => '',
     'category'   => '',
     'brand'      => '',
@@ -56,6 +58,15 @@ function bootscore_product_slider($atts) {
     'product_cat'    => sanitize_text_field($atts['category']),
     'post_type'      => sanitize_text_field($atts['type']),
   );
+
+  if ($atts['showhidden'] != 'true') {
+    $options['tax_query'][] = array(
+      'taxonomy' => 'product_visibility',
+      'field'    => 'name',
+      'terms'    => 'exclude-from-catalog',
+      'operator' => 'NOT IN',
+    );
+  }
 
   if ($atts['id']) {
     $options['post__in'] = array_map('trim', explode(',', sanitize_text_field($atts['id'])));
