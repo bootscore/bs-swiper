@@ -7,7 +7,7 @@ WordPress plugin to show posts, pages, custom post types or WooCommerce products
 <img src="https://lh3.googleusercontent.com/pw/AM-JKLWiXYRnKEw159nO7pwFb4ntUSLVFvmlb8jvSaz__ucMtM26cCHhEXAwHSc58oh1FKGg99sY6sxyw1ycm5fuGUimM-lYZ2Z2yrh-imU4EE_vQhu8pwFaP4fK8yeXQdSyZowyGgwSNBR83WvRajr4M8e-Kw=w1200-h941-no" alt="bs-swiper">
 
 ## Installation
-1. Download latest release [bs-swiper-main.zip](https://github.com/bootscore/bs-swiper/releases). 
+1. Download latest release [bs-swiper-main.zip](https://github.com/bootscore/bs-swiper/releases/latest/download/bs-swiper-main.zip). 
 2. In your admin panel, go to Plugins > and click the Add New button.
 3. Click Upload Plugin and Choose File, then select the Plugin's .zip file. Click Install Now.
 4. Click Activate to use your new Plugin right away.
