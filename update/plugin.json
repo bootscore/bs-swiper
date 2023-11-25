@@ -1,8 +1,0 @@
- {
- 	"name" : "bS Swiper",
- 	"version" : "5.5.0",
- 	"download_url" : "https://github.com/bootscore/bs-swiper/releases/download/v5.5.0/bs-swiper-main.zip",
- 	"sections" : {
- 		"description" : "Added attribute for handling out of stock products"
- 	}
- }
