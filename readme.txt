@@ -3,18 +3,18 @@
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
 Stable tag: 5.5.0
-Tested up to: 6.3.2
+Tested up to: 6.4.1
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
-Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel for bootScore theme. Copyright 2021 - 2022 bootScore.
+Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme. Copyright 2021 - 2023 Bootscore.
 
 
 == Credits ==
 
-    - Swiper: https://swiperjs.com/, MIT License, http://www.idangero.us/swiper/, Copyright 2015, Vladimir Kharlampidi
+    - Swiper: https://swiperjs.com/, MIT License, https://github.com/nolimits4web/swiper/blob/master/LICENSE, Copyright 2015, Vladimir Kharlampidi
     - Update Checker https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt, Copyright 2017, Jānis Elsts
 
 == Installation ==
@@ -117,7 +117,10 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
         order="" ASC or DESC
         orderby="" date, title or rand
         posts="" number of posts to display
-        outofstock="" true, false -  will hide/show out of stock products.
+        featured="true" - Will pull featured products (Default: false)
+        outofstock="false" - Will hide out of stock products (Default: true)
+        onsale="true" - Will show only onsale products (Default: '')
+        showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 
