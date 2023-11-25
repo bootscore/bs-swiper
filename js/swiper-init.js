@@ -1,4 +1,5 @@
-//Multiple Swiper instances per page https://raddy.co.uk/blog/multiple-instances-of-swiperjs-on-the-same-page-with-the-same-settings/
+//Multiple Swiper instances per page 
+// See https://raddy.co.uk/blog/multiple-instances-of-swiperjs-on-the-same-page-with-the-same-settings/
 
 // Cards
 const bSSwiper = document.querySelectorAll('.cards');
@@ -9,10 +10,10 @@ for (i = 0; i < bSSwiper.length; i++) {
 
   var slider = new Swiper('.cards-' + i, {
 
-    /* Options */
+    // Options
     slidesPerView: 1,
     spaceBetween: 20,
-    //loop: true, // Disable infinity loop Swiper v9 https://swiperjs.com/migration-guide-v9
+    loop: true,
     grabCursor: true,
     pagination: {
       el: '.swiper-pagination',
@@ -48,10 +49,10 @@ for (i = 0; i < bSSwiperAutoplay.length; i++) {
 
   var slider = new Swiper('.cards-autoplay-' + i, {
 
-    /* Options */
+    // Options
     slidesPerView: 1,
     spaceBetween: 20,
-    //loop: true, // Disable infinity loop Swiper v9 https://swiperjs.com/migration-guide-v9
+    loop: true,
     grabCursor: true,
     autoplay: {
       delay: 3000,
@@ -91,7 +92,7 @@ for (i = 0; i < bSSwiperHero.length; i++) {
 
   var slider = new Swiper('.heroes-' + i, {
 
-    /* Options */
+    // Options
     slidesPerView: 1,
     loop: true,
     grabCursor: true,
@@ -121,7 +122,7 @@ for (i = 0; i < bSSwiperHeroFade.length; i++) {
 
   var slider = new Swiper('.heroes-fade-' + i, {
 
-    /* Options */
+    // Options
     slidesPerView: 1,
     loop: true,
     grabCursor: true,
