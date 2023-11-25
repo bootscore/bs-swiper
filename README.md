@@ -1,6 +1,6 @@
 # bS Swiper
 
-WordPress plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in bootScore theme.
+WordPress plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme.
 
 - Demo and documentation: https://bootscore.me/documentation/bs-swiper/
 
@@ -130,10 +130,11 @@ Showing child-pages in parent-page is very useful to avoid empty parent-pages.
 - `featured="true"` - Will pull featured products (Default: `false`)
 - `outofstock="false"` - Will hide out of stock products (Default: `true`)
 - `onsale="true"` - Will show only onsale products (Default: `''`)
+- `showhidden="true"` Shows products hidden from catalog (Default: `false`)
 
 
 ## Related posts
-bootScore v5.3.1 added a hook to all `single-*.php`'s:
+Bootscore v5.3.1 added a hook to all `single-*.php`'s:
 
 ```php
 <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
