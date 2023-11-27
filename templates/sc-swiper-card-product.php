@@ -38,17 +38,18 @@ function bootscore_product_slider($atts) {
 
   ob_start();
   $atts = shortcode_atts(array(
-    'type'       => 'product',
-    'order'      => 'DESC',
-    'orderby'    => 'date',
-    'posts'      => -1,
-    'showhidden' => false,
-    'id'         => '',
-    'category'   => '',
-    'brand'      => '',
-    'featured'   => '',
-    'outofstock' => '',
-    'onsale'     => '',
+    'type'        => 'product',
+    'post_status' => 'publish',
+    'order'       => 'DESC',
+    'orderby'     => 'date',
+    'posts'       => -1,
+    'showhidden'  => false,
+    'id'          => '',
+    'category'    => '',
+    'brand'       => '',
+    'featured'    => '',
+    'outofstock'  => '',
+    'onsale'      => '',
   ), $atts);
 
   $options = array(

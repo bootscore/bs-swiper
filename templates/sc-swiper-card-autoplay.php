@@ -43,27 +43,28 @@ function bootscore_swiper_autoplay($atts) {
 
   ob_start();
   $atts = shortcode_atts(array(
-    'type' => 'post',
-    'order' => 'date',
-    'orderby' => 'date',
-    'posts' => -1,
-    'category' => '',
-    'post_parent'    => '',
-    'tax' => '',
-    'terms' => '',
-    'id' => '',
-    'excerpt' => 'true',
-    'tags' => 'true',
-    'categories' => 'true',
+    'type'        => 'post',
+    'post_status' => 'publish',
+    'order'       => 'date',
+    'orderby'     => 'date',
+    'posts'       => -1,
+    'category'    => '',
+    'post_parent' => '',
+    'tax'         => '',
+    'terms'       => '',
+    'id'          => '',
+    'excerpt'     => 'true',
+    'tags'        => 'true',
+    'categories'  => 'true',
   ), $atts);
 
   $options = array(
-    'post_type' => sanitize_text_field($atts['type']),
-    'order' => sanitize_text_field($atts['order']),
-    'orderby' => sanitize_text_field($atts['orderby']),
+    'post_type'      => sanitize_text_field($atts['type']),
+    'order'          => sanitize_text_field($atts['order']),
+    'orderby'        => sanitize_text_field($atts['orderby']),
     'posts_per_page' => is_numeric($atts['posts']) ? (int) $atts['posts'] : -1,
-    'category_name' => sanitize_text_field($atts['category']),
-    'post_parent' => is_numeric($atts['post_parent']) ? (int) $atts['post_parent'] : '',
+    'category_name'  => sanitize_text_field($atts['category']),
+    'post_parent'    => is_numeric($atts['post_parent']) ? (int) $atts['post_parent'] : '',
   );
 
   $tax = trim(sanitize_text_field($atts['tax']));
