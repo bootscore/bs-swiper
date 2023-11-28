@@ -35,8 +35,9 @@ function bootscore_related_posts() {
   $query_args = array(
     'category__in'   => $cat_ids,
     'post_type'      => $current_post_type,
-    'post__not_in'    => array($post_id),
-    'posts_per_page'  => '12',
+    'post_status'    => 'publish',
+    'post__not_in'   => array($post_id),
+    'posts_per_page' => '12',
   );
 
   $related_cats_post = new WP_Query($query_args);
