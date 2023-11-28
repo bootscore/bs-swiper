@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.5.0
+Stable tag: 5.6.0
 Tested up to: 6.4.1
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -125,6 +125,18 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+= 5.6.0 - November 28 2023 =
+
+* [FEATURE] Added brand and onsale attribute #60 (@DogByteMarketing)
+* [FEATURE] Product template shortcode options #57 (@DogByteMarketing)
+* [FEATURE] Procuct attribute to show the hidden products #62 (@DogByteMarketing)
+* [IMPROVEMENT] Revert limit 12 products to posts -1 #60 (@DogByteMarketing), (@crftwrk)
+* [IMPROVEMENT] Added sanitization and the extract replacement to the other templates #60 (@DogByteMarketing)
+* [BUGFIX] Products with visibility set to none are currently being displayed #62 (@DogByteMarketing)
+* [BUGFIX] Possibility to get non published posts #65 (@DogByteMarketing)
+* [UPDATE] Update checker v5 #63 (@crftwrk)
+* [UPDATE] Swiper 11.0.5 #64 (@crftwrk)
 
 = 5.5.0 - October 16 2023 =
 
