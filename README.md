@@ -1,6 +1,8 @@
 # bS Swiper
 
-WordPress plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme.
+[![Packagist Prerelease](https://img.shields.io/packagist/vpre/bootscore/bs-swiper?logo=packagist&logoColor=fff)](https://packagist.org/packages/bootscore/bs-swiper)
+
+WordPress plugin to show posts, pages, custom post types or WooCommerce products in a [swiper.js](https://swiperjs.com) carousel in Bootscore theme.
 
 - Demo and documentation: https://bootscore.me/documentation/bs-swiper/
 
@@ -169,4 +171,3 @@ The copied file will now override the bS Swiper template file. Change cards, cla
 - bS Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 - swiper.js, nolimits4web, MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
 - Plugin Update Checker, YahnisElsts, MIT License https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt
-
