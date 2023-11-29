@@ -16,7 +16,7 @@ License: MIT License
 defined( 'ABSPATH' ) || exit;
 
 
-/*
+/**
  * Update checker
  */
 require 'update/plugin-update-checker.php';
