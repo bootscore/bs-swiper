@@ -56,11 +56,12 @@ add_action('wp_enqueue_scripts', 'swiper_scripts');
  *
  * Locate the called template.
  * Search Order:
- * 1. /themes/theme/bs-swiper-main/$template_name
- * 2. /themes/theme/$template_name
- * 3. /plugins/bs-swiper-main/templates/$template_name.
+ * 1. /themes/theme/bs-swiper/$template_name
+ * 2. /themes/theme/bs-swiper-main/$template_name
+ * 3. /themes/theme/$template_name
+ * 4. /plugins/bs-swiper-main/templates/$template_name.
  *
- * @since 1.0.0
+ * @since 5.7.0
  *
  * @param 	string 	$template_name			Template to load.
  * @param 	string 	$string $template_path	Path to templates.
@@ -69,28 +70,26 @@ add_action('wp_enqueue_scripts', 'swiper_scripts');
  */
 function bs_swiper_locate_template($template_name, $template_path = '', $default_path = '') {
 
-  // Set variable to search in bs-swiper-main folder of theme.
-  if (!$template_path) :
-    $template_path = 'bs-swiper-main/';
-  endif;
-
   // Set default plugin templates path.
   if (!$default_path) :
     $default_path = plugin_dir_path(__FILE__) . 'templates/'; // Path to the template folder
   endif;
 
-  // Search template file in theme folder.
-  $template = locate_template(array(
-    $template_path . $template_name,
-    $template_name
-  ));
+  // Check if 'bs-swiper/' exists in the theme.
+  $bs_swiper_path = get_theme_file_path('bs-swiper/' . $template_name);
+  if (file_exists($bs_swiper_path)) {
+    return $bs_swiper_path;
+  }
 
-  // Get plugins template file.
-  if (!$template) :
-    $template = $default_path . $template_name;
-  endif;
+  // Check if 'bs-swiper-main/' exists in the theme.
+  // Fallback for existing 'bs-swiper-main/' folders in child theme
+  $bs_swiper_main_path = get_theme_file_path('bs-swiper-main/' . $template_name);
+  if (file_exists($bs_swiper_main_path)) {
+    return $bs_swiper_main_path;
+  }
 
-  return apply_filters('bs_swiper_locate_template', $template, $template_name, $template_path, $default_path);
+  // If neither 'bs-swiper/' nor 'bs-swiper-main/' exists, return the default path.
+  return $default_path . $template_name;
 }
 
 
