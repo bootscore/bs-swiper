@@ -6,9 +6,9 @@
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card.php
  *
- * @author   bootScore
- * @package  bS Swiper
- * @version  5.6.0
+ * @author   Bootscore
+ * @package  bs Swiper
+ * @version  5.7.0
  *
  * Posts: 
  * [bs-swiper-card-autoplay type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -122,7 +122,7 @@ function bootscore_swiper_autoplay($atts) {
                 </a>
 
                 <?php if ('post' === get_post_type()) : ?>
-                  <p class="meta small mb-2 text-muted">
+                  <p class="meta small mb-2 text-body-secondary">
                     <?php
                       bootscore_date();
                       bootscore_author();
