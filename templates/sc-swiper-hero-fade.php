@@ -6,9 +6,9 @@
  *
  * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-hero.php
  *
- * @author   bootScore
- * @package  bS Swiper
- * @version  5.6.0
+ * @author   Bootscore
+ * @package  bs Swiper
+ * @version  5.7.0
  *
  * Posts: 
  * [bs-swiper-hero-fade type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -101,24 +101,24 @@ function bootscore_swiper_hero_fade($atts) {
 
         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-          <div class="swiper-slide h-100 bg-dark tags-heading-none">
+          <div class="swiper-slide h-100 bg-dark">
 
             <!-- Featured Image-->
             <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
 
             <div class="position-absolute top-0 end-0 bottom-0 start-0">
 
-              <div class="container h-100 d-flex flex-column">
+              <div class="container h-100 d-flex justify-content-center align-items-end">
 
-                <div class="mt-auto text-white mb-5 text-center">
+                <div class="text-white mb-5 text-center">
 
                   <?php if ($atts['categories'] == 'true') : ?>
                     <?php bootscore_category_badge(); ?>
                   <?php endif; ?>
 
                   <!-- Title -->
-                  <h2 class="blog-post-title">
-                    <a class="text-white" href="<?php the_permalink(); ?>">
+                  <h2 class="blog-post-title h5">
+                    <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
                   </h2>
@@ -133,7 +133,7 @@ function bootscore_swiper_hero_fade($atts) {
                   <?php endif; ?>
 
                   <p class="card-text">
-                    <a class="read-more btn btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                    <a class="read-more btn btn-sm btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                   </p>
                            
                   <!-- Tags -->
