@@ -2,13 +2,13 @@
 
 /*
  *
- * Adds related posts to single_*.php. Needs at least  bootScore 5.3.1
+ * Adds related posts to single_*.php. Needs at least  Bootscore 5.3.1
  *
- * This template can be overriden by copying this file to your-theme/bs-swiper-main/related-posts.php
+ * This template can be overridden by copying this file to your-theme/bs-swiper/related-posts.php
  *
- * @author   bootScore
- * @package  bS Swiper
- * @version  5.3.1
+ * @author   Bootscore
+ * @package  bs Swiper
+ * @version  5.7.0
  *
 */
 
@@ -41,6 +41,9 @@ function bootscore_related_posts() {
   );
 
   $related_cats_post = new WP_Query($query_args);
+
+  // Check if there are related posts
+  if ($related_cats_post->have_posts()) :
 ?>
 
   <div class="related-posts mb-3">
@@ -51,8 +54,7 @@ function bootscore_related_posts() {
         <div class="swiper-wrapper">
 
           <?php
-          if ($related_cats_post->have_posts()) :
-            while ($related_cats_post->have_posts()) : $related_cats_post->the_post();
+          while ($related_cats_post->have_posts()) : $related_cats_post->the_post();
           ?>
 
             <div class="swiper-slide card h-auto mb-5">
@@ -92,8 +94,9 @@ function bootscore_related_posts() {
       </div><!-- .swiper-container -->
     </div><!-- .px-lg-5.position-relative -->
   </div><!-- .related-posts -->
+
 <?php
-            // Restore original Post Data
-            wp_reset_postdata();
-          endif;
-        }
+    // Restore original Post Data
+    wp_reset_postdata();
+  endif;
+}
