@@ -2,13 +2,13 @@
 
 /*
  *
- * Adds related posts to single_*.php. Needs at least  bootScore 5.3.1
+ * Adds related posts to single_*.php. Needs at least  Bootscore 5.3.1
  *
- * This template can be overridden by copying this file to your-theme/bs-swiper-main/related-posts.php
+ * This template can be overridden by copying this file to your-theme/bs-swiper/related-posts.php
  *
- * @author   bootScore
- * @package  bS Swiper
- * @version  5.3.1
+ * @author   Bootscore
+ * @package  bs Swiper
+ * @version  5.7.0
  *
 */
 
