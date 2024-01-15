@@ -142,7 +142,7 @@ Bootscore v5.3.1 added a hook to all `single-*.php`'s:
 <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
 ```
 
-bS Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
+bs Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
 
 Related posts can simply be hidden by removing the hook in your child's `single-*.php` or by using a single line of CSS:
 
@@ -158,9 +158,9 @@ add_filter('bootscore_disable_related_posts', '__return_true');
 ```
 
 ## Overriding templates via theme
-Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
+Template files can be found within the **/bs-swiper/templates/** plugin directory.
 
-Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named **/bs-swiper-main/** keeping the same file structure but removing the **/templates/** subdirectory. Path must be **/your-theme/bs-swiper-main/[file].php**.
+Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named **/bs-swiper/** keeping the same file structure but removing the **/templates/** subdirectory. Path must be **/your-theme/bs-swiper-main/[file].php**.
 
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
