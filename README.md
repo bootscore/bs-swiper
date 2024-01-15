@@ -158,9 +158,9 @@ add_filter('bootscore_disable_related_posts', '__return_true');
 ```
 
 ## Overriding templates via theme
-Template files can be found within the **/bs-swiper/templates/** plugin directory.
+Template files can be found within the `/bs-swiper/templates/` plugin directory.
 
-Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named **/bs-swiper/** keeping the same file structure but removing the **/templates/** subdirectory. Path must be **/your-theme/bs-swiper-main/[file].php**.
+Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named `/bs-swiper/` keeping the same file structure but removing the `/templates/` subdirectory. Path must be `/your-theme/bs-swiper-main/[file].php`.
 
 The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
 
