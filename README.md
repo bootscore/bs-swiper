@@ -152,6 +152,11 @@ Related posts can simply be hidden by removing the hook in your child's `single-
 }
 ```
 
+```php
+// Remove related posts
+add_filter('bootscore_disable_related_posts', '__return_true');
+```
+
 ## Overriding templates via theme
 Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
 
