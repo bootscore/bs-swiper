@@ -4,11 +4,11 @@
  *
  * Product slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card-product.php
+ * This template can be overriden by copying this file to your-theme/bs-swiper/sc-swiper-card-product.php
  *
- * @author   bootScore
- * @package  bS Swiper
- * @version  5.6.0
+ * @author   Bootscore
+ * @package  bs Swiper
+ * @version  5.7.0
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product]
