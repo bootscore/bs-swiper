@@ -130,7 +130,8 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 * [FEATURE] Rewrite locate template script to skip -main suffix in child folder #67 (@crftwrk)
 * [FEATURE] Add filter to remove related posts #69 (@crftwrk)
-* [FEATURE] Replace text-muted with text-body-secondary ca224bc (@crftwrk)
+* [IMPROVEMENT] Replace text-muted with text-body-secondary ca224bc (@crftwrk)
+* [IMPROVEMENT] -main branch suffix from plugin's folder. This does not affect existing bs-swiper-main installations.
 * [IMPROVEMENT] Classes in hero templates 56ea649 (@crftwrk)
 * [BUGFIX] Remove related posts if no other posts in the same category are available #68 (@crftwrk)
 * [Update] Update checker 5.3 4e30570 (@crftwrk)
