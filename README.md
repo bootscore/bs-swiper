@@ -146,17 +146,19 @@ Bootscore v5.3.1 added a hook to all `single-*.php`'s:
 
 bs Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
 
-Related posts can simply be hidden by removing the hook in your child's `single-*.php` or by using a single line of CSS:
+Related posts can be removed by adding a filter to child's `functions.php`:
+
+```php
+// Remove related posts
+add_filter('bootscore_disable_related_posts', '__return_true');
+```
+
+Or by using a single line of CSS:
 
 ```css
 .related-posts {
   display: none;
 }
-```
-
-```php
-// Remove related posts
-add_filter('bootscore_disable_related_posts', '__return_true');
 ```
 
 ## Overriding templates via theme
@@ -175,6 +177,6 @@ The copied file will now override the bS Swiper template file. Change cards, cla
 - `sc-swiper-hero-fade.php`
 
 ## License & Credits
-- bS Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
+- bs Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 - swiper.js, nolimits4web, MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
 - Plugin Update Checker, YahnisElsts, MIT License https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt
