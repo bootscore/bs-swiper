@@ -1,6 +1,8 @@
 # bS Swiper
 
 [![Packagist Prerelease](https://img.shields.io/packagist/vpre/bootscore/bs-swiper?logo=packagist&logoColor=fff)](https://packagist.org/packages/bootscore/bs-swiper)
+[![Github All Releases](https://img.shields.io/github/downloads/bootscore/bs-swiper/total.svg)](https://github.com/bootscore/bs-swiper/releases)
+
 
 WordPress plugin to show posts, pages, custom post types or WooCommerce products in a [swiper.js](https://swiperjs.com) carousel in Bootscore theme.
 
