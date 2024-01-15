@@ -19,6 +19,14 @@ defined( 'ABSPATH' ) || exit;
 
 // Related posts
 function bootscore_related_posts() {
+  
+  // Check if the user wants to disable related posts
+  $disable_related_posts = apply_filters('bootscore_disable_related_posts', false);
+
+  // If the filter is set to true, exit the function
+  if ($disable_related_posts) {
+    return;
+  }
 
   $post_id = get_the_ID();
   $cat_ids = array();
@@ -44,58 +52,56 @@ function bootscore_related_posts() {
 
   // Check if there are related posts
   if ($related_cats_post->have_posts()) :
-?>
+    ?>
+    <div class="related-posts mb-3">
+      <hr>
+      <h2 class="h4 text-center my-4"><?php _e('You might also like', 'bootscore'); ?></h2>
+      <div class="px-lg-5 position-relative">
+        <div class="cards swiper-container swiper position-static">
+          <div class="swiper-wrapper">
 
-  <div class="related-posts mb-3">
-    <hr>
-    <h2 class="h4 text-center my-4"><?php _e('You might also like', 'bootscore'); ?></h2>
-    <div class="px-lg-5 position-relative">
-      <div class="cards swiper-container swiper position-static">
-        <div class="swiper-wrapper">
+            <?php
+            while ($related_cats_post->have_posts()) : $related_cats_post->the_post();
+            ?>
 
-          <?php
-          while ($related_cats_post->have_posts()) : $related_cats_post->the_post();
-          ?>
+              <div class="swiper-slide card h-auto mb-5">
 
-            <div class="swiper-slide card h-auto mb-5">
+                <?php if ( has_post_thumbnail() ) : ?>
+                  <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
+                <?php endif; ?>
 
-              <?php if ( has_post_thumbnail() ) : ?>
-                <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
-              <?php endif; ?>
+                <div class="card-body d-flex flex-column">
 
-              <div class="card-body d-flex flex-column">
+                  <?php the_title('<h3 class="card-title h6 text-truncate">', '</h3>'); ?>
 
-                <?php the_title('<h3 class="card-title h6 text-truncate">', '</h3>'); ?>
+                  <p class="card-text small text-truncate">
+                    <?= strip_tags(get_the_excerpt()); ?>
+                  </p>
 
-                <p class="card-text small text-truncate">
-                  <?= strip_tags(get_the_excerpt()); ?>
-                </p>
+                  <p class="card-text small mt-auto">
+                    <a class="read-more stretched-link" href="<?php the_permalink(); ?>">
+                      <?php _e('Read more »', 'bootscore'); ?>
+                    </a>
+                  </p>
 
-                <p class="card-text small mt-auto">
-                  <a class="read-more stretched-link" href="<?php the_permalink(); ?>">
-                    <?php _e('Read more »', 'bootscore'); ?>
-                  </a>
-                </p>
+                </div>
 
-              </div>
-
-            </div><!-- .card -->
+              </div><!-- .card -->
 
             <?php endwhile; ?>
 
-        </div><!-- .swiper-wrapper -->
+          </div><!-- .swiper-wrapper -->
 
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next end-0 d-none d-lg-block"></div>
-        <div class="swiper-button-prev start-0 d-none d-lg-block"></div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next end-0 d-none d-lg-block"></div>
+          <div class="swiper-button-prev start-0 d-none d-lg-block"></div>
 
-      </div><!-- .swiper-container -->
-    </div><!-- .px-lg-5.position-relative -->
-  </div><!-- .related-posts -->
-
-<?php
+        </div><!-- .swiper-container -->
+      </div><!-- .px-lg-5.position-relative -->
+    </div><!-- .related-posts -->
+    <?php
     // Restore original Post Data
     wp_reset_postdata();
   endif;
