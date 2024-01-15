@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.6.0
-Tested up to: 6.4.1
+Stable tag: 5.7.0
+Tested up to: 6.4.2
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -125,6 +125,15 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 
 == Changelog ==
+
+= 5.7.0 - January 16 2024 =
+
+* [FEATURE] Rewrite locate template script to skip -main suffix in child folder #67 (@crftwrk)
+* [FEATURE] Add filter to remove related posts #69 (@crftwrk)
+* [FEATURE] Replace text-muted with text-body-secondary ca224bc (@crftwrk)
+* [IMPROVEMENT] Classes in hero templates 56ea649 (@crftwrk)
+* [BUGFIX] Remove related posts if no other posts in the same category are available #68 (@crftwrk)
+* [Update] Update checker 5.3 4e30570 (@crftwrk)
 
 = 5.6.0 - November 28 2023 =
 
