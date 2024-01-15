@@ -153,7 +153,7 @@ Related posts can be removed by adding a filter to child's `functions.php`:
 add_filter('bootscore_disable_related_posts', '__return_true');
 ```
 
-Or by using a single line of CSS:
+Or by a single line of CSS:
 
 ```css
 .related-posts {
