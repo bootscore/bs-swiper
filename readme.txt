@@ -1,4 +1,4 @@
-=== bS Swiper ===
+=== bs Swiper ===
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
@@ -134,7 +134,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 * [IMPROVEMENT] -main branch suffix from plugin's folder. This does not affect existing bs-swiper-main installations.
 * [IMPROVEMENT] Classes in hero templates 56ea649 (@crftwrk)
 * [BUGFIX] Remove related posts if no other posts in the same category are available #68 (@crftwrk)
-* [Update] Update checker 5.3 4e30570 (@crftwrk)
+* [UPDATE] Update checker 5.3 4e30570 (@crftwrk)
 
 = 5.6.0 - November 28 2023 =
 
