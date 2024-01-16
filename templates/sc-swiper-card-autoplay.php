@@ -4,7 +4,7 @@
  *
  * Post/Page/CPT Card Autoplay slider template.
  *
- * This template can be overriden by copying this file to your-theme/bs-swiper-main/sc-swiper-card.php
+ * This template can be overriden by copying this file to your-theme/bs-swiper/sc-swiper-card.php
  *
  * @author   Bootscore
  * @package  bs Swiper

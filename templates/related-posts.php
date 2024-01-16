@@ -2,7 +2,7 @@
 
 /*
  *
- * Adds related posts to single_*.php. Needs at least  Bootscore 5.3.1
+ * Adds related posts to single-*.php. Needs at least  Bootscore 5.3.1
  *
  * This template can be overridden by copying this file to your-theme/bs-swiper/related-posts.php
  *

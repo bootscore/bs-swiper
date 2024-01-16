@@ -1,6 +1,8 @@
-# bS Swiper
+# bs Swiper
 
 [![Packagist Prerelease](https://img.shields.io/packagist/vpre/bootscore/bs-swiper?logo=packagist&logoColor=fff)](https://packagist.org/packages/bootscore/bs-swiper)
+[![Github All Releases](https://img.shields.io/github/downloads/bootscore/bs-swiper/total.svg)](https://github.com/bootscore/bs-swiper/releases)
+
 
 WordPress plugin to show posts, pages, custom post types or WooCommerce products in a [swiper.js](https://swiperjs.com) carousel in Bootscore theme.
 
@@ -9,7 +11,7 @@ WordPress plugin to show posts, pages, custom post types or WooCommerce products
 <img src="https://lh3.googleusercontent.com/pw/AM-JKLWiXYRnKEw159nO7pwFb4ntUSLVFvmlb8jvSaz__ucMtM26cCHhEXAwHSc58oh1FKGg99sY6sxyw1ycm5fuGUimM-lYZ2Z2yrh-imU4EE_vQhu8pwFaP4fK8yeXQdSyZowyGgwSNBR83WvRajr4M8e-Kw=w1200-h941-no" alt="bs-swiper">
 
 ## Installation
-1. Download latest release [bs-swiper-main.zip](https://github.com/bootscore/bs-swiper/releases/latest/download/bs-swiper-main.zip). 
+1. Download latest release [bs-swiper.zip](https://github.com/bootscore/bs-swiper/releases/latest/download/bs-swiper.zip). 
 2. In your admin panel, go to Plugins > and click the Add New button.
 3. Click Upload Plugin and Choose File, then select the Plugin's .zip file. Click Install Now.
 4. Click Activate to use your new Plugin right away.
@@ -142,9 +144,16 @@ Bootscore v5.3.1 added a hook to all `single-*.php`'s:
 <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
 ```
 
-bS Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
+bs Swiper hooks related posts there showing the latest 12 posts from the same category. This means that the category should have at least 4 posts to show the related posts correctly.
 
-Related posts can simply be hidden by removing the hook in your child's `single-*.php` or by using a single line of CSS:
+Related posts can be removed by adding a filter to child's `functions.php`:
+
+```php
+// Remove related posts
+add_filter('bootscore_disable_related_posts', '__return_true');
+```
+
+Or by a single line of CSS:
 
 ```css
 .related-posts {
@@ -153,11 +162,11 @@ Related posts can simply be hidden by removing the hook in your child's `single-
 ```
 
 ## Overriding templates via theme
-Template files can be found within the **/bs-swiper-main/templates/** plugin directory.
+Template files can be found within the `/bs-swiper/templates/` plugin directory.
 
-Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named **/bs-swiper-main/** keeping the same file structure but removing the **/templates/** subdirectory. Path must be **/your-theme/bs-swiper-main/[file].php**.
+Edit files in an upgrade-safe way using overrides. Copy the template into a directory within your theme named `/bs-swiper/` keeping the same file structure but removing the `/templates/` subdirectory. Path must be `/your-theme/bs-swiper/[file].php`.
 
-The copied file will now override the bS Swiper template file. Change cards, classes or HTML as you want.
+The copied file will now override the bs Swiper template file. Change cards, classes or HTML as you want.
 
 ### Templates that can be overridden
 - `related-posts.php`
@@ -168,6 +177,6 @@ The copied file will now override the bS Swiper template file. Change cards, cla
 - `sc-swiper-hero-fade.php`
 
 ## License & Credits
-- bS Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
+- bs Swiper, MIT License https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 - swiper.js, nolimits4web, MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
 - Plugin Update Checker, YahnisElsts, MIT License https://github.com/YahnisElsts/plugin-update-checker/blob/master/license.txt
