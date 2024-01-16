@@ -6,7 +6,7 @@ Version: 5.7.0
 Tested up to: 6.4.2
 Requires at least: 5.0
 Requires PHP: 7.4
-Author: bootScore
+Author: Bootscore
 Author URI: https://bootscore.me
 License: MIT License
 */
