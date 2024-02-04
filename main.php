@@ -3,7 +3,7 @@
 Plugin URI: https://bootscore.me/plugins/bs-swiper/
 Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme. <a href="https://bootscore.me/documentation/bs-swiper/">Documentation</a> | <a href="https://bootscore.me/documentation/bs-swiper/#Changelog">Changelog</a>
 Version: 5.7.0
-Tested up to: 6.4.2
+Tested up to: 6.4.3
 Requires at least: 5.0
 Requires PHP: 7.4
 Author: Bootscore
@@ -37,14 +37,14 @@ $myUpdateChecker->setBranch('main');
  */
 function swiper_scripts() {
 
-  wp_enqueue_script('swiper-min-js', plugins_url('/js/swiper-bundle.min.js', __FILE__), array(), false, true);
+  wp_enqueue_script('swiper-min-js', plugins_url('/assets/js/swiper-bundle.min.js', __FILE__), array(), false, true);
 
-  wp_enqueue_script('swiper-init-js', plugins_url('/js/swiper-init.js', __FILE__), array(), false, true);
+  wp_enqueue_script('swiper-init-js', plugins_url('/assets/js/swiper-init.js', __FILE__), array(), false, true);
 
-  wp_register_style('swiper-min-css', plugins_url('css/swiper-bundle.min.css', __FILE__));
+  wp_register_style('swiper-min-css', plugins_url('/assets/css/swiper-bundle.min.css', __FILE__));
   wp_enqueue_style('swiper-min-css');
 
-  wp_register_style('swiper-style-css', plugins_url('css/swiper-style.css', __FILE__));
+  wp_register_style('swiper-style-css', plugins_url('/assets/css/swiper-style.css', __FILE__));
   wp_enqueue_style('swiper-style-css');
 }
 
