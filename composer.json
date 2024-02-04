@@ -1,11 +1,11 @@
 {
     "name": "bootscore/bs-swiper",
-    "description": "Swiper slider for bootscore",
+    "description": "Swiper slider for Bootscore",
     "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "The Bootscore Authors"
+            "name": "The Bootscore Contributors"
         }
     ],
     "readme": "README.md",
