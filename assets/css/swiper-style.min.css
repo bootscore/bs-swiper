@@ -1,0 +1,5 @@
+/*!
+ * bs Swiper
+ * 
+ * @version 5.7.1
+ */.cards .swiper-button-prev,.cards .swiper-button-next,.cards-autoplay .swiper-button-prev,.cards-autoplay .swiper-button-next{color:var(--bs-link-color)}.cards .swiper-pagination-bullet,.cards-autoplay .swiper-pagination-bullet{background:var(--bs-body-color)}.cards .swiper-pagination-bullet-active,.cards-autoplay .swiper-pagination-bullet-active{background:var(--bs-link-color)}.heroes .swiper-button-prev,.heroes .swiper-button-next,.heroes-fade .swiper-button-prev,.heroes-fade .swiper-button-next{color:var(--bs-white)}.heroes .swiper-pagination-bullet,.heroes-fade .swiper-pagination-bullet{background:var(--bs-white)}.heroes .swiper-pagination-bullet-active,.heroes-fade .swiper-pagination-bullet-active{background:var(--bs-white)}

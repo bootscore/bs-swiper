@@ -1,0 +1,43 @@
+/*!
+ * bs Swiper
+ * 
+ * @version 5.7.1
+ */
+
+
+// Cards
+.cards,
+.cards-autoplay {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: var(--#{$prefix}link-color);
+  }
+
+  .swiper-pagination-bullet {
+    background: var(--#{$prefix}body-color);
+
+    &-active {
+      background: var(--#{$prefix}link-color);
+    }
+  }
+}
+
+
+// Heroes
+.heroes,
+.heroes-fade {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: var(--#{$prefix}white);
+  }
+
+  .swiper-pagination-bullet {
+    background: var(--#{$prefix}white);
+
+    &-active {
+      background: var(--#{$prefix}white);
+    }
+  }
+}
