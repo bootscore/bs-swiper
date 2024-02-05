@@ -1,12 +1,24 @@
-//Multiple Swiper instances per page 
-// See https://raddy.co.uk/blog/multiple-instances-of-swiperjs-on-the-same-page-with-the-same-settings/
+/*!
+ * bs Swiper
+ * 
+ * @version 5.7.1
+ */
 
-// Cards
-const bSSwiper = document.querySelectorAll('.cards');
 
-for (i = 0; i < bSSwiper.length; i++) {
+/**
+ * Multiple Swiper instances per page 
+ * See https://raddy.co.uk/blog/multiple-instances-of-swiperjs-on-the-same-page-with-the-same-settings/
+ */
 
-  bSSwiper[i].classList.add('cards-' + i);
+
+/**
+ * Cards
+ */
+const bsSwiper = document.querySelectorAll('.cards');
+
+for (i = 0; i < bsSwiper.length; i++) {
+
+  bsSwiper[i].classList.add('cards-' + i);
 
   var slider = new Swiper('.cards-' + i, {
 
@@ -40,12 +52,14 @@ for (i = 0; i < bSSwiper.length; i++) {
 }
 
 
-// Cards Autoplay
-const bSSwiperAutoplay = document.querySelectorAll('.cards-autoplay');
+/**
+ * Cards Autoplay
+ */
+const bsSwiperAutoplay = document.querySelectorAll('.cards-autoplay');
 
-for (i = 0; i < bSSwiperAutoplay.length; i++) {
+for (i = 0; i < bsSwiperAutoplay.length; i++) {
 
-  bSSwiperAutoplay[i].classList.add('cards-autoplay-' + i);
+  bsSwiperAutoplay[i].classList.add('cards-autoplay-' + i);
 
   var slider = new Swiper('.cards-autoplay-' + i, {
 
@@ -83,12 +97,14 @@ for (i = 0; i < bSSwiperAutoplay.length; i++) {
 }
 
 
-// Hero
-const bSSwiperHero = document.querySelectorAll('.heroes');
+/**
+ * Hero
+ */
+const bsSwiperHero = document.querySelectorAll('.heroes');
 
-for (i = 0; i < bSSwiperHero.length; i++) {
+for (i = 0; i < bsSwiperHero.length; i++) {
 
-  bSSwiperHero[i].classList.add('heroes-' + i);
+  bsSwiperHero[i].classList.add('heroes-' + i);
 
   var slider = new Swiper('.heroes-' + i, {
 
@@ -113,12 +129,14 @@ for (i = 0; i < bSSwiperHero.length; i++) {
 }
 
 
-// Hero Fade
-const bSSwiperHeroFade = document.querySelectorAll('.heroes-fade');
+/**
+ * Hero Fade
+ */
+const bsSwiperHeroFade = document.querySelectorAll('.heroes-fade');
 
-for (i = 0; i < bSSwiperHeroFade.length; i++) {
+for (i = 0; i < bsSwiperHeroFade.length; i++) {
 
-  bSSwiperHeroFade[i].classList.add('heroes-fade-' + i);
+  bsSwiperHeroFade[i].classList.add('heroes-fade-' + i);
 
   var slider = new Swiper('.heroes-fade-' + i, {
 
