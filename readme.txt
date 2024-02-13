@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.7.0
+Stable tag: 5.7.1
 Tested up to: 6.4.3
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -126,123 +126,229 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
+= 5.7.1 - February 13 2024 =
+
+#### Improvement
+
+* Moved `css` and `js` to `assets` folder #71 (@crftwrk)
+* Minified styles and scripts and added source #73 (@crftwrk)
+
+#### Update
+
+* Swiper 11.0.6 #72 (@crftwrk)
+
 = 5.7.0 - January 16 2024 =
 
-* [FEATURE] Rewrite locate template script to skip -main suffix in child folder #67 (@crftwrk)
-* [FEATURE] Add filter to remove related posts #69 (@crftwrk)
-* [IMPROVEMENT] Replace text-muted with text-body-secondary ca224bc (@crftwrk)
-* [IMPROVEMENT] -main branch suffix from plugin's folder. This does not affect existing bs-swiper-main installations.
-* [IMPROVEMENT] Classes in hero templates 56ea649 (@crftwrk)
-* [BUGFIX] Remove related posts if no other posts in the same category are available #68 (@crftwrk)
-* [UPDATE] Update checker 5.3 4e30570 (@crftwrk)
+#### Feature
+
+* Rewrite locate template script to skip `-main` suffix in child folder #67 (@crftwrk)
+* Add filter to remove related posts #69 (@crftwrk)
+
+#### Improvement
+
+* Replaced `text-muted` with `text-body-secondary` ca224bc (@crftwrk)
+* `-main` branch suffix from plugin's folder. This does not affect existing bs-swiper-main installations.
+* Classes in hero templates 56ea649 (@crftwrk)
+
+#### Bugfix
+
+* Remove related posts if no other posts in the same category are available #68 (@crftwrk)
+
+#### Update
+
+* Update checker 5.3 4e30570 (@crftwrk)
 
 = 5.6.0 - November 28 2023 =
 
-* [FEATURE] Added brand and onsale attribute #60 (@DogByteMarketing)
-* [FEATURE] Product template shortcode options #57 (@DogByteMarketing)
-* [FEATURE] Procuct attribute to show the hidden products #62 (@DogByteMarketing)
-* [IMPROVEMENT] Revert limit 12 products to posts -1 #60 (@DogByteMarketing), (@crftwrk)
-* [IMPROVEMENT] Added sanitization and the extract replacement to the other templates #60 (@DogByteMarketing)
-* [BUGFIX] Products with visibility set to none are currently being displayed #62 (@DogByteMarketing)
-* [BUGFIX] Possibility to get non published posts #65 (@DogByteMarketing)
-* [UPDATE] Update checker v5 #63 (@crftwrk)
-* [UPDATE] Swiper 11.0.5 #64 (@crftwrk)
+#### Feature
+
+* Added brand and onsale attribute #60 (@DogByteMarketing)
+* Product template shortcode options #57 (@DogByteMarketing)
+* Procuct attribute to show the hidden products #62 (@DogByteMarketing)
+
+#### Improvement
+
+* Revert limit 12 products to posts -1 #60 (@DogByteMarketing), (@crftwrk)
+* Added sanitization and the extract replacement to the other templates #60 (@DogByteMarketing)
+
+#### Bugfix
+
+* Products with visibility set to none are currently being displayed #62 (@DogByteMarketing)
+* Possibility to get non published posts #65 (@DogByteMarketing)
+
+#### Update
+
+* Update checker v5 #63 (@crftwrk)
+* Swiper 11.0.5 #64 (@crftwrk)
 
 = 5.5.0 - October 16 2023 =
 
-* [FEATURE] Attribute for handling OOS products #54
+#### Feature
+
+* Attribute for handling OOS products #54
 
 = 5.4.0 - September 14 2023 =
 
-* [FEATURE] Added featured products attribute #49
-* [FEATURE] Added ability to disable excerpt, categories and tags badges #51
-* [BUGFIX] Product shortcode triggering error when category is empty #48
+#### Feature
+
+* Added featured products attribute #49
+* Added ability to disable excerpt, categories and tags badges #51
+
+#### Bugfix
+
+* Product shortcode triggering error when category is empty #48
 
 = 5.3.2 - August 27 2023 =
 
-* [BUGFIX] Downgrade to update checker 4
+#### Bugfix
+
+* Downgrade to update checker 4
 
 = 5.3.1 - August 26 2023 =
 
-* [IMPROVEMENT] Deny direct access #40
-* [BUGFIX] Tags badges in heroes e5399d6
-* [UPDATE] Plugin update checker 5.2 #41
+#### Improvement
+
+* Deny direct access #40
+
+#### Bugfix
+
+* Tags badges in heroes e5399d6
+
+#### Update
+
+* Plugin update checker 5.2 #41
 
 = 5.3.0 - August 11 2023 =
 
-* [FEATURE] Related posts template #31
-* [IMPROVEMENT] Change --bs-primary to --bs-link-color (Dark Mode) 5b3e48c
-* [BUGFIX] Undefined variable in sc-product.php #33
+#### Feature
+
+* Related posts template #31
+
+#### Improvement
+
+* Change --bs-primary to --bs-link-color (Dark Mode) 5b3e48c
+
+#### Bugfix
+
+* Undefined variable in sc-product.php #33
 
 = 5.2.1 - April 26 2023 =
 
-* [IMPROVEMENT] Replace PHP echo's with shorthand
-* [IMPROVEMENT] Change bullet CSS variable to body color
+#### Improvement
+
+* Replace PHP echo's with shorthand
+* Change bullet CSS variable to body color
 
 = 5.2.0 - March 31 2023 =
 
-* [IMPROVEMENT] Loop cards
+#### Improvement
+
+* Loop cards
 
 = 5.1.0.7 - December 21 2022 =
 
-* [NEW] Add composer.json
-* [NEW] Add card autoplay template
-* [UPDATE] Update Swiper 8.4.5
+#### Feature
+
+* Added composer.json
+* Added card autoplay template
+
+#### Update
+
+* Update Swiper 8.4.5
 
 = 5.1.0.6 - September 06 2022 =
 
-* [IMPROVEMENT] Fix product star rating
+#### Improvement
+
+* Fix product star rating
 
 = 5.1.0.5 - July 27 2022 =
 
-* [UPDATE] Swiper 8.3.2
+#### Update
+
+* Swiper 8.3.2
 
 = 5.1.0.4 - June 28 2022 =
 
-* [UPDATE] Swiper 8.2.5
-* [IMPROVEMENT] Reformat all files
+#### Improvement
+
+* Reformat all files
+
+#### Update
+
+* Swiper 8.2.5
 
 = 5.1.0.3 - June 10 2022 =
 
-* [UPDATE] Swiper 8.2.3
+#### Update
+
+* Swiper 8.2.3
 
 = 5.1.0.2 - April 16 2022 =
 
-* [UPDATE] Swiper 8.1.1
+#### Update
+
+* Swiper 8.1.1
 
 = 5.1.0.1 - February 03 2022 =
 
-* [UPDATE] Swiper 8.0.2
+#### Update
+
+* Swiper 8.0.2
 
 = 5.1.0.0 - January 10 2022 =
 
-* [NEW] Added shortcode to show single items by id
-* [NEW] Added shortcode for custom post types by terms-slug
-* [REMOVED] Shortcode for CPT by parent terms id
-* [CHANGED] Template sc-swiper-card.php
-* [CHANGED] Template sc-swiper-hero.php
-* [CHANGED] Template sc-swiper-hero-fade.php
-* [UPDATE] Swiper 7.3.4
+#### Feature
+
+* Added shortcode to show single items by id
+* Added shortcode for custom post types by terms-slug
+
+#### Removed
+
+* Shortcode for CPT by parent terms id
+
+#### Improvement
+
+* Template sc-swiper-card.php
+* Template sc-swiper-hero.php
+* Template sc-swiper-hero-fade.php
+
+#### Update
+
+* Swiper 7.3.4
 
 = 5.0.0.4 - October 23 2021 =
 
+#### Improvement
+
 * Added bg-dark class to heroes
-* Update Swiper 7.0.9
+
+#### Update
+
+*  Swiper 7.0.9
 
 = 5.0.0.3 - September 09 2021 =
 
-* Update to swiper 7.0.4
+#### Feature
+
 * Changed repository and plugin name
 
+#### Update
+
+* Swiper 7.0.4
+
 = 5.0.0.2 - August 12 2021 =
+
+#### Feature
 
 * Added new hero-fade template
 
 = 5.0.0.1 - August 02 2021 =
 
-* Removed source map in swiper-bundle.min.js
+#### Removed
+
+* Source map in swiper-bundle.min.js
 
 = 5.0.0.0 - July 29 2021 =
 
 * Initial release
-        
