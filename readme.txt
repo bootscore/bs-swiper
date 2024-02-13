@@ -130,7 +130,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 #### Improvement
 
-* Moved css and js to assets folder #71 (@crftwrk)
+* Moved `css` and `js` to `assets` folder #71 (@crftwrk)
 * Minified styles and scripts and added source #73 (@crftwrk)
 
 #### Update
@@ -141,12 +141,12 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 #### Feature
 
-* Rewrite locate template script to skip -main suffix in child folder #67 (@crftwrk)
+* Rewrite locate template script to skip `-main` suffix in child folder #67 (@crftwrk)
 * Add filter to remove related posts #69 (@crftwrk)
 
 #### Improvement
 
-* Replace text-muted with text-body-secondary ca224bc (@crftwrk)
+* Replaced `text-muted` with `text-body-secondary` ca224bc (@crftwrk)
 * `-main` branch suffix from plugin's folder. This does not affect existing bs-swiper-main installations.
 * Classes in hero templates 56ea649 (@crftwrk)
 
