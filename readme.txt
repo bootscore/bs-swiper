@@ -166,7 +166,7 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 * Product template shortcode options #57 (@DogByteMarketing)
 * Procuct attribute to show the hidden products #62 (@DogByteMarketing)
 
-#### Imprrovement
+#### Improvement
 
 * Revert limit 12 products to posts -1 #60 (@DogByteMarketing), (@crftwrk)
 * Added sanitization and the extract replacement to the other templates #60 (@DogByteMarketing)
