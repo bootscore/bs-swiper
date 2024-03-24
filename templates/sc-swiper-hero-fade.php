@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.0
+ * @version  5.7.2
  *
  * Posts: 
  * [bs-swiper-hero-fade type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -77,7 +77,7 @@ function bootscore_swiper_hero_fade($atts) {
     unset($options['category_name']);
     $options['tax_query'] = array(array(
       'taxonomy' => $tax,
-      'field'    => 'name',
+      'field'    => 'slug',
       'terms'    => $terms,
     ));
   }

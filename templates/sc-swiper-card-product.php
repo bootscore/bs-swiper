@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.0
+ * @version  5.7.2
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product]
@@ -63,7 +63,7 @@ function bootscore_product_slider($atts) {
   if ($atts['showhidden'] != 'true') {
     $options['tax_query'][] = array(
       'taxonomy' => 'product_visibility',
-      'field'    => 'name',
+      'field'    => 'slug',
       'terms'    => 'exclude-from-catalog',
       'operator' => 'NOT IN',
     );
@@ -84,7 +84,7 @@ function bootscore_product_slider($atts) {
   if ($atts['featured'] == 'true') {
     $options['tax_query'][] = array(
       'taxonomy' => 'product_visibility',
-      'field'    => 'name',
+      'field'    => 'slug',
       'terms'    => 'featured',
       'operator' => 'IN',
     );
