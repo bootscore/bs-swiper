@@ -2,14 +2,14 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.7.1
+Stable tag: 5.7.2
 Tested up to: 6.4.3
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
 License URI: https://github.com/bootscore/bs-swiper/blob/main/LICENSE
 
-Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme. Copyright 2021 - 2023 Bootscore.
+Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme. Copyright 2021 - 2024 Bootscore.
 
 
 == Credits ==
@@ -126,77 +126,88 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 == Changelog ==
 
+= 5.7.2 - March 28 2024 =
+
+#### Bugfix
+
+* Term field name to slug
+
+#### Update
+
+* Update checker 5.4
+* Swiper 11.0.7
+
 = 5.7.1 - February 13 2024 =
 
 #### Improvement
 
-* Moved `css` and `js` to `assets` folder #71 (@crftwrk)
-* Minified styles and scripts and added source #73 (@crftwrk)
+* Moved `css` and `js` to `assets` folder
+* Minified styles and scripts and added source
 
 #### Update
 
-* Swiper 11.0.6 #72 (@crftwrk)
+* Swiper 11.0.6
 
 = 5.7.0 - January 16 2024 =
 
 #### Feature
 
-* Rewrite locate template script to skip `-main` suffix in child folder #67 (@crftwrk)
-* Add filter to remove related posts #69 (@crftwrk)
+* Rewrite locate template script to skip `-main` suffix in child folder
+* Add filter to remove related posts
 
 #### Improvement
 
-* Replaced `text-muted` with `text-body-secondary` ca224bc (@crftwrk)
+* Replaced `text-muted` with `text-body-secondary`
 * `-main` branch suffix from plugin's folder. This does not affect existing bs-swiper-main installations.
-* Classes in hero templates 56ea649 (@crftwrk)
+* Classes in hero templates
 
 #### Bugfix
 
-* Remove related posts if no other posts in the same category are available #68 (@crftwrk)
+* Remove related posts if no other posts in the same category are available
 
 #### Update
 
-* Update checker 5.3 4e30570 (@crftwrk)
+* Update checker 5.3
 
 = 5.6.0 - November 28 2023 =
 
 #### Feature
 
-* Added brand and onsale attribute #60 (@DogByteMarketing)
-* Product template shortcode options #57 (@DogByteMarketing)
-* Procuct attribute to show the hidden products #62 (@DogByteMarketing)
+* Added brand and onsale attribute
+* Product template shortcode options
+* Procuct attribute to show the hidden products
 
 #### Improvement
 
-* Revert limit 12 products to posts -1 #60 (@DogByteMarketing), (@crftwrk)
-* Added sanitization and the extract replacement to the other templates #60 (@DogByteMarketing)
+* Revert limit 12 products to posts -1
+* Added sanitization and the extract replacement to the other templates 
 
 #### Bugfix
 
-* Products with visibility set to none are currently being displayed #62 (@DogByteMarketing)
-* Possibility to get non published posts #65 (@DogByteMarketing)
+* Products with visibility set to none are currently being displayed
+* Possibility to get non published posts
 
 #### Update
 
-* Update checker v5 #63 (@crftwrk)
-* Swiper 11.0.5 #64 (@crftwrk)
+* Update checker v5
+* Swiper 11.0.5
 
 = 5.5.0 - October 16 2023 =
 
 #### Feature
 
-* Attribute for handling OOS products #54
+* Attribute for handling OOS products
 
 = 5.4.0 - September 14 2023 =
 
 #### Feature
 
-* Added featured products attribute #49
-* Added ability to disable excerpt, categories and tags badges #51
+* Added featured products attribute
+* Added ability to disable excerpt, categories and tags badges
 
 #### Bugfix
 
-* Product shortcode triggering error when category is empty #48
+* Product shortcode triggering error when category is empty
 
 = 5.3.2 - August 27 2023 =
 
@@ -208,29 +219,29 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 
 #### Improvement
 
-* Deny direct access #40
+* Deny direct access
 
 #### Bugfix
 
-* Tags badges in heroes e5399d6
+* Tags badges in heroes
 
 #### Update
 
-* Plugin update checker 5.2 #41
+* Plugin update checker 5.2
 
 = 5.3.0 - August 11 2023 =
 
 #### Feature
 
-* Related posts template #31
+* Related posts template
 
 #### Improvement
 
-* Change --bs-primary to --bs-link-color (Dark Mode) 5b3e48c
+* Change --bs-primary to --bs-link-color (Dark Mode)
 
 #### Bugfix
 
-* Undefined variable in sc-product.php #33
+* Undefined variable in sc-product.php
 
 = 5.2.1 - April 26 2023 =
 
