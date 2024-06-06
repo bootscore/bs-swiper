@@ -128,15 +128,15 @@ showhidden="true" Shows products hidden from catalog (Default: false)
 
 = 5.8.0 - June 06 2024 =
 
-### Feature
+#### Feature
 
 * Added a filter to change related posts heading title
 
-### Update
+#### Update
 
 * Swiper 11.1.4
 
-### Templates changed
+#### Templates changed
 
 * `related-posts.php`
 
