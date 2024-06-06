@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.7.2
-Tested up to: 6.4.3
+Stable tag: 5.8.0
+Tested up to: 6.5.4
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -27,104 +27,118 @@ Plugin to show posts, pages, custom post types or WooCommerce products in a swip
 == Usage ==
 
 
-    = Posts =
+= Posts =
 
-        Use shortcode to show posts somewhere:
+Use shortcode to show posts somewhere:
 
-        Cards:
-        [bs-swiper-card type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
+Cards:
+[bs-swiper-card type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
+
+Cards Autoplay:
+[bs-swiper-card-autoplay type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
+
+Heroes:
+[bs-swiper-hero type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
+
+Heroes Fade:
+[bs-swiper-hero-fade type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
+
+Options:
+
+category="" category-slug
+order="" ASC or DESC
+orderby="" date, title or rand
+posts="" amount of posts to show
+categories="false" hide categories badges
+excerpt="false" hide excerpt
+tags="false" hide tags badges
+
+
+= Pages =
+
+Use shortcode to show child pages somewhere:
+
+Cards:
+[bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+
+Cards Autoplay:
+[bs-swiper-card-autoplay type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+
+Heroes:
+[bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+
+Heroes Fade:
+[bs-swiper-hero-fade type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
+
+Options:
+
+post_parent="" ID of parent page
+order="" ASC or DESC
+orderby="" date, title or rand
+posts="" amount of pages to show
+excerpt="false" hide excerpt
+
+
+= Custom Post Types =
+
+Use shortcode to show custom post types somewhere:
+
+Cards:
+[bs-swiper-card type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+
+Cards Autoplay:
+[bs-swiper-card-autoplay type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+
+Heroes:
+[bs-swiper-hero type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+
+Heroes Fade:
+[bs-swiper-hero-fade type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
+
+Options:
+
+type="" type of custom post type
+tax="" taxonomy
+terms="" terms-slug - multiple terms separated by comma
+order="" ASC or DESC
+orderby="" date, title or rand
+posts="" amount of posts to show 
+excerpt="false" hide excerpt
+
+
+= Products =
+
+Use shortcode to show products somewhere:
+
+[bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]
+
+Options:
+
+category="" category-slug, multiple categories separated by comma
+order="" ASC or DESC
+orderby="" date, title or rand
+posts="" number of posts to display
+featured="true" - Will pull featured products (Default: false)
+outofstock="false" - Will hide out of stock products (Default: true)
+onsale="true" - Will show only onsale products (Default: '')
+showhidden="true" Shows products hidden from catalog (Default: false)
         
-        Cards Autoplay:
-        [bs-swiper-card-autoplay type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
-        
-        Heroes:
-        [bs-swiper-hero type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
-        
-        Heroes Fade:
-        [bs-swiper-hero-fade type="post" category="cars, boats" order="DESC" orderby="date" posts="4"]
-
-        Options:
-
-        category="" category-slug
-        order="" ASC or DESC
-        orderby="" date, title or rand
-        posts="" amount of posts to show
-        categories="false" hide categories badges
-        excerpt="false" hide excerpt
-        tags="false" hide tags badges
-        
-        
-    = Pages =
-
-        Use shortcode to show child pages somewhere:
-
-        Cards:
-        [bs-swiper-card type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
-        
-        Cards Autoplay:
-        [bs-swiper-card-autoplay type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
-        
-        Heroes:
-        [bs-swiper-hero type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
-        
-        Heroes Fade:
-        [bs-swiper-hero-fade type="page" post_parent="1891" order="ASC" orderby="title" posts="6"]
-
-        Options:
-
-        post_parent="" ID of parent page
-        order="" ASC or DESC
-        orderby="" date, title or rand
-        posts="" amount of pages to show
-        excerpt="false" hide excerpt
-        
-        
-    = Custom Post Types =
-
-        Use shortcode to show custom post types somewhere:
-
-        Cards:
-        [bs-swiper-card type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
-        
-        Cards Autoplay:
-        [bs-swiper-card-autoplay type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
-        
-        Heroes:
-        [bs-swiper-hero type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
-        
-        Heroes Fade:
-        [bs-swiper-hero-fade type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
-
-        Options:
-
-        type="" type of custom post type
-        tax="" taxonomy
-        terms="" terms-slug - multiple terms separated by comma
-        order="" ASC or DESC
-        orderby="" date, title or rand
-        posts="" amount of posts to show 
-        excerpt="false" hide excerpt
-
-    = Products =
-
-        Use shortcode to show products somewhere:
-
-        [bs-swiper-card-product category="shoes, trousers" order="DESC" orderby="date" posts="12"]
-
-        Options:
-
-        category="" category-slug, multiple categories separated by comma
-        order="" ASC or DESC
-        orderby="" date, title or rand
-        posts="" number of posts to display
-        featured="true" - Will pull featured products (Default: false)
-        outofstock="false" - Will hide out of stock products (Default: true)
-        onsale="true" - Will show only onsale products (Default: '')
-        showhidden="true" Shows products hidden from catalog (Default: false)
-        
-
 
 == Changelog ==
+
+= 5.8.0 - June 06 2024 =
+
+### Feature
+
+* Added a filter to change related posts heading title
+
+### Update
+
+* Swiper 11.1.4
+
+### Templates changed
+
+* `related-posts.php`
 
 = 5.7.2 - March 28 2024 =
 
