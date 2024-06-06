@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.0
+ * @version  5.8.0
  *
 */
 
@@ -55,7 +55,7 @@ function bootscore_related_posts() {
     ?>
     <div class="related-posts mb-3">
       <hr>
-      <h2 class="h4 text-center my-4"><?php _e('You might also like', 'bootscore'); ?></h2>
+      <h2 class="h4 text-center my-4"><?= apply_filters('bootscore/bs-swiper/related-posts/heading', __('You might also like', 'bootscore')); ?></h2>
       <div class="px-lg-5 position-relative">
         <div class="cards swiper-container swiper position-static">
           <div class="swiper-wrapper">
