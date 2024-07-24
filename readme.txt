@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.8.1
-Tested up to: 6.5.5
+Stable tag: 5.8.2
+Tested up to: 6.6
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -125,6 +125,12 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.2 - July 24 2024 =
+
+#### Update
+
+* Swiper 11.1.7
 
 = 5.8.1 - July 15 2024 =
 
