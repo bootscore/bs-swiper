@@ -35,6 +35,9 @@ for (i = 0; i < bsSwiper.length; i++) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    keyboard: {
+      enabled: true,
+    },
     breakpoints: {
       768: {
         slidesPerView: 2,
@@ -79,6 +82,9 @@ for (i = 0; i < bsSwiperAutoplay.length; i++) {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+    },
+    keyboard: {
+      enabled: true,
     },
     breakpoints: {
       768: {
