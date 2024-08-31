@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
+ * @version  5.9.0
  *
  * Posts: 
  * [bs-swiper-hero-fade type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -108,7 +108,7 @@ function bootscore_swiper_hero_fade($atts) {
 
             <div class="position-absolute top-0 end-0 bottom-0 start-0">
 
-              <div class="container h-100 d-flex justify-content-center align-items-end">
+              <div class="<?= apply_filters('bootscore/class/container', 'container', 'bs-swiper-hero-fade'); ?> h-100 d-flex justify-content-center align-items-end">
 
                 <div class="text-white mb-5 text-center">
 
