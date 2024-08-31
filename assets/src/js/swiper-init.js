@@ -1,7 +1,7 @@
 /*!
  * bs Swiper
  * 
- * @version 5.7.1
+ * @version 5.9.0
  */
 
 
@@ -69,7 +69,9 @@ for (i = 0; i < bsSwiperAutoplay.length; i++) {
     loop: true,
     grabCursor: true,
     autoplay: {
-      delay: 3000,
+      delay: 4000,
+      //disableOnInteraction: true,
+      pauseOnMouseEnter: true,
     },
     disableOnInteraction: false,
     pagination: {
@@ -114,6 +116,8 @@ for (i = 0; i < bsSwiperHero.length; i++) {
     grabCursor: true,
     autoplay: {
       delay: 4000,
+      //disableOnInteraction: true,
+      pauseOnMouseEnter: true,
     },
     pagination: {
       el: '.swiper-pagination',
@@ -151,6 +155,8 @@ for (i = 0; i < bsSwiperHeroFade.length; i++) {
     },
     autoplay: {
       delay: 4000,
+      //disableOnInteraction: true,
+      pauseOnMouseEnter: true,
     },
     pagination: {
       el: '.swiper-pagination',
