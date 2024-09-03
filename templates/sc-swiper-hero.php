@@ -117,7 +117,7 @@ function bootscore_swiper_hero($atts) {
                   <?php endif; ?>
 
                   <!-- Title -->
-                  <h2 class="blog-post-title h5">
+                  <h2 class="blog-post-title <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading', 'h5', 'bs-swiper-hero'); ?>">
                     <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
