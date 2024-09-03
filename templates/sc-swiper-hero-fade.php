@@ -93,7 +93,6 @@ function bootscore_swiper_hero_fade($atts) {
   $query = new WP_Query($options);
   if ($query->have_posts()) { ?>
 
-
     <!-- Swiper -->
     <div class="heroes-fade swiper-container swiper <?= apply_filters('bootscore/bs-swiper/class/swiper-container', 'mb-4', 'bs-swiper-hero-fade'); ?>">
 
@@ -103,7 +102,6 @@ function bootscore_swiper_hero_fade($atts) {
 
           <div class="swiper-slide h-100 bg-dark">
 
-            <!-- Featured Image-->
             <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img ' . apply_filters('bootscore/bs-swiper/class/swiper-hero-image', '', 'bs-swiper-hero-fade'))); ?>
 
             <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-overlay-position', 'position-absolute top-0 end-0 bottom-0 start-0', 'bs-swiper-hero-fade'); ?>">
@@ -116,14 +114,12 @@ function bootscore_swiper_hero_fade($atts) {
                     <?php bootscore_category_badge(); ?>
                   <?php endif; ?>
 
-                  <!-- Title -->
                   <h2 class="blog-post-title <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading', 'h5', 'bs-swiper-hero-fade'); ?>">
                     <a class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading/link', 'text-white text-decoration-none', 'bs-swiper-hero-fade'); ?>" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
                   </h2>
 
-                  <!-- Excerpt & Read more -->
                   <?php if ($atts['excerpt'] == 'true') : ?>
                     <p class="card-text">
                       <a class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption/excerpt/link', 'text-white text-decoration-none', 'bs-swiper-hero-fade'); ?>" href="<?php the_permalink(); ?>">
@@ -136,7 +132,6 @@ function bootscore_swiper_hero_fade($atts) {
                     <a class="read-more <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/button', 'btn btn-sm btn-light', 'bs-swiper-hero-fade'); ?>" href="<?php the_permalink(); ?>" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                   </p>
                            
-                  <!-- Tags -->
                   <?php if ($atts['tags'] == 'true') : ?>
                     <?php bootscore_tags(); ?>
                   <?php endif; ?>
@@ -158,7 +153,6 @@ function bootscore_swiper_hero_fade($atts) {
       <!-- Add Arrows -->
       <div class="swiper-button-next d-none d-lg-block"></div>
       <div class="swiper-button-prev d-none d-lg-block"></div>
-
 
     </div><!-- swiper-container -->
     <!-- Swiper End -->
