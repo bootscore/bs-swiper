@@ -108,7 +108,7 @@ function bootscore_swiper_hero($atts) {
 
             <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-overlay-position', 'position-absolute top-0 end-0 bottom-0 start-0', 'bs-swiper-hero'); ?>">
 
-              <div class="<?= apply_filters('bootscore/class/container', 'container', 'bs-swiper-hero'); ?> h-100 d-flex justify-content-center align-items-end">
+              <div class="<?= apply_filters('bootscore/bs-swiper/class/container', 'container h-100 d-flex justify-content-center align-items-end', 'bs-swiper-hero'); ?>">
 
                 <div class="text-white mb-5 text-center">
 

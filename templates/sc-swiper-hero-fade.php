@@ -108,7 +108,7 @@ function bootscore_swiper_hero_fade($atts) {
 
             <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-overlay-position', 'position-absolute top-0 end-0 bottom-0 start-0', 'bs-swiper-hero-fade'); ?>">
 
-              <div class="<?= apply_filters('bootscore/class/container', 'container', 'bs-swiper-hero-fade'); ?> h-100 d-flex justify-content-center align-items-end">
+              <div class="<?= apply_filters('bootscore/bs-swiper/class/container', 'container h-100 d-flex justify-content-center align-items-end', 'bs-swiper-hero-fade'); ?>">
 
                 <div class="text-white mb-5 text-center">
 
