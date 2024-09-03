@@ -118,7 +118,7 @@ function bootscore_swiper_hero($atts) {
 
                   <!-- Title -->
                   <h2 class="blog-post-title <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading', 'h5', 'bs-swiper-hero'); ?>">
-                    <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
+                    <a class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading/link', 'text-white text-decoration-none', 'bs-swiper-hero'); ?>" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
                   </h2>
@@ -126,14 +126,14 @@ function bootscore_swiper_hero($atts) {
                   <!-- Excerpt & Read more -->
                   <?php if ($atts['excerpt'] == 'true') : ?>
                     <p class="card-text">
-                      <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
+                      <a class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption/excerpt/link', 'text-white text-decoration-none', 'bs-swiper-hero'); ?>" href="<?php the_permalink(); ?>">
                         <?= strip_tags(get_the_excerpt()); ?>
                       </a>
                     </p>
                   <?php endif; ?>
                   
                   <p class="card-text">
-                    <a class="read-more btn btn-sm btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                    <a class="read-more <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/button', 'btn btn-sm btn-light', 'bs-swiper-hero'); ?>" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                   </p>
   
                   <!-- Tags -->
