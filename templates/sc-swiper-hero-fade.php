@@ -104,7 +104,7 @@ function bootscore_swiper_hero_fade($atts) {
           <div class="swiper-slide h-100 bg-dark">
 
             <!-- Featured Image-->
-            <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
+            <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img ' . apply_filters('bootscore/bs-swiper/class/swiper-hero-image', '', 'bs-swiper-hero-fade'))); ?>
 
             <div class="position-absolute top-0 end-0 bottom-0 start-0">
 
