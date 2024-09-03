@@ -110,7 +110,7 @@ function bootscore_swiper_hero_fade($atts) {
 
               <div class="<?= apply_filters('bootscore/bs-swiper/class/container', 'container h-100 d-flex justify-content-center align-items-end', 'bs-swiper-hero-fade'); ?>">
 
-                <div class="text-white mb-5 text-center">
+                <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption', 'text-white mb-5 text-center', 'bs-swiper-hero-fade'); ?>">
 
                   <?php if ($atts['categories'] == 'true') : ?>
                     <?php bootscore_category_badge(); ?>
