@@ -95,7 +95,7 @@ function bootscore_swiper_hero($atts) {
 
 
     <!-- Swiper -->
-    <div class="heroes swiper-container swiper <?= apply_filters('bootscore/bs-swiper/class/spacer', 'mb-4', 'bs-swiper-hero'); ?>">
+    <div class="heroes swiper-container swiper <?= apply_filters('bootscore/bs-swiper/class/swiper-container', 'mb-4', 'bs-swiper-hero'); ?>">
 
       <div class="swiper-wrapper">
 
