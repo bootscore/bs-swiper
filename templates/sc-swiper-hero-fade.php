@@ -106,7 +106,7 @@ function bootscore_swiper_hero_fade($atts) {
             <!-- Featured Image-->
             <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img ' . apply_filters('bootscore/bs-swiper/class/swiper-hero-image', '', 'bs-swiper-hero-fade'))); ?>
 
-            <div class="position-absolute top-0 end-0 bottom-0 start-0">
+            <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-overlay-position', 'position-absolute top-0 end-0 bottom-0 start-0', 'bs-swiper-hero-fade'); ?>">
 
               <div class="<?= apply_filters('bootscore/class/container', 'container', 'bs-swiper-hero-fade'); ?> h-100 d-flex justify-content-center align-items-end">
 
