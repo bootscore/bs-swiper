@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.8.4
+Stable tag: 5.8.5
 Tested up to: 6.6
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -125,6 +125,16 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.5 - September 04 2024 =
+
+#### Improvement
+
+* Added `pauseOnMouseEnter: true,` to autoplay init
+
+#### Update
+
+* Swiper 11.1.12
 
 = 5.8.4 - August 27 2024 =
 
