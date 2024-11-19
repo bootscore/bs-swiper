@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.8.0
+ * @version  5.8.7
  *
 */
 
@@ -53,8 +53,7 @@ function bootscore_related_posts() {
   // Check if there are related posts
   if ($related_cats_post->have_posts()) :
     ?>
-    <div class="related-posts mb-3">
-      <hr>
+    <div class="related-posts border-top mb-3">
       <h2 class="h4 text-center my-4"><?= apply_filters('bootscore/bs-swiper/related-posts/heading', __('You might also like', 'bootscore')); ?></h2>
       <div class="px-lg-5 position-relative">
         <div class="cards swiper-container swiper position-static">
