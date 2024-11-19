@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.9.0
+ * @version  5.8.7
  *
 */
 
