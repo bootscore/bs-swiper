@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.8.6
-Tested up to: 6.6
+Stable tag: 5.8.7
+Tested up to: 6.7
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -125,6 +125,18 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.7 - November 19 2024 =
+
+#### Improvements
+
+- Changed `<hr>` to `border-top` in `related-posts.php`
+- Tested up to WP 6.7
+
+#### Updates
+
+- Swiper v11.1.15
+- Plugin Update Checker v5.5
 
 = 5.8.6 - September 13 2024 =
 
