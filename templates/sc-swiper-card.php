@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
+ * @version  5.8.8
  *
  * Posts: 
  * [bs-swiper-card type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -95,7 +95,7 @@ function bootscore_swiper($atts) {
 
 
     <!-- Swiper -->
-    <div class="px-5 position-relative">
+    <div class="px-5 position-relative mb-5">
 
       <div class="cards swiper-container swiper position-static">
 
@@ -103,7 +103,7 @@ function bootscore_swiper($atts) {
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-            <div class="swiper-slide card h-auto mb-5">
+            <div class="swiper-slide card h-auto">
 
               <?php if ( has_post_thumbnail() ) : ?>
                 <a href="<?php the_permalink(); ?>">
@@ -160,7 +160,7 @@ function bootscore_swiper($atts) {
         </div> <!-- .swiper-wrapper -->
 
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination pagination-card"></div>
         <!-- Add Arrows -->
         <div class="swiper-button-next end-0"></div>
         <div class="swiper-button-prev start-0"></div>

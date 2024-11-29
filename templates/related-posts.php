@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.8.7
+ * @version  5.8.8
  *
 */
 
@@ -53,9 +53,9 @@ function bootscore_related_posts() {
   // Check if there are related posts
   if ($related_cats_post->have_posts()) :
     ?>
-    <div class="related-posts border-top mb-3">
+    <div class="related-posts border-top pb-3">
       <h2 class="h4 text-center my-4"><?= apply_filters('bootscore/bs-swiper/related-posts/heading', __('You might also like', 'bootscore')); ?></h2>
-      <div class="px-lg-5 position-relative">
+      <div class="px-lg-5 position-relative mb-5">
         <div class="cards swiper-container swiper position-static">
           <div class="swiper-wrapper">
 
@@ -63,7 +63,7 @@ function bootscore_related_posts() {
             while ($related_cats_post->have_posts()) : $related_cats_post->the_post();
             ?>
 
-              <div class="swiper-slide card h-auto mb-5">
+              <div class="swiper-slide card h-auto">
 
                 <?php if ( has_post_thumbnail() ) : ?>
                   <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
@@ -92,7 +92,7 @@ function bootscore_related_posts() {
           </div><!-- .swiper-wrapper -->
 
           <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination pagination-card"></div>
           <!-- Add Arrows -->
           <div class="swiper-button-next end-0 d-none d-lg-block"></div>
           <div class="swiper-button-prev start-0 d-none d-lg-block"></div>

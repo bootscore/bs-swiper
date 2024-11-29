@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
+ * @version  5.8.8
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product]
@@ -123,7 +123,7 @@ function bootscore_product_slider($atts) {
 
 
     <!-- Swiper -->
-    <div class="px-5 position-relative product-slider woocommerce">
+    <div class="px-5 position-relative product-slider woocommerce mb-5">
 
       <div class="cards swiper-container swiper position-static">
 
@@ -131,7 +131,7 @@ function bootscore_product_slider($atts) {
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-            <div <?php wc_product_class('swiper-slide card h-auto mb-5 d-flex text-center product-card'); ?>>
+            <div <?php wc_product_class('swiper-slide card h-auto d-flex text-center product-card'); ?>>
               <?php
               /**
                * Hook: woocommerce_before_shop_loop_item.
@@ -183,7 +183,7 @@ function bootscore_product_slider($atts) {
         </div> <!-- .swiper-wrapper -->
 
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination pagination-card"></div>
         <!-- Add Arrows -->
         <div class="swiper-button-next end-0"></div>
         <div class="swiper-button-prev start-0"></div>

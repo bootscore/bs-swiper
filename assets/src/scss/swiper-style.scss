@@ -1,7 +1,7 @@
 /*!
  * bs Swiper
  * 
- * @version 5.7.1
+ * @version 5.8.8
  */
 
 
@@ -21,6 +21,15 @@
       background: var(--#{$prefix}link-color);
     }
   }
+}
+
+// Use negative margin to push the pagination below the cards
+// Fixes the issue that botton-prev and button-next are not vertically centered on the card templates
+// prev and next arrows position is calculated on the .swiper-container height
+// See
+// @version 5.8.8
+.swiper-pagination.pagination-card {
+  margin-bottom: -($spacer * 3);
 }
 
 
