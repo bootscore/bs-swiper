@@ -1,7 +1,7 @@
 /*!
  * bs Swiper
  * 
- * @version 5.7.1
+ * @version 5.8.8
  */
 
 
@@ -12,6 +12,11 @@
   .swiper-button-prev,
   .swiper-button-next {
     color: var(--#{$prefix}link-color);
+
+    // Fix the issue that button-prev and button-next are not vertically centered on the card templates
+    // prev and next arrows position is calculated on the .swiper-container height not on .swiper-slide
+    // @version 5.8.8
+    margin-top: calc(-#{$spacer * 1.5} - (var(--swiper-navigation-size) / 2));
   }
 
   .swiper-pagination-bullet {
