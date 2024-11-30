@@ -5,27 +5,23 @@
  */
 
 
+:root {
+  --swiper-theme-color: var(--#{$prefix}link-color);
+  --swiper-pagination-bullet-inactive-color: var(--#{$prefix}body-color);
+}
+
+
 // Cards
 .cards,
 .cards-autoplay {
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: var(--#{$prefix}link-color);
-
     // Fix the issue that button-prev and button-next are not vertically centered on the card templates because slides have .mb-5 class to push .swiper-pagination below the cards 
     // prev and next arrows position is calculated on the .swiper-container height not on .swiper-slide
     // See https://github.com/bootscore/bs-swiper/pull/93
     // @version 5.8.8
     margin-top: calc(-#{$spacer * 1.5} - (var(--swiper-navigation-size) / 2));
-  }
-
-  .swiper-pagination-bullet {
-    background: var(--#{$prefix}body-color);
-
-    &-active {
-      background: var(--#{$prefix}link-color);
-    }
   }
 }
 
@@ -36,14 +32,14 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: var(--#{$prefix}white);
+    color: var(--swiper-navigation-light-color, $white);
   }
 
   .swiper-pagination-bullet {
-    background: var(--#{$prefix}white);
+    background: var(--swiper-pagination-bullet-inactive-light-color, $white);
 
     &-active {
-      background: var(--#{$prefix}white);
+      background: var(--swiper-pagination-bullet-active-light-color, $white);
     }
   }
 }
