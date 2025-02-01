@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.8.7
+Stable tag: 5.8.8
 Tested up to: 6.7
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -125,6 +125,20 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.8 - January 03 2025 =
+
+#### Improvement
+
+- Switched Swiper CSS to variables
+
+#### Bugfix
+
+- `prev` and `next` arrow buttons not vertically centered on card templates
+
+#### Update
+
+- Swiper 11.2.0
 
 = 5.8.7 - November 19 2024 =
 
