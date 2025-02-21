@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
+ * @version  5.9.0
  *
  * Posts: 
  * [bs-swiper-hero-fade type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -93,9 +93,8 @@ function bootscore_swiper_hero_fade($atts) {
   $query = new WP_Query($options);
   if ($query->have_posts()) { ?>
 
-
     <!-- Swiper -->
-    <div class="heroes-fade swiper-container swiper mb-4">
+    <div class="heroes-fade swiper-container swiper <?= apply_filters('bootscore/bs-swiper/class/swiper-container', 'mb-4', 'bs-swiper-hero-fade'); ?>">
 
       <div class="swiper-wrapper">
 
@@ -103,40 +102,36 @@ function bootscore_swiper_hero_fade($atts) {
 
           <div class="swiper-slide h-100 bg-dark">
 
-            <!-- Featured Image-->
-            <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img')); ?>
+            <?php the_post_thumbnail('full', array('class' => 'swiper-hero-img ' . apply_filters('bootscore/bs-swiper/class/swiper-hero-image', '', 'bs-swiper-hero-fade'))); ?>
 
-            <div class="position-absolute top-0 end-0 bottom-0 start-0">
+            <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-overlay-position', 'position-absolute top-0 end-0 bottom-0 start-0', 'bs-swiper-hero-fade'); ?>">
 
-              <div class="container h-100 d-flex justify-content-center align-items-end">
+              <div class="<?= apply_filters('bootscore/bs-swiper/class/container', 'container h-100 d-flex justify-content-center align-items-end', 'bs-swiper-hero-fade'); ?>">
 
-                <div class="text-white mb-5 text-center">
+                <div class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption', 'text-white mb-5 text-center', 'bs-swiper-hero-fade'); ?>">
 
                   <?php if ($atts['categories'] == 'true') : ?>
                     <?php bootscore_category_badge(); ?>
                   <?php endif; ?>
 
-                  <!-- Title -->
-                  <h2 class="blog-post-title h5">
-                    <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
+                  <h2 class="blog-post-title <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading', 'h5', 'bs-swiper-hero-fade'); ?>">
+                    <a class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption/heading/link', 'text-white text-decoration-none', 'bs-swiper-hero-fade'); ?>" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
                   </h2>
 
-                  <!-- Excerpt & Read more -->
                   <?php if ($atts['excerpt'] == 'true') : ?>
                     <p class="card-text">
-                      <a class="text-white text-decoration-none" href="<?php the_permalink(); ?>">
+                      <a class="<?= apply_filters('bootscore/bs-swiper/class/swiper-caption/excerpt/link', 'text-white text-decoration-none', 'bs-swiper-hero-fade'); ?>" href="<?php the_permalink(); ?>">
                         <?= strip_tags(get_the_excerpt()); ?>
                       </a>
                     </p>
                   <?php endif; ?>
 
                   <p class="card-text">
-                    <a class="read-more btn btn-sm btn-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                    <a class="read-more <?= apply_filters('bootscore/bs-swiper/class/swiper-caption/button', 'btn btn-sm btn-light', 'bs-swiper-hero-fade'); ?>" href="<?php the_permalink(); ?>" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                   </p>
                            
-                  <!-- Tags -->
                   <?php if ($atts['tags'] == 'true') : ?>
                     <?php bootscore_tags(); ?>
                   <?php endif; ?>
@@ -158,7 +153,6 @@ function bootscore_swiper_hero_fade($atts) {
       <!-- Add Arrows -->
       <div class="swiper-button-next d-none d-lg-block"></div>
       <div class="swiper-button-prev d-none d-lg-block"></div>
-
 
     </div><!-- swiper-container -->
     <!-- Swiper End -->
