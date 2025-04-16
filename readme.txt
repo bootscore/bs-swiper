@@ -130,7 +130,7 @@ showhidden="true" Shows products hidden from catalog (Default: false)
 
 #### Improvement
 
-- Added a timestamp to prevent caching if JF/CSS files has been changed
+- Added a timestamp to prevent caching if JS/CSS files has been changed
 
 #### Updates
 
