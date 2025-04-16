@@ -132,9 +132,10 @@ showhidden="true" Shows products hidden from catalog (Default: false)
 
 - Added a timestamp to prevent caching if JF/CSS files has been changed
 
-#### Update
+#### Updates
 
 - Swiper 11.2.6
+- Tested up to WP 6.8
 
 = 5.8.8 - January 03 2025 =
 
