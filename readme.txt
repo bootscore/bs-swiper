@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing
 
-Stable tag: 5.8.9
+Stable tag: 5.8.10
 Tested up to: 6.8
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -125,6 +125,13 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.10 - May 21 2025 =
+
+#### Updates
+
+- Swiper 11.2.7
+- Plugin Update Checker 5.6
 
 = 5.8.9 - April 16 2025 =
 
