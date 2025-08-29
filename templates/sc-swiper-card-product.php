@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
+ * @version  5.8.11
  *
  * Product Slider Shortcode
  * [bs-swiper-card-product]
@@ -100,22 +100,12 @@ function bootscore_product_slider($atts) {
     );
   }
 
+  // On-sale filter (use WooCommerce helper instead of meta_query)
   if ($atts['onsale'] == 'true') {
-    $options['meta_query'][] = array(
-      'relation' => 'OR',
-      array(
-        'key'           => '_sale_price',
-        'value'         => 0,
-        'compare'       => '>',
-        'type'          => 'numeric'
-      ),
-      array(
-        'key'           => '_min_variation_sale_price',
-        'value'         => 0,
-        'compare'       => '>',
-        'type'          => 'numeric'
-      ),
-    );
+    $onsale_ids = wc_get_product_ids_on_sale();
+    $options['post__in'] = !empty($options['post__in'])
+      ? array_intersect($options['post__in'], $onsale_ids)
+      : $onsale_ids;
   }
 
   $query = new WP_Query($options);
