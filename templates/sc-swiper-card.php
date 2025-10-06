@@ -8,28 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
- *
- * Posts: 
- * [bs-swiper-card type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
- *
- * Child-pages: 
- * [bs-swiper-card type="page" post_parent="21" order="ASC" orderby="title" posts="6"]
- *
- * Custom post types:
- * [bs-swiper-card type="isotope" tax="isotope_category" terms="dogs, cats" order="DESC" orderby="date" posts="5"]
- *
- * Single items:
- * [bs-swiper-card type="post" id="1, 15"]
- * [bs-swiper-card type="page" id="2, 25"]
- * [bs-swiper-card type="isotope" id="33, 31"]
- * 
- * Optional:
- * Add the following attributes to disable excerpt, tags, or categories
- * excerpt="false"
- * tags="false"
- * categories="false"
- *
+ * @version  6.0.0
 */
 
 
@@ -40,8 +19,8 @@ defined( 'ABSPATH' ) || exit;
 // Card Slider Shortcode
 add_shortcode('bs-swiper-card', 'bootscore_swiper');
 function bootscore_swiper($atts) {
-
   ob_start();
+
   $atts = shortcode_atts(array(
     'type'        => 'post',
     'post_status' => 'publish',
@@ -56,6 +35,7 @@ function bootscore_swiper($atts) {
     'excerpt'     => 'true',
     'tags'        => 'true',
     'categories'  => 'true',
+    'cols'        => '', // new attribute: e.g., "2,3,4,6"
   ), $atts);
 
   $options = array(
@@ -70,8 +50,7 @@ function bootscore_swiper($atts) {
   $tax = trim(sanitize_text_field($atts['tax']));
   $terms = trim(sanitize_text_field($atts['terms']));
   if ($tax != '' && $terms != '') {
-    $terms = explode(',', $terms);
-    $terms = array_map('trim', $terms);
+    $terms = array_map('trim', explode(',', $terms));
     $terms = array_filter($terms);
     $terms = array_unique($terms);
     unset($options['category_name']);
@@ -82,46 +61,64 @@ function bootscore_swiper($atts) {
     ));
   }
 
-  if ($atts['id'] != '') {
-    $ids = explode(',', sanitize_text_field($atts['id']));
-    $ids = array_map('intval', $ids);
+  if (!empty($atts['id'])) {
+    $ids = array_map('intval', explode(',', $atts['id']));
     $ids = array_filter($ids);
     $ids = array_unique($ids);
     $options['post__in'] = $ids;
   }
 
-  $query = new WP_Query($options);
-  if ($query->have_posts()) { ?>
+  // Handle cols attribute and map to breakpoints
+  $breakpoints = [];
+  $bps = [0, 576, 768, 992, 1200, 1400]; // xs, sm, md, lg, xl, 2xl
 
+  if (!empty($atts['cols'])) {
+    $cols = array_map('intval', explode(',', $atts['cols']));
+
+    foreach ($cols as $i => $val) {
+      if (isset($bps[$i])) {
+        $breakpoints[$bps[$i]] = ['slidesPerView' => $val];
+      }
+    }
+  } else {
+    // Default: 1 slide on xs/sm, 2 on md, 3 on lg, 4 on xl+, etc.
+    $breakpoints = [
+      0    => ['slidesPerView' => 1],
+      576  => ['slidesPerView' => 1],
+      768  => ['slidesPerView' => 2],
+      992  => ['slidesPerView' => 3],
+      1200 => ['slidesPerView' => 4],
+      1400 => ['slidesPerView' => 4],
+    ];
+  }
+
+  $data_breakpoints = htmlspecialchars(json_encode($breakpoints), ENT_QUOTES, 'UTF-8');
+
+  $query = new WP_Query($options);
+  if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
     <div class="px-5 position-relative">
-
-      <div class="cards swiper-container swiper position-static">
-
+      <div class="cards swiper-container swiper position-static" data-swiper-breakpoints="<?= $data_breakpoints; ?>">
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-
             <div class="swiper-slide card h-auto mb-5">
 
-              <?php if ( has_post_thumbnail() ) : ?>
+              <?php if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
+                  <?php the_post_thumbnail('medium', ['class' => 'card-img-top']); ?>
                 </a>
               <?php endif; ?>
 
               <div class="card-body d-flex flex-column">
-
-                <?php if ($atts['categories'] == 'true') : ?>
-                  <?php bootscore_category_badge(); ?>
-                <?php endif; ?>
+                <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
 
                 <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
                   <?php the_title('<h2 class="blog-post-title h5">', '</h2>'); ?>
                 </a>
 
-                <?php if ('post' === get_post_type()) : ?>
+                <?php if (get_post_type() === 'post') : ?>
                   <p class="meta small mb-2 text-body-secondary">
                     <?php
                       bootscore_date();
@@ -132,7 +129,7 @@ function bootscore_swiper($atts) {
                   </p>
                 <?php endif; ?>
 
-                <?php if ($atts['excerpt'] == 'true') : ?>
+                <?php if ($atts['excerpt'] === 'true') : ?>
                   <p class="card-text">
                     <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
                       <?= strip_tags(get_the_excerpt()); ?>
@@ -142,35 +139,26 @@ function bootscore_swiper($atts) {
 
                 <p class="card-text mt-auto">
                   <a class="read-more" href="<?php the_permalink(); ?>">
-                    <?php _e('Read more »', 'bootscore'); ?>
+                    <?= __('Read more »', 'bootscore'); ?>
                   </a>
                 </p>
 
-                <?php if ($atts['tags'] == 'true') : ?>
-                  <?php bootscore_tags(); ?>
-                <?php endif; ?>
-
+                <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
               </div>
-
-            </div><!-- .card -->
-
-          <?php endwhile;
-          wp_reset_postdata(); ?>
-
-        </div> <!-- .swiper-wrapper -->
+            </div>
+          <?php endwhile; wp_reset_postdata(); ?>
+        </div>
 
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
         <!-- Add Arrows -->
         <div class="swiper-button-next end-0"></div>
         <div class="swiper-button-prev start-0"></div>
-
-      </div><!-- swiper-container -->
-
+      </div>
     </div>
     <!-- Swiper End -->
 
-<?php $myvariable = ob_get_clean();
-    return $myvariable;
-  }
+<?php
+    return ob_get_clean();
+  endif;
 }
