@@ -17,22 +17,6 @@ defined( 'ABSPATH' ) || exit;
 
 
 /**
- * Update checker
- */
-require 'update/plugin-update-checker.php';
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/bootscore/bs-swiper/',
-	__FILE__,
-	'bs-swiper'
-);
-
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
-
-
-/**
  * Register styles and scripts
  */
 function swiper_scripts() {
@@ -148,37 +132,3 @@ function bs_swiper_card() {
 }
 add_action('wp_head', 'bs_swiper_card');
 
-
-// Cards Autoplay
-function bs_swiper_card_autoplay() {
-  return bs_swiper_get_template('sc-swiper-card-autoplay.php');
-}
-add_action('wp_head', 'bs_swiper_card_autoplay');
-
-
-// Products
-function bs_swiper_card_product() {
-  return bs_swiper_get_template('sc-swiper-card-product.php');
-}
-add_action('wp_head', 'bs_swiper_card_product');
-
-
-// Heroes
-function bs_swiper_hero() {
-  return bs_swiper_get_template('sc-swiper-hero.php');
-}
-add_action('wp_head', 'bs_swiper_hero');
-
-
-// Heroes Fade
-function bs_swiper_hero_fade() {
-  return bs_swiper_get_template('sc-swiper-hero-fade.php');
-}
-add_action('wp_head', 'bs_swiper_hero_fade');
-
-
-// Related Posts
-function bs_swiper_related_posts() {
-  return bs_swiper_get_template('related-posts.php');
-}
-add_action('wp_head', 'bs_swiper_related_posts');
