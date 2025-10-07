@@ -16,7 +16,7 @@
 defined( 'ABSPATH' ) || exit;
 
 
-// Card Slider Shortcode
+// Column Slider Shortcode
 add_shortcode('bs-swiper-columns', 'bootscore_swiper');
 function bootscore_swiper($atts) {
   ob_start();
@@ -35,7 +35,8 @@ function bootscore_swiper($atts) {
     'excerpt'     => 'true',
     'tags'        => 'true',
     'categories'  => 'true',
-    'slidesperview'        => '', // new attribute: e.g., "2,3,4,6"
+    'slidesperview' => '', // new attribute: e.g., "2,3,4,6"
+    'loop'        => 'false', // new parameter: default false
   ), $atts);
 
   $options = array(
@@ -92,14 +93,20 @@ function bootscore_swiper($atts) {
     ];
   }
 
+  // Handle loop parameter
+  $loop = ($atts['loop'] === 'true');
+
   $data_breakpoints = htmlspecialchars(json_encode($breakpoints), ENT_QUOTES, 'UTF-8');
+  $data_loop = $loop ? 'true' : 'false';
 
   $query = new WP_Query($options);
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
     <div class="px-5 position-relative">
-      <div class="bs-swiper-columns swiper-container swiper position-static" data-swiper-breakpoints="<?= $data_breakpoints; ?>">
+      <div class="bs-swiper-columns swiper-container swiper position-static" 
+           data-swiper-breakpoints="<?= $data_breakpoints; ?>"
+           data-swiper-loop="<?= $data_loop; ?>">
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
