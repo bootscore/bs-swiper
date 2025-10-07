@@ -37,6 +37,8 @@ function bootscore_swiper($atts) {
     'categories'  => 'true',
     'slidesperview' => '', // new attribute: e.g., "2,3,4,6"
     'loop'        => 'false', // new parameter: default false
+    'autoplay'    => 'false', // new parameter: default false
+    'delay'       => '4000',  // new parameter: default 4000ms
   ), $atts);
 
   $options = array(
@@ -95,9 +97,15 @@ function bootscore_swiper($atts) {
 
   // Handle loop parameter
   $loop = ($atts['loop'] === 'true');
+  
+  // Handle autoplay parameters
+  $autoplay = ($atts['autoplay'] === 'true');
+  $delay = is_numeric($atts['delay']) ? (int) $atts['delay'] : 4000;
 
   $data_breakpoints = htmlspecialchars(json_encode($breakpoints), ENT_QUOTES, 'UTF-8');
   $data_loop = $loop ? 'true' : 'false';
+  $data_autoplay = $autoplay ? 'true' : 'false';
+  $data_delay = $delay;
 
   $query = new WP_Query($options);
   if ($query->have_posts()) : ?>
@@ -106,7 +114,9 @@ function bootscore_swiper($atts) {
     <div class="px-5 position-relative">
       <div class="bs-swiper-columns swiper-container swiper position-static" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
-           data-swiper-loop="<?= $data_loop; ?>">
+           data-swiper-loop="<?= $data_loop; ?>"
+           data-swiper-autoplay="<?= $data_autoplay; ?>"
+           data-swiper-delay="<?= $data_delay; ?>">
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
