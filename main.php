@@ -129,7 +129,7 @@ function bs_swiper_get_template($template_name, $args = array(), $tempate_path =
 
 // Cards
 function bs_swiper_card() {
-  return bs_swiper_get_template('sc-swiper-card.php');
+  return bs_swiper_get_template('sc-swiper-columns.php');
 }
 add_action('wp_head', 'bs_swiper_card');
 

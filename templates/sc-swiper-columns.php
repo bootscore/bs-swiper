@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 // Card Slider Shortcode
-add_shortcode('bs-swiper-card', 'bootscore_swiper');
+add_shortcode('bs-swiper-columns', 'bootscore_swiper');
 function bootscore_swiper($atts) {
   ob_start();
 
@@ -35,7 +35,7 @@ function bootscore_swiper($atts) {
     'excerpt'     => 'true',
     'tags'        => 'true',
     'categories'  => 'true',
-    'cols'        => '', // new attribute: e.g., "2,3,4,6"
+    'slidesperview'        => '', // new attribute: e.g., "2,3,4,6"
   ), $atts);
 
   $options = array(
@@ -68,14 +68,14 @@ function bootscore_swiper($atts) {
     $options['post__in'] = $ids;
   }
 
-  // Handle cols attribute and map to breakpoints
+  // Handle slidesperview attribute and map to breakpoints
   $breakpoints = [];
   $bps = [0, 576, 768, 992, 1200, 1400]; // xs, sm, md, lg, xl, 2xl
 
-  if (!empty($atts['cols'])) {
-    $cols = array_map('intval', explode(',', $atts['cols']));
+  if (!empty($atts['slidesperview'])) {
+    $slidesperview = array_map('intval', explode(',', $atts['slidesperview']));
 
-    foreach ($cols as $i => $val) {
+    foreach ($slidesperview as $i => $val) {
       if (isset($bps[$i])) {
         $breakpoints[$bps[$i]] = ['slidesPerView' => $val];
       }
@@ -99,7 +99,7 @@ function bootscore_swiper($atts) {
 
     <!-- Swiper -->
     <div class="px-5 position-relative">
-      <div class="cards swiper-container swiper position-static" data-swiper-breakpoints="<?= $data_breakpoints; ?>">
+      <div class="bs-swiper-columns swiper-container swiper position-static" data-swiper-breakpoints="<?= $data_breakpoints; ?>">
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
