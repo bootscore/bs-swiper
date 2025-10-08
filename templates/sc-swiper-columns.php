@@ -40,6 +40,7 @@ function bootscore_swiper($atts) {
     'autoplay'    => 'false', // new parameter: default false
     'delay'       => '4000',  // new parameter: default 4000ms
     'spacebetween' => '20',   // new parameter: default 20px
+    'effect'      => 'slide', // new parameter: default slide
   ), $atts);
 
   $options = array(
@@ -106,11 +107,16 @@ function bootscore_swiper($atts) {
   // Handle spacebetween parameter
   $spaceBetween = is_numeric($atts['spacebetween']) ? (int) $atts['spacebetween'] : 20;
 
+  // Handle effect parameter - validate against allowed effects
+  $allowed_effects = array('slide', 'fade', 'cube', 'coverflow', 'flip', 'cards', 'creative');
+  $effect = in_array(strtolower($atts['effect']), $allowed_effects) ? strtolower($atts['effect']) : 'slide';
+
   $data_breakpoints = htmlspecialchars(json_encode($breakpoints), ENT_QUOTES, 'UTF-8');
   $data_loop = $loop ? 'true' : 'false';
   $data_autoplay = $autoplay ? 'true' : 'false';
   $data_delay = $delay;
   $data_spacebetween = $spaceBetween;
+  $data_effect = $effect;
 
   $query = new WP_Query($options);
   if ($query->have_posts()) : ?>
@@ -122,7 +128,8 @@ function bootscore_swiper($atts) {
            data-swiper-loop="<?= $data_loop; ?>"
            data-swiper-autoplay="<?= $data_autoplay; ?>"
            data-swiper-delay="<?= $data_delay; ?>"
-           data-swiper-spacebetween="<?= $data_spacebetween; ?>">
+           data-swiper-spacebetween="<?= $data_spacebetween; ?>"
+           data-swiper-effect="<?= $data_effect; ?>">
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
