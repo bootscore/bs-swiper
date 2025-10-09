@@ -139,7 +139,7 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
+            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
 
               <?php if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>">
