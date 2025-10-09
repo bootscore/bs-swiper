@@ -177,7 +177,7 @@ function bootscore_swiper($atts) {
                   </p>
                 <?php endif; ?>
                 
-                <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text', 'bs-swiper-columns'); ?>">
+                <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text mt-auto', 'bs-swiper-columns'); ?>">
                   <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
                     <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
                   </a>
