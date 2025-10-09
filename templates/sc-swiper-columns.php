@@ -139,7 +139,7 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="swiper-slide card h-auto mb-5">
+            <article id="post-<?php the_ID(); ?>" class="swiper-slide card h-auto mb-5">
 
               <?php if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>">
@@ -181,7 +181,7 @@ function bootscore_swiper($atts) {
 
                 <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
               </div>
-            </div>
+            </article>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
 
