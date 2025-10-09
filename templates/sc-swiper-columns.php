@@ -139,19 +139,19 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" class="swiper-slide card h-auto mb-5">
+            <article id="post-<?php the_ID(); ?>" class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
 
               <?php if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('medium', ['class' => 'card-img-top']); ?>
+                  <?php the_post_thumbnail('medium', array('class' => apply_filters('bootscore/class/loop/card/image', 'card-img-top', 'bs-swiper-columns'))); ?>
                 </a>
               <?php endif; ?>
 
-              <div class="card-body d-flex flex-column">
+              <div class="<?= apply_filters('bootscore/class/loop/card/body', 'card-body d-flex flex-column', 'bs-swiper-columns'); ?>">
                 <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
-
+                
                 <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
-                  <?php the_title('<h2 class="blog-post-title h5">', '</h2>'); ?>
+                  <?php the_title('<h2 class="' . apply_filters('bootscore/class/loop/card/title', 'blog-post-title h5', 'bs-swiper-columns') . '">', '</h2>'); ?>
                 </a>
 
                 <?php if (get_post_type() === 'post') : ?>
@@ -166,16 +166,16 @@ function bootscore_swiper($atts) {
                 <?php endif; ?>
 
                 <?php if ($atts['excerpt'] === 'true') : ?>
-                  <p class="card-text">
+                  <p class="<?= apply_filters('bootscore/class/loop/card-text/excerpt', 'card-text', 'bs-swiper-columns'); ?>">
                     <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
                       <?= strip_tags(get_the_excerpt()); ?>
                     </a>
                   </p>
                 <?php endif; ?>
-
-                <p class="card-text mt-auto">
-                  <a class="read-more" href="<?php the_permalink(); ?>">
-                    <?= __('Read more »', 'bootscore'); ?>
+                
+                <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text', 'bs-swiper-columns'); ?>">
+                  <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                    <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
                   </a>
                 </p>
 
