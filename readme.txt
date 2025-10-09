@@ -2,7 +2,7 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing, dzembak
 
-Stable tag: 5.8.11
+Stable tag: 6-dev
 Tested up to: 6.8
 Requires at least: 5.0
 Requires PHP: 7.4

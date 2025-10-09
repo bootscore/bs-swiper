@@ -1,7 +1,7 @@
 /*!
  * bs Swiper
  * 
- * @version 5.8.8
+ * @version 6.0.0
  */
 
 
@@ -41,5 +41,20 @@
     &-active {
       background: var(--swiper-pagination-bullet-active-light-color, $white);
     }
+  }
+}
+
+
+// Pagination Bullets
+.swiper-pagination-bullet {
+  //width: $spacer * .3125;
+  //height: $spacer * .3125;
+  transition: width .2s ease-in-out, height .2s ease-in-out, background-color .2s ease-in-out, opacity .2s ease-in-out;
+  border-radius: var(--#{$prefix}border-radius-pill);
+  opacity: .4;
+
+  &-active {
+    width: $spacer *1.5;
+    opacity: 1;
   }
 }

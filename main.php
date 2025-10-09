@@ -2,7 +2,7 @@
 /*Plugin Name: bs Swiper
 Plugin URI: https://bootscore.me/documentation/bs-swiper/
 Description: Plugin to show posts, pages, custom post types or WooCommerce products in a swiper.js carousel in Bootscore theme.
-Version: 5.8.11
+Version: 6-dev
 Tested up to: 6.8
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -14,22 +14,6 @@ License: MIT License
 
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
-
-
-/**
- * Update checker
- */
-require 'update/plugin-update-checker.php';
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/bootscore/bs-swiper/',
-	__FILE__,
-	'bs-swiper'
-);
-
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
 
 
 /**
@@ -66,11 +50,10 @@ add_action('wp_enqueue_scripts', 'swiper_scripts');
  * Locate the called template.
  * Search Order:
  * 1. /themes/theme/bs-swiper/$template_name
- * 2. /themes/theme/bs-swiper-main/$template_name
- * 3. /themes/theme/$template_name
- * 4. /plugins/bs-swiper-main/templates/$template_name.
+ * 2. /themes/theme/$template_name
+ * 3. /plugins/bs-swiper/templates/$template_name.
  *
- * @since 5.7.0
+ * @since 1.0.0
  *
  * @param 	string 	$template_name			Template to load.
  * @param 	string 	$string $template_path	Path to templates.
@@ -79,26 +62,28 @@ add_action('wp_enqueue_scripts', 'swiper_scripts');
  */
 function bs_swiper_locate_template($template_name, $template_path = '', $default_path = '') {
 
+  // Set variable to search in bs-swiper folder of theme.
+  if (!$template_path) :
+    $template_path = 'bs-swiper/';
+  endif;
+
   // Set default plugin templates path.
   if (!$default_path) :
     $default_path = plugin_dir_path(__FILE__) . 'templates/'; // Path to the template folder
   endif;
 
-  // Check if 'bs-swiper/' exists in the theme.
-  $bs_swiper_path = get_theme_file_path('bs-swiper/' . $template_name);
-  if (file_exists($bs_swiper_path)) {
-    return $bs_swiper_path;
-  }
+  // Search template file in theme folder.
+  $template = locate_template(array(
+    $template_path . $template_name,
+    $template_name
+  ));
 
-  // Check if 'bs-swiper-main/' exists in the theme.
-  // Fallback for existing 'bs-swiper-main/' folders in child theme
-  $bs_swiper_main_path = get_theme_file_path('bs-swiper-main/' . $template_name);
-  if (file_exists($bs_swiper_main_path)) {
-    return $bs_swiper_main_path;
-  }
+  // Get plugins template file.
+  if (!$template) :
+    $template = $default_path . $template_name;
+  endif;
 
-  // If neither 'bs-swiper/' nor 'bs-swiper-main/' exists, return the default path.
-  return $default_path . $template_name;
+  return apply_filters('bs_swiper_locate_template', $template, $template_name, $template_path, $default_path);
 }
 
 
@@ -107,7 +92,7 @@ function bs_swiper_locate_template($template_name, $template_path = '', $default
  *
  * Search for the template and include the file.
  *
- * @since 1.0.0
+ * @since 6.0.0
  *
  * @see bs_swiper_locate_template()
  *
@@ -144,41 +129,7 @@ function bs_swiper_get_template($template_name, $args = array(), $tempate_path =
 
 // Cards
 function bs_swiper_card() {
-  return bs_swiper_get_template('sc-swiper-card.php');
+  return bs_swiper_get_template('sc-swiper-columns.php');
 }
 add_action('wp_head', 'bs_swiper_card');
 
-
-// Cards Autoplay
-function bs_swiper_card_autoplay() {
-  return bs_swiper_get_template('sc-swiper-card-autoplay.php');
-}
-add_action('wp_head', 'bs_swiper_card_autoplay');
-
-
-// Products
-function bs_swiper_card_product() {
-  return bs_swiper_get_template('sc-swiper-card-product.php');
-}
-add_action('wp_head', 'bs_swiper_card_product');
-
-
-// Heroes
-function bs_swiper_hero() {
-  return bs_swiper_get_template('sc-swiper-hero.php');
-}
-add_action('wp_head', 'bs_swiper_hero');
-
-
-// Heroes Fade
-function bs_swiper_hero_fade() {
-  return bs_swiper_get_template('sc-swiper-hero-fade.php');
-}
-add_action('wp_head', 'bs_swiper_hero_fade');
-
-
-// Related Posts
-function bs_swiper_related_posts() {
-  return bs_swiper_get_template('related-posts.php');
-}
-add_action('wp_head', 'bs_swiper_related_posts');
