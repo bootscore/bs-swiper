@@ -150,9 +150,13 @@ function bootscore_swiper($atts) {
               <div class="<?= apply_filters('bootscore/class/loop/card/body', 'card-body d-flex flex-column', 'bs-swiper-columns'); ?>">
                 <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
                 
+                <?php do_action('bootscore_before_loop_title', 'bs-swiper-columns'); ?>
+                
                 <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
                   <?php the_title('<h2 class="' . apply_filters('bootscore/class/loop/card/title', 'blog-post-title h5', 'bs-swiper-columns') . '">', '</h2>'); ?>
                 </a>
+                
+                <?php do_action('bootscore_after_loop_title', 'bs-swiper-columns'); ?>
 
                 <?php if (get_post_type() === 'post') : ?>
                   <p class="meta small mb-2 text-body-secondary">
@@ -181,6 +185,9 @@ function bootscore_swiper($atts) {
 
                 <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
               </div>
+              
+              <?php do_action('bootscore_loop_item_after_card_body', 'bs-swiper-columns'); ?>
+              
             </article>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
