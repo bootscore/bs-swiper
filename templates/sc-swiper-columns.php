@@ -35,14 +35,20 @@ function bootscore_swiper($atts) {
     'excerpt'     => 'true',
     'tags'        => 'true',
     'categories'  => 'true',
-    'slidesperview' => '', // new attribute: e.g., "2,3,4,6"
+    'slidesperview' => '',    // new attribute: e.g., "2,3,4,6"
     'loop'        => 'false', // new parameter: default false
     'autoplay'    => 'false', // new parameter: default false
     'delay'       => '4000',  // new parameter: default 4000ms
     'spacebetween' => '20',   // new parameter: default 20px
     'effect'      => 'slide', // new parameter: default slide
     'speed'       => '300',   // new parameter: default 300ms
+    'context'       => '',    // new contextual filters
   ), $atts);
+
+  // Store context globally for filters, if needed
+  $GLOBALS['bs_swiper_context'] = $atts['context'];
+
+  $context = $atts['context'];
 
   $options = array(
     'post_type'      => sanitize_text_field($atts['type']),
