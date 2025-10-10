@@ -37,14 +37,16 @@ function bootscore_swiper($atts) {
     'excerpt'       => 'true',
     'readmore'      => 'true',
     'tags'          => 'true',
-    'slidesperview' => '',    // new attribute: e.g., "2,3,4,6"
+    'navigation'    => 'true',  // new shows/hides prev/next arrows
+    'pagination'    => 'true',  // new shows/hides bullet pagination
+    'slidesperview' => '',      // new attribute: e.g., "2,3,4,6"
     'loop'          => 'false', // new parameter: default false
     'autoplay'      => 'false', // new parameter: default false
     'delay'         => '4000',  // new parameter: default 4000ms
-    'spacebetween'  => '20',   // new parameter: default 20px
+    'spacebetween'  => '20',    // new parameter: default 20px
     'effect'        => 'slide', // new parameter: default slide
     'speed'         => '300',   // new parameter: default 300ms
-    'context'       => '',    // new contextual filters
+    'context'       => '',      // new contextual filters
   ), $atts);
 
   // Store context globally for filters, if needed
@@ -135,7 +137,7 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="px-5 position-relative">
+    <div class="position-relative <?php if ($atts['navigation'] === 'true') : ?>px-5<?php endif; ?>">
       <div class="bs-swiper-columns swiper-container swiper position-static" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
            data-swiper-loop="<?= $data_loop; ?>"
@@ -205,10 +207,16 @@ function bootscore_swiper($atts) {
         </div>
 
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next end-0"></div>
-        <div class="swiper-button-prev start-0"></div>
+        <?php if ($atts['pagination'] === 'true') : ?>
+          <div class="swiper-pagination"></div>
+        <?php endif; ?>
+        
+        <!-- Add Navigation Arrows -->
+        <?php if ($atts['navigation'] === 'true') : ?>
+          <div class="swiper-button-next end-0"></div>
+          <div class="swiper-button-prev start-0"></div>
+        <?php endif; ?>
+        
       </div>
     </div>
     <!-- Swiper End -->
