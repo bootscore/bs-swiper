@@ -22,26 +22,28 @@ function bootscore_swiper($atts) {
   ob_start();
 
   $atts = shortcode_atts(array(
-    'type'        => 'post',
-    'post_status' => 'publish',
-    'order'       => 'date',
-    'orderby'     => 'date',
-    'posts'       => -1,
-    'category'    => '',
-    'post_parent' => '',
-    'tax'         => '',
-    'terms'       => '',
-    'id'          => '',
-    'excerpt'     => 'true',
-    'tags'        => 'true',
-    'categories'  => 'true',
+    'type'          => 'post',
+    'post_status'   => 'publish',
+    'order'         => 'date',
+    'orderby'       => 'date',
+    'posts'         => -1,
+    'category'      => '',
+    'post_parent'   => '',
+    'tax'           => '',
+    'terms'         => '',
+    'id'            => '',
+    'categories'    => 'true',
+    'meta'          => 'true',
+    'excerpt'       => 'true',
+    'readmore'      => 'true',
+    'tags'          => 'true',
     'slidesperview' => '',    // new attribute: e.g., "2,3,4,6"
-    'loop'        => 'false', // new parameter: default false
-    'autoplay'    => 'false', // new parameter: default false
-    'delay'       => '4000',  // new parameter: default 4000ms
-    'spacebetween' => '20',   // new parameter: default 20px
-    'effect'      => 'slide', // new parameter: default slide
-    'speed'       => '300',   // new parameter: default 300ms
+    'loop'          => 'false', // new parameter: default false
+    'autoplay'      => 'false', // new parameter: default false
+    'delay'         => '4000',  // new parameter: default 4000ms
+    'spacebetween'  => '20',   // new parameter: default 20px
+    'effect'        => 'slide', // new parameter: default slide
+    'speed'         => '300',   // new parameter: default 300ms
     'context'       => '',    // new contextual filters
   ), $atts);
 
@@ -158,21 +160,23 @@ function bootscore_swiper($atts) {
                 
                 <?php do_action('bootscore_before_loop_title', 'bs-swiper-columns'); ?>
                 
-                <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                <a class="<?= apply_filters('bootscore/class/loop/card/title/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
                   <?php the_title('<h2 class="' . apply_filters('bootscore/class/loop/card/title', 'blog-post-title h5', 'bs-swiper-columns') . '">', '</h2>'); ?>
                 </a>
                 
                 <?php do_action('bootscore_after_loop_title', 'bs-swiper-columns'); ?>
 
-                <?php if (get_post_type() === 'post') : ?>
-                  <p class="meta small mb-2 text-body-secondary">
-                    <?php
-                      bootscore_date();
-                      bootscore_author();
-                      bootscore_comments();
-                      bootscore_edit();
-                    ?>
-                  </p>
+                <?php if ($atts['meta'] === 'true') : ?>
+                  <?php if (get_post_type() === 'post') : ?>
+                    <p class="meta small mb-2 text-body-secondary">
+                      <?php
+                        bootscore_date();
+                        bootscore_author();
+                        bootscore_comments();
+                        bootscore_edit();
+                      ?>
+                    </p>
+                  <?php endif; ?>
                 <?php endif; ?>
 
                 <?php if ($atts['excerpt'] === 'true') : ?>
@@ -183,11 +187,13 @@ function bootscore_swiper($atts) {
                   </p>
                 <?php endif; ?>
                 
-                <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text mt-auto', 'bs-swiper-columns'); ?>">
-                  <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
-                    <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
-                  </a>
-                </p>
+                <?php if ($atts['readmore'] === 'true') : ?>
+                  <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text mt-auto', 'bs-swiper-columns'); ?>">
+                    <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                      <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
+                    </a>
+                  </p>
+                <?php endif; ?>
 
                 <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
               </div>
