@@ -155,11 +155,15 @@ function bootscore_swiper($atts) {
           <?php while ($query->have_posts()) : $query->the_post(); ?>
             <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
 
+              <?php do_action('bootscore_before_loop_thumbnail', 'bs-swiper-columns'); ?>
+              
               <?php if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>">
                   <?php the_post_thumbnail('medium', array('class' => apply_filters('bootscore/class/loop/card/image', 'card-img-top', 'bs-swiper-columns'))); ?>
                 </a>
               <?php endif; ?>
+              
+              <?php do_action('bootscore_after_loop_thumbnail', 'bs-swiper-columns'); ?>
 
               <div class="<?= apply_filters('bootscore/class/loop/card/body', 'card-body d-flex flex-column', 'bs-swiper-columns'); ?>">
                 <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
