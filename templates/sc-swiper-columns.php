@@ -137,7 +137,11 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="position-relative <?php if ($atts['navigation'] === 'true') : ?>px-5<?php endif; ?>">
+    <div class="position-relative <?php 
+    if ($atts['navigation'] === 'true') {
+        echo apply_filters('bootscore/bs-swiper/class/wrapper/spacer', 'px-5', 'bs-swiper-columns');
+    } ?>">  
+      
       <div class="bs-swiper-columns swiper-container swiper position-static" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
            data-swiper-loop="<?= $data_loop; ?>"
@@ -213,8 +217,10 @@ function bootscore_swiper($atts) {
         
         <!-- Add Navigation Arrows -->
         <?php if ($atts['navigation'] === 'true') : ?>
-          <div class="swiper-button-next end-0"></div>
-          <div class="swiper-button-prev start-0"></div>
+          <div class="<?= apply_filters('bootscore/bs-swiper/class/navigation', '', 'bs-swiper-columns'); ?>">
+            <div class="swiper-button-next end-0"></div>
+            <div class="swiper-button-prev start-0"></div>
+          </div>
         <?php endif; ?>
         
       </div>
