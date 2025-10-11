@@ -206,6 +206,9 @@ function bootscore_swiper($atts) {
                 <?php endif; ?>
 
                 <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
+                
+                <?php do_action('bootscore_after_loop_tags', 'bs-swiper-columns'); ?>
+                
               </div>
               
               <?php do_action('bootscore_loop_item_after_card_body', 'bs-swiper-columns'); ?>
