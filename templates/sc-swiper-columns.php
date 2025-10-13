@@ -138,7 +138,7 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="position-relative <?php 
+    <div class="swiper-outer-wrapper position-relative mb-3 pb-5 <?php 
     if ($atts['navigation'] === 'true') {
         echo apply_filters('bootscore/bs-swiper/class/wrapper/spacer', 'px-5', 'bs-swiper-columns');
     } ?>">  
@@ -155,7 +155,7 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
+            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto', 'bs-swiper-columns'); ?>">
 
               <?php do_action('bootscore_before_loop_thumbnail', 'bs-swiper-columns'); ?>
               
