@@ -22,27 +22,37 @@ function bootscore_swiper($atts) {
   ob_start();
 
   $atts = shortcode_atts(array(
-    'type'        => 'post',
-    'post_status' => 'publish',
-    'order'       => 'date',
-    'orderby'     => 'date',
-    'posts'       => -1,
-    'category'    => '',
-    'post_parent' => '',
-    'tax'         => '',
-    'terms'       => '',
-    'id'          => '',
-    'excerpt'     => 'true',
-    'tags'        => 'true',
-    'categories'  => 'true',
-    'slidesperview' => '', // new attribute: e.g., "2,3,4,6"
-    'loop'        => 'false', // new parameter: default false
-    'autoplay'    => 'false', // new parameter: default false
-    'delay'       => '4000',  // new parameter: default 4000ms
-    'spacebetween' => '20',   // new parameter: default 20px
-    'effect'      => 'slide', // new parameter: default slide
-    'speed'       => '300',   // new parameter: default 300ms
+    'type'          => 'post',
+    'post_status'   => 'publish',
+    'order'         => 'date',
+    'orderby'       => 'date',
+    'posts'         => -1,
+    'category'      => '',
+    'post_parent'   => '',
+    'tax'           => '',
+    'terms'         => '',
+    'id'            => '',
+    'categories'    => 'true',
+    'meta'          => 'true',
+    'excerpt'       => 'true',
+    'readmore'      => 'true',
+    'tags'          => 'true',
+    'navigation'    => 'true',  // new shows/hides prev/next arrows
+    'pagination'    => 'true',  // new shows/hides bullet pagination
+    'slidesperview' => '',      // new attribute: e.g., "2,3,4,6"
+    'loop'          => 'false', // new parameter: default false
+    'autoplay'      => 'false', // new parameter: default false
+    'delay'         => '4000',  // new parameter: default 4000ms
+    'spacebetween'  => '20',    // new parameter: default 20px
+    'effect'        => 'slide', // new parameter: default slide
+    'speed'         => '300',   // new parameter: default 300ms
+    'context'       => '',      // new contextual filters
   ), $atts);
+
+  // Store context globally for filters, if needed
+  $GLOBALS['bs_swiper_context'] = $atts['context'];
+
+  $context = $atts['context'];
 
   $options = array(
     'post_type'      => sanitize_text_field($atts['type']),
@@ -127,7 +137,11 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="px-5 position-relative">
+    <div class="position-relative <?php 
+    if ($atts['navigation'] === 'true') {
+        echo apply_filters('bootscore/bs-swiper/class/wrapper/spacer', 'px-5', 'bs-swiper-columns');
+    } ?>">  
+      
       <div class="bs-swiper-columns swiper-container swiper position-static" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
            data-swiper-loop="<?= $data_loop; ?>"
@@ -139,57 +153,83 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="swiper-slide card h-auto mb-5">
+            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
 
+              <?php do_action('bootscore_before_loop_thumbnail', 'bs-swiper-columns'); ?>
+              
               <?php if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('medium', ['class' => 'card-img-top']); ?>
+                  <?php the_post_thumbnail('medium', array('class' => apply_filters('bootscore/class/loop/card/image', 'card-img-top', 'bs-swiper-columns'))); ?>
                 </a>
               <?php endif; ?>
+              
+              <?php do_action('bootscore_after_loop_thumbnail', 'bs-swiper-columns'); ?>
 
-              <div class="card-body d-flex flex-column">
+              <div class="<?= apply_filters('bootscore/class/loop/card/body', 'card-body d-flex flex-column', 'bs-swiper-columns'); ?>">
                 <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
-
-                <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
-                  <?php the_title('<h2 class="blog-post-title h5">', '</h2>'); ?>
+                
+                <?php do_action('bootscore_before_loop_title', 'bs-swiper-columns'); ?>
+                
+                <a class="<?= apply_filters('bootscore/class/loop/card/title/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                  <?php the_title('<h2 class="' . apply_filters('bootscore/class/loop/card/title', 'blog-post-title h5', 'bs-swiper-columns') . '">', '</h2>'); ?>
                 </a>
+                
+                <?php do_action('bootscore_after_loop_title', 'bs-swiper-columns'); ?>
 
-                <?php if (get_post_type() === 'post') : ?>
-                  <p class="meta small mb-2 text-body-secondary">
-                    <?php
-                      bootscore_date();
-                      bootscore_author();
-                      bootscore_comments();
-                      bootscore_edit();
-                    ?>
-                  </p>
+                <?php if ($atts['meta'] === 'true') : ?>
+                  <?php if (get_post_type() === 'post') : ?>
+                    <p class="meta small mb-2 text-body-secondary">
+                      <?php
+                        bootscore_date();
+                        bootscore_author();
+                        bootscore_comments();
+                        bootscore_edit();
+                      ?>
+                    </p>
+                  <?php endif; ?>
                 <?php endif; ?>
 
                 <?php if ($atts['excerpt'] === 'true') : ?>
-                  <p class="card-text">
+                  <p class="<?= apply_filters('bootscore/class/loop/card-text/excerpt', 'card-text', 'bs-swiper-columns'); ?>">
                     <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
                       <?= strip_tags(get_the_excerpt()); ?>
                     </a>
                   </p>
                 <?php endif; ?>
-
-                <p class="card-text mt-auto">
-                  <a class="read-more" href="<?php the_permalink(); ?>">
-                    <?= __('Read more »', 'bootscore'); ?>
-                  </a>
-                </p>
+                
+                <?php if ($atts['readmore'] === 'true') : ?>
+                  <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text mt-auto', 'bs-swiper-columns'); ?>">
+                    <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                      <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
+                    </a>
+                  </p>
+                <?php endif; ?>
 
                 <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
+                
+                <?php do_action('bootscore_after_loop_tags', 'bs-swiper-columns'); ?>
+                
               </div>
-            </div>
+              
+              <?php do_action('bootscore_loop_item_after_card_body', 'bs-swiper-columns'); ?>
+              
+            </article>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
 
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next end-0"></div>
-        <div class="swiper-button-prev start-0"></div>
+        <?php if ($atts['pagination'] === 'true') : ?>
+          <div class="swiper-pagination"></div>
+        <?php endif; ?>
+        
+        <!-- Add Navigation Arrows -->
+        <?php if ($atts['navigation'] === 'true') : ?>
+          <div class="<?= apply_filters('bootscore/bs-swiper/class/navigation', '', 'bs-swiper-columns'); ?>">
+            <div class="swiper-button-next end-0"></div>
+            <div class="swiper-button-prev start-0"></div>
+          </div>
+        <?php endif; ?>
+        
       </div>
     </div>
     <!-- Swiper End -->
