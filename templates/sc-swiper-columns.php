@@ -43,7 +43,7 @@ function bootscore_swiper($atts) {
     'loop'          => 'false', // new parameter: default false
     'autoplay'      => 'false', // new parameter: default false
     'delay'         => '4000',  // new parameter: default 4000ms
-    'spacebetween'  => '20',    // new parameter: default 20px
+    'spacebetween'  => '24',    // 24px equal to default Bootstrap 1.5rem grid gutter
     'effect'        => 'slide', // new parameter: default slide
     'speed'         => '300',   // new parameter: default 300ms
     'context'       => '',      // new contextual filters
