@@ -17,6 +17,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 // Column Slider Shortcode
+// Column Slider Shortcode
 add_shortcode('bs-swiper-columns', 'bootscore_swiper');
 function bootscore_swiper($atts) {
   ob_start();
@@ -142,7 +143,8 @@ function bootscore_swiper($atts) {
         echo apply_filters('bootscore/bs-swiper/class/wrapper/spacer', 'px-5', 'bs-swiper-columns');
     } ?>">  
       
-      <div class="bs-swiper-columns swiper-container swiper position-static" 
+      <!-- Main Swiper Container - CLEANED UP -->
+      <div class="bs-swiper-columns swiper" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
            data-swiper-loop="<?= $data_loop; ?>"
            data-swiper-autoplay="<?= $data_autoplay; ?>"
@@ -216,21 +218,21 @@ function bootscore_swiper($atts) {
             </article>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
-
-        <!-- Add Pagination -->
-        <?php if ($atts['pagination'] === 'true') : ?>
-          <div class="swiper-pagination"></div>
-        <?php endif; ?>
-        
-        <!-- Add Navigation Arrows -->
-        <?php if ($atts['navigation'] === 'true') : ?>
-          <div class="<?= apply_filters('bootscore/bs-swiper/class/navigation', '', 'bs-swiper-columns'); ?>">
-            <div class="swiper-button-next end-0"></div>
-            <div class="swiper-button-prev start-0"></div>
-          </div>
-        <?php endif; ?>
-        
       </div>
+      <!-- End Main Swiper Container -->
+
+      <!-- Navigation and Pagination OUTSIDE the swiper container -->
+      <?php if ($atts['pagination'] === 'true') : ?>
+        <div class="swiper-pagination"></div>
+      <?php endif; ?>
+      
+      <?php if ($atts['navigation'] === 'true') : ?>
+        <div class="<?= apply_filters('bootscore/bs-swiper/class/navigation', '', 'bs-swiper-columns'); ?>">
+          <div class="swiper-button-next end-0"></div>
+          <div class="swiper-button-prev start-0"></div>
+        </div>
+      <?php endif; ?>
+      
     </div>
     <!-- Swiper End -->
 
