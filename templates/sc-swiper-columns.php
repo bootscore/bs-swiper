@@ -138,9 +138,12 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="swiper-outer-wrapper position-relative mb-3 pb-5 <?php 
+    <div class="bs-swiper-wrapper position-relative <?= apply_filters('bootscore/bs-swiper/class/wrapper/margin-bottom', 'mb-3', 'bs-swiper-columns'); ?> <?php 
     if ($atts['navigation'] === 'true') {
-        echo apply_filters('bootscore/bs-swiper/class/wrapper/spacer', 'px-5', 'bs-swiper-columns');
+        echo apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
+    } ?> <?php 
+    if ($atts['pagination'] === 'true') {
+        echo apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
     } ?>">  
       
       <!-- Main Swiper Container - CLEANED UP -->
