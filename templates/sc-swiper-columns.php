@@ -17,7 +17,6 @@ defined( 'ABSPATH' ) || exit;
 
 
 // Column Slider Shortcode
-// Column Slider Shortcode
 add_shortcode('bs-swiper-columns', 'bootscore_swiper');
 function bootscore_swiper($atts) {
   ob_start();
@@ -151,9 +150,15 @@ function bootscore_swiper($atts) {
     if ($atts['pagination'] === 'true') {
       $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
     }
+
+    // Add context as data attribute if provided
+    $wrapper_attributes = '';
+    if (!empty($atts['context'])) {
+      $wrapper_attributes = ' data-context="' . esc_attr($atts['context']) . '"';
+    }
     ?>
 
-    <div class="<?= $wrapper_classes ?>">
+    <div class="<?= $wrapper_classes ?>"<?= $wrapper_attributes ?>>
       
       <!-- Main Swiper Container - CLEANED UP -->
       <div class="bs-swiper-columns swiper" 
