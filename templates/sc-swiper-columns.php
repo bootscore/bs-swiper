@@ -138,13 +138,22 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="bs-swiper-wrapper position-relative <?= apply_filters('bootscore/bs-swiper/class/wrapper/margin-bottom', 'mb-3', 'bs-swiper-columns'); ?> <?php 
+    <?php
+    // The wrapper is used to place navigation arrows outside the slides
+    // @link https://stackoverflow.com/questions/41855877/css-how-to-have-swiper-slider-arrows-outside-of-slider-that-takes-up-12-column
+    $wrapper_classes = 'bs-swiper-wrapper';
+    $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper', 'position-relative mb-3', 'bs-swiper-columns');
+
     if ($atts['navigation'] === 'true') {
-        echo apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
-    } ?> <?php 
+      $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
+    }
+
     if ($atts['pagination'] === 'true') {
-        echo apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
-    } ?>">  
+      $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
+    }
+    ?>
+
+    <div class="<?= $wrapper_classes ?>">
       
       <!-- Main Swiper Container - CLEANED UP -->
       <div class="bs-swiper-columns swiper" 
