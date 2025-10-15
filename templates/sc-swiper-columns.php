@@ -210,7 +210,7 @@ function bootscore_swiper($atts) {
 
                 <?php if ($atts['excerpt'] === 'true') : ?>
                   <p class="<?= apply_filters('bootscore/class/loop/card-text/excerpt', 'card-text', 'bs-swiper-columns'); ?>">
-                    <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                    <a class="<?= apply_filters('bootscore/class/loop/card-text/excerpt/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
                       <?= strip_tags(get_the_excerpt()); ?>
                     </a>
                   </p>
