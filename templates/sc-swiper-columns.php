@@ -43,7 +43,7 @@ function bootscore_swiper($atts) {
     'loop'          => 'false', // new parameter: default false
     'autoplay'      => 'false', // new parameter: default false
     'delay'         => '4000',  // new parameter: default 4000ms
-    'spacebetween'  => '20',    // new parameter: default 20px
+    'spacebetween'  => '24',    // 24px equal to default Bootstrap 1.5rem grid gutter
     'effect'        => 'slide', // new parameter: default slide
     'speed'         => '300',   // new parameter: default 300ms
     'context'       => '',      // new contextual filters
@@ -137,12 +137,31 @@ function bootscore_swiper($atts) {
   if ($query->have_posts()) : ?>
 
     <!-- Swiper -->
-    <div class="position-relative <?php 
+    <?php
+    // The wrapper is used to place navigation arrows outside the slides
+    // @link https://stackoverflow.com/questions/41855877/css-how-to-have-swiper-slider-arrows-outside-of-slider-that-takes-up-12-column
+    $wrapper_classes = 'bs-swiper-wrapper';
+    $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper', 'position-relative mb-3', 'bs-swiper-columns');
+
     if ($atts['navigation'] === 'true') {
-        echo apply_filters('bootscore/bs-swiper/class/wrapper/spacer', 'px-5', 'bs-swiper-columns');
-    } ?>">  
+      $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
+    }
+
+    if ($atts['pagination'] === 'true') {
+      $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
+    }
+
+    // Add context as data attribute if provided
+    $wrapper_attributes = '';
+    if (!empty($atts['context'])) {
+      $wrapper_attributes = ' data-context="' . esc_attr($atts['context']) . '"';
+    }
+    ?>
+
+    <div class="<?= $wrapper_classes ?>"<?= $wrapper_attributes ?>>
       
-      <div class="bs-swiper-columns swiper-container swiper position-static" 
+      <!-- Main Swiper Container - CLEANED UP -->
+      <div class="bs-swiper-columns swiper" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
            data-swiper-loop="<?= $data_loop; ?>"
            data-swiper-autoplay="<?= $data_autoplay; ?>"
@@ -153,7 +172,7 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto mb-5', 'bs-swiper-columns'); ?>">
+            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto', 'bs-swiper-columns'); ?>">
 
               <?php do_action('bootscore_before_loop_thumbnail', 'bs-swiper-columns'); ?>
               
@@ -191,7 +210,7 @@ function bootscore_swiper($atts) {
 
                 <?php if ($atts['excerpt'] === 'true') : ?>
                   <p class="<?= apply_filters('bootscore/class/loop/card-text/excerpt', 'card-text', 'bs-swiper-columns'); ?>">
-                    <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
+                    <a class="<?= apply_filters('bootscore/class/loop/card-text/excerpt/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
                       <?= strip_tags(get_the_excerpt()); ?>
                     </a>
                   </p>
@@ -216,21 +235,21 @@ function bootscore_swiper($atts) {
             </article>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
-
-        <!-- Add Pagination -->
-        <?php if ($atts['pagination'] === 'true') : ?>
-          <div class="swiper-pagination"></div>
-        <?php endif; ?>
-        
-        <!-- Add Navigation Arrows -->
-        <?php if ($atts['navigation'] === 'true') : ?>
-          <div class="<?= apply_filters('bootscore/bs-swiper/class/navigation', '', 'bs-swiper-columns'); ?>">
-            <div class="swiper-button-next end-0"></div>
-            <div class="swiper-button-prev start-0"></div>
-          </div>
-        <?php endif; ?>
-        
       </div>
+      <!-- End Main Swiper Container -->
+
+      <!-- Navigation and Pagination OUTSIDE the swiper container -->
+      <?php if ($atts['pagination'] === 'true') : ?>
+        <div class="swiper-pagination"></div>
+      <?php endif; ?>
+      
+      <?php if ($atts['navigation'] === 'true') : ?>
+        <div class="<?= apply_filters('bootscore/bs-swiper/class/navigation', '', 'bs-swiper-columns'); ?>">
+          <div class="swiper-button-next end-0"></div>
+          <div class="swiper-button-prev start-0"></div>
+        </div>
+      <?php endif; ?>
+      
     </div>
     <!-- Swiper End -->
 
