@@ -143,6 +143,11 @@ function bootscore_swiper($atts) {
     $wrapper_classes = 'bs-swiper-wrapper';
     $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper', 'position-relative mb-3', 'bs-swiper-columns');
 
+    // Add woocommerce class if type is product
+    if ($atts['type'] === 'product') {
+        $wrapper_classes .= ' woocommerce';
+    }
+
     if ($atts['navigation'] === 'true') {
       $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
     }
@@ -172,67 +177,92 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto', 'bs-swiper-columns'); ?>">
+              <?php if ($atts['type'] === 'product') : ?>
+                  
+                <!-- WooCommerce Product Template -->
+                  <div <?php wc_product_class('swiper-slide card h-auto d-flex text-center product-card'); ?>>
+                    <?php
 
-              <?php do_action('bootscore_before_loop_thumbnail', 'bs-swiper-columns'); ?>
-              
-              <?php if (has_post_thumbnail()) : ?>
-                <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('medium', array('class' => apply_filters('bootscore/class/loop/card/image', 'card-img-top', 'bs-swiper-columns'))); ?>
-                </a>
-              <?php endif; ?>
-              
-              <?php do_action('bootscore_after_loop_thumbnail', 'bs-swiper-columns'); ?>
+                    do_action('woocommerce_before_shop_loop_item');
 
-              <div class="<?= apply_filters('bootscore/class/loop/card/body', 'card-body d-flex flex-column', 'bs-swiper-columns'); ?>">
-                <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
-                
-                <?php do_action('bootscore_before_loop_title', 'bs-swiper-columns'); ?>
-                
-                <a class="<?= apply_filters('bootscore/class/loop/card/title/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
-                  <?php the_title('<h2 class="' . apply_filters('bootscore/class/loop/card/title', 'blog-post-title h5', 'bs-swiper-columns') . '">', '</h2>'); ?>
-                </a>
-                
-                <?php do_action('bootscore_after_loop_title', 'bs-swiper-columns'); ?>
+                    do_action('woocommerce_before_shop_loop_item_title');
 
-                <?php if ($atts['meta'] === 'true') : ?>
-                  <?php if (get_post_type() === 'post') : ?>
-                    <p class="meta small mb-2 text-body-secondary">
+                    ?>
+                    <div class="card-body d-flex flex-column">
                       <?php
-                        bootscore_date();
-                        bootscore_author();
-                        bootscore_comments();
-                        bootscore_edit();
+
+                      do_action('woocommerce_shop_loop_item_title');
+
+                      do_action('woocommerce_after_shop_loop_item_title');
+
+                      do_action('woocommerce_after_shop_loop_item');
                       ?>
-                    </p>
-                  <?php endif; ?>
-                <?php endif; ?>
+                    </div>
+                  </div>
+              <?php else : ?>
+                  <!-- Default Post Template -->
+                  <article class="swiper-slide <?= apply_filters('bootscore/class/loop/card', 'card h-auto', 'bs-swiper-columns'); ?>">
 
-                <?php if ($atts['excerpt'] === 'true') : ?>
-                  <p class="<?= apply_filters('bootscore/class/loop/card-text/excerpt', 'card-text', 'bs-swiper-columns'); ?>">
-                    <a class="<?= apply_filters('bootscore/class/loop/card-text/excerpt/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
-                      <?= strip_tags(get_the_excerpt()); ?>
-                    </a>
-                  </p>
-                <?php endif; ?>
-                
-                <?php if ($atts['readmore'] === 'true') : ?>
-                  <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text mt-auto', 'bs-swiper-columns'); ?>">
-                    <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
-                      <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
-                    </a>
-                  </p>
-                <?php endif; ?>
+                    <?php do_action('bootscore_before_loop_thumbnail', 'bs-swiper-columns'); ?>
 
-                <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
-                
-                <?php do_action('bootscore_after_loop_tags', 'bs-swiper-columns'); ?>
-                
-              </div>
-              
-              <?php do_action('bootscore_loop_item_after_card_body', 'bs-swiper-columns'); ?>
-              
-            </article>
+                    <?php if (has_post_thumbnail()) : ?>
+                      <a href="<?php the_permalink(); ?>">
+                        <?php the_post_thumbnail('medium', array('class' => apply_filters('bootscore/class/loop/card/image', 'card-img-top', 'bs-swiper-columns'))); ?>
+                      </a>
+                    <?php endif; ?>
+
+                    <?php do_action('bootscore_after_loop_thumbnail', 'bs-swiper-columns'); ?>
+
+                    <div class="<?= apply_filters('bootscore/class/loop/card/body', 'card-body d-flex flex-column', 'bs-swiper-columns'); ?>">
+                      <?php if ($atts['categories'] === 'true') : bootscore_category_badge(); endif; ?>
+
+                      <?php do_action('bootscore_before_loop_title', 'bs-swiper-columns'); ?>
+
+                      <a class="<?= apply_filters('bootscore/class/loop/card/title/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                        <?php the_title('<h2 class="' . apply_filters('bootscore/class/loop/card/title', 'blog-post-title h5', 'bs-swiper-columns') . '">', '</h2>'); ?>
+                      </a>
+
+                      <?php do_action('bootscore_after_loop_title', 'bs-swiper-columns'); ?>
+
+                      <?php if ($atts['meta'] === 'true') : ?>
+                        <?php if (get_post_type() === 'post') : ?>
+                          <p class="meta small mb-2 text-body-secondary">
+                            <?php
+                              bootscore_date();
+                              bootscore_author();
+                              bootscore_comments();
+                              bootscore_edit();
+                            ?>
+                          </p>
+                        <?php endif; ?>
+                      <?php endif; ?>
+
+                      <?php if ($atts['excerpt'] === 'true') : ?>
+                        <p class="<?= apply_filters('bootscore/class/loop/card-text/excerpt', 'card-text', 'bs-swiper-columns'); ?>">
+                          <a class="<?= apply_filters('bootscore/class/loop/card-text/excerpt/link', 'text-body text-decoration-none', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                            <?= strip_tags(get_the_excerpt()); ?>
+                          </a>
+                        </p>
+                      <?php endif; ?>
+
+                      <?php if ($atts['readmore'] === 'true') : ?>
+                        <p class="<?= apply_filters('bootscore/class/loop/card-text/read-more', 'card-text mt-auto', 'bs-swiper-columns'); ?>">
+                          <a class="<?= apply_filters('bootscore/class/loop/read-more', 'read-more', 'bs-swiper-columns'); ?>" href="<?php the_permalink(); ?>">
+                            <?= apply_filters('bootscore/loop/read-more/text', __('Read more »', 'bootscore', 'bs-swiper-columns')); ?>
+                          </a>
+                        </p>
+                      <?php endif; ?>
+
+                      <?php if ($atts['tags'] === 'true') : bootscore_tags(); endif; ?>
+
+                      <?php do_action('bootscore_after_loop_tags', 'bs-swiper-columns'); ?>
+
+                    </div>
+
+                    <?php do_action('bootscore_loop_item_after_card_body', 'bs-swiper-columns'); ?>
+
+                  </article>
+              <?php endif; ?>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
