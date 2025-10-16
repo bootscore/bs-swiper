@@ -4,7 +4,7 @@
  * Context: Used by [bs-swiper-columns] shortcode for non-product posts.
  *
  * @var array $atts_local
-*
+ *
  * This template can be overriden by copying this file to your-theme/bs-swiper/columns.php
  *
  * @author   Bootscore
