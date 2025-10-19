@@ -19,6 +19,7 @@ defined('ABSPATH') || exit;
  * Usage:
  * [bs-swiper layout="columns" type="post" posts="6"]
  * [bs-swiper layout="columns" type="product" posts="8"]
+ * [bs-swiper layout="columns" type="product" featured="true" onsale="true" outofstock="false"]
  * [bs-swiper layout="heroes" type="post" effect="fade"]
  * [bs-swiper layout="heroes" type="product" effect="coverflow"]
  */
@@ -53,6 +54,11 @@ function bootscore_swiper($atts) {
     'effect'        => 'slide', // Only for heroes layout
     'speed'         => '300',
     'context'       => '',
+    // WooCommerce-specific parameters
+    'featured'      => '',      // Show only featured products
+    'outofstock'    => '',      // Hide out of stock products (default behavior)
+    'onsale'        => '',      // Show only on-sale products
+    'showhidden'    => 'false', // Show products hidden from catalog
   ), $atts);
 
   // Set conditional defaults based on layout
@@ -85,6 +91,69 @@ function bootscore_swiper($atts) {
     'post_parent'    => is_numeric($atts['post_parent']) ? (int) $atts['post_parent'] : '',
   );
 
+  // WooCommerce-specific handling
+  if ($atts['type'] === 'product') {
+    
+    // Initialize tax_query array if needed
+    if (!isset($options['tax_query'])) {
+      $options['tax_query'] = array();
+    }
+    
+    // Hide products excluded from catalog (unless showhidden is true)
+    if ($atts['showhidden'] !== 'true') {
+      $options['tax_query'][] = array(
+        'taxonomy' => 'product_visibility',
+        'field'    => 'slug',
+        'terms'    => 'exclude-from-catalog',
+        'operator' => 'NOT IN',
+      );
+    }
+    
+    // Featured products filter
+    if ($atts['featured'] === 'true') {
+      $options['tax_query'][] = array(
+        'taxonomy' => 'product_visibility',
+        'field'    => 'slug',
+        'terms'    => 'featured',
+        'operator' => 'IN',
+      );
+    }
+    
+    // Out of stock filter (hide by default if outofstock is not 'true')
+    if ($atts['outofstock'] !== 'true') {
+      if (!isset($options['meta_query'])) {
+        $options['meta_query'] = array();
+      }
+      $options['meta_query'][] = array(
+        'key'     => '_stock_status',
+        'value'   => 'instock',
+        'compare' => '=',
+      );
+    }
+    
+    // On-sale filter (use WooCommerce helper instead of meta_query)
+    if ($atts['onsale'] === 'true') {
+      $onsale_ids = wc_get_product_ids_on_sale();
+      
+      // If post__in already exists (from id parameter), intersect with on-sale IDs
+      if (!empty($options['post__in'])) {
+        $options['post__in'] = array_intersect($options['post__in'], $onsale_ids);
+      } else {
+        $options['post__in'] = $onsale_ids;
+      }
+    }
+    
+    // Use product_cat instead of category_name for products
+    if (!empty($atts['category'])) {
+      unset($options['category_name']);
+      $options['tax_query'][] = array(
+        'taxonomy' => 'product_cat',
+        'field'    => 'slug',
+        'terms'    => sanitize_text_field($atts['category']),
+      );
+    }
+  }
+
   // Handle taxonomy query
   $tax = trim(sanitize_text_field($atts['tax']));
   $terms = trim(sanitize_text_field($atts['terms']));
@@ -92,12 +161,17 @@ function bootscore_swiper($atts) {
     $terms = array_map('trim', explode(',', $terms));
     $terms = array_filter($terms);
     $terms = array_unique($terms);
+    
+    if (!isset($options['tax_query'])) {
+      $options['tax_query'] = array();
+    }
+    
     unset($options['category_name']);
-    $options['tax_query'] = array(array(
+    $options['tax_query'][] = array(
       'taxonomy' => $tax,
       'field'    => 'slug',
       'terms'    => $terms,
-    ));
+    );
   }
 
   // Handle specific post IDs
@@ -105,7 +179,13 @@ function bootscore_swiper($atts) {
     $ids = array_map('intval', explode(',', $atts['id']));
     $ids = array_filter($ids);
     $ids = array_unique($ids);
-    $options['post__in'] = $ids;
+    
+    // If post__in already exists (from onsale), intersect
+    if (!empty($options['post__in'])) {
+      $options['post__in'] = array_intersect($options['post__in'], $ids);
+    } else {
+      $options['post__in'] = $ids;
+    }
   }
 
   // Handle slidesperview attribute ONLY for columns layout
