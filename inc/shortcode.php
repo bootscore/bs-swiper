@@ -22,6 +22,7 @@ defined('ABSPATH') || exit;
  * [bs-swiper layout="columns" type="product" featured="true" onsale="true" outofstock="false"]
  * [bs-swiper layout="heroes" type="post" effect="fade"]
  * [bs-swiper layout="heroes" type="product" effect="coverflow"]
+ * [bs-swiper layout="columns" type="post" effect="auto" slidesperview="auto"]
  */
 add_shortcode('bs-swiper', 'bootscore_swiper');
 function bootscore_swiper($atts) {
@@ -46,12 +47,12 @@ function bootscore_swiper($atts) {
     'tags'          => 'true',
     'navigation'    => 'true',
     'pagination'    => 'true',
-    'slidesperview' => '',      // Only for columns layout
+    'slidesperview' => '',      // Works for both layouts now
     'loop'          => 'false',
     'autoplay'      => 'false',
     'delay'         => '4000',
     'spacebetween'  => '',      // Conditional defaults
-    'effect'        => 'slide', // Only for heroes layout
+    'effect'        => 'slide', // Works for both layouts now
     'speed'         => '300',
     'context'       => '',
     // WooCommerce-specific parameters
@@ -66,16 +67,10 @@ function bootscore_swiper($atts) {
     if (empty($atts['spacebetween'])) {
       $atts['spacebetween'] = '0'; // Default for heroes
     }
-    if (empty($atts['slidesperview'])) {
-      $atts['slidesperview'] = '1'; // Force single slide for heroes
-    }
   } else {
     // columns layout defaults
     if (empty($atts['spacebetween'])) {
       $atts['spacebetween'] = '24'; // Default for columns
-    }
-    if (empty($atts['effect'])) {
-      $atts['effect'] = 'slide'; // Force slide effect for columns
     }
   }
 
@@ -188,20 +183,65 @@ function bootscore_swiper($atts) {
     }
   }
 
-  // Handle slidesperview attribute ONLY for columns layout
+  // Handle slidesperview attribute for both layouts
   $breakpoints = [];
-  if ($atts['layout'] === 'columns') {
-    $bps = [0, 576, 768, 992, 1200, 1400];
+  $bps = [0, 576, 768, 992, 1200, 1400];
 
-    if (!empty($atts['slidesperview'])) {
-      $slidesperview = array_map('intval', explode(',', $atts['slidesperview']));
-      foreach ($slidesperview as $i => $val) {
-        if (isset($bps[$i])) {
-          $breakpoints[$bps[$i]] = ['slidesPerView' => $val];
-        }
+  // Handle effect parameter for both layouts
+  $allowed_effects = array('slide', 'fade', 'cube', 'coverflow', 'flip', 'cards', 'creative', 'auto');
+  $effect = in_array(strtolower($atts['effect']), $allowed_effects) ? strtolower($atts['effect']) : 'slide';
+
+  // Effects that require slidesPerView: 1
+  $single_slide_effects = array('fade', 'cube', 'flip', 'cards');
+
+  if (!empty($atts['slidesperview'])) {
+    // Check if effect requires single slide
+    if (in_array($effect, $single_slide_effects)) {
+      // Force slidesPerView to 1 for all breakpoints
+      foreach ($bps as $bp) {
+        $breakpoints[$bp] = ['slidesPerView' => 1];
       }
     } else {
-      // Default breakpoints for columns
+      // Check if slidesperview is 'auto'
+      if ($atts['slidesperview'] === 'auto') {
+        // Set all breakpoints to 'auto'
+        foreach ($bps as $bp) {
+          $breakpoints[$bp] = ['slidesPerView' => 'auto'];
+        }
+      } else {
+        // Handle comma-separated values
+        $slidesperview = array_map('trim', explode(',', $atts['slidesperview']));
+        foreach ($slidesperview as $i => $val) {
+          if (isset($bps[$i])) {
+            // Check if individual value is 'auto'
+            $breakpoints[$bps[$i]] = ['slidesPerView' => $val === 'auto' ? 'auto' : (int)$val];
+          }
+        }
+      }
+    }
+  } else {
+    // Default breakpoints based on effect first, then layout
+    if (in_array($effect, $single_slide_effects)) {
+      // Force single slide for these effects
+      $breakpoints = [
+        0    => ['slidesPerView' => 1],
+        576  => ['slidesPerView' => 1],
+        768  => ['slidesPerView' => 1],
+        992  => ['slidesPerView' => 1],
+        1200 => ['slidesPerView' => 1],
+        1400 => ['slidesPerView' => 1],
+      ];
+    } elseif ($atts['layout'] === 'heroes') {
+      $breakpoints = [
+        0    => ['slidesPerView' => 1],
+        576  => ['slidesPerView' => 1],
+        768  => ['slidesPerView' => 1],
+        992  => ['slidesPerView' => 1],
+        1200 => ['slidesPerView' => 1],
+        1400 => ['slidesPerView' => 1],
+      ];
+    } else {
+      // columns layout defaults
       $breakpoints = [
         0    => ['slidesPerView' => 1],
         576  => ['slidesPerView' => 1],
@@ -211,16 +251,6 @@ function bootscore_swiper($atts) {
         1400 => ['slidesPerView' => 4],
       ];
     }
-  } else {
-    // Heroes layout - single slide only
-    $breakpoints = [
-      0    => ['slidesPerView' => 1],
-      576  => ['slidesPerView' => 1],
-      768  => ['slidesPerView' => 1],
-      992  => ['slidesPerView' => 1],
-      1200 => ['slidesPerView' => 1],
-      1400 => ['slidesPerView' => 1],
-    ];
   }
 
   // Handle parameters
@@ -228,15 +258,6 @@ function bootscore_swiper($atts) {
   $autoplay = ($atts['autoplay'] === 'true');
   $delay = is_numeric($atts['delay']) ? (int) $atts['delay'] : 4000;
   $spaceBetween = is_numeric($atts['spacebetween']) ? (int) $atts['spacebetween'] : ($atts['layout'] === 'heroes' ? 0 : 24);
-  
-  // Handle effect parameter - only for heroes layout
-  $allowed_effects = array('slide', 'fade', 'cube', 'coverflow', 'flip', 'cards', 'creative');
-  if ($atts['layout'] === 'heroes') {
-    $effect = in_array(strtolower($atts['effect']), $allowed_effects) ? strtolower($atts['effect']) : 'slide';
-  } else {
-    $effect = 'slide'; // Force slide effect for columns
-  }
-  
   $speed = is_numeric($atts['speed']) ? (int) $atts['speed'] : 300;
 
   $data_breakpoints = htmlspecialchars(json_encode($breakpoints), ENT_QUOTES, 'UTF-8');
