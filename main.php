@@ -21,4 +21,4 @@ defined( 'ABSPATH' ) || exit;
  */
 require_once('inc/enqueue.php');          // Enqueue scripts and styles
 require_once('inc/locate-template.php');  // Allow template overrides in child-theme
-require_once('inc/sc-columns.php');       // Columns slider shortcode
+require_once('inc/shortcode.php');        // Shortcode for columns and heroes

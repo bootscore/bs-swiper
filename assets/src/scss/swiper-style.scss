@@ -10,8 +10,14 @@
   --swiper-pagination-bullet-inactive-color: var(--#{$prefix}body-color);
 }
 
+.bs-swiper-heroes {
+  --swiper-theme-color: var(--#{$prefix}white);
+  --swiper-pagination-bullet-inactive-color: var(--#{$prefix}white);
+}
 
-// Cards
+
+// Cards, Still needed? For related posts?
+/*
 .cards,
 .cards-autoplay {
 
@@ -24,25 +30,8 @@
     margin-top: calc(-#{$spacer * 1.5} - (var(--swiper-navigation-size) / 2));
   }
 }
+*/
 
-
-// Heroes
-.heroes,
-.heroes-fade {
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: var(--swiper-navigation-light-color, $white);
-  }
-
-  .swiper-pagination-bullet {
-    background: var(--swiper-pagination-bullet-inactive-light-color, $white);
-
-    &-active {
-      background: var(--swiper-pagination-bullet-active-light-color, $white);
-    }
-  }
-}
 
 
 // Pagination Bullets

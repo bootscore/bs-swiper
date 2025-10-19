@@ -14,17 +14,20 @@ defined('ABSPATH') || exit;
 
 
 /**
- * Column Slider Shortcode
+ * Swiper Shortcode
  *
  * Usage:
- * [bs-swiper-columns type="post" posts="6"]
- * [bs-swiper-columns type="product" posts="8"]
+ * [bs-swiper layout="columns" type="post" posts="6"]
+ * [bs-swiper layout="columns" type="product" posts="8"]
+ * [bs-swiper layout="heroes" type="post" effect="fade"]
+ * [bs-swiper layout="heroes" type="product" effect="coverflow"]
  */
-add_shortcode('bs-swiper-columns', 'bootscore_swiper');
+add_shortcode('bs-swiper', 'bootscore_swiper');
 function bootscore_swiper($atts) {
   ob_start();
 
   $atts = shortcode_atts(array(
+    'layout'        => 'columns', // new: columns, heroes
     'type'          => 'post',
     'post_status'   => 'publish',
     'order'         => 'date',
@@ -40,22 +43,38 @@ function bootscore_swiper($atts) {
     'excerpt'       => 'true',
     'readmore'      => 'true',
     'tags'          => 'true',
-    'navigation'    => 'true',  // new shows/hides prev/next arrows
-    'pagination'    => 'true',  // new shows/hides bullet pagination
-    'slidesperview' => '',      // new attribute: e.g., "2,3,4,6"
-    'loop'          => 'false', // new parameter: default false
-    'autoplay'      => 'false', // new parameter: default false
-    'delay'         => '4000',  // new parameter: default 4000ms
-    'spacebetween'  => '24',    // 24px equal to default Bootstrap 1.5rem grid gutter
-    'effect'        => 'slide', // new parameter: default slide
-    'speed'         => '300',   // new parameter: default 300ms
-    'context'       => '',      // new contextual filters
+    'navigation'    => 'true',
+    'pagination'    => 'true',
+    'slidesperview' => '',      // Only for columns layout
+    'loop'          => 'false',
+    'autoplay'      => 'false',
+    'delay'         => '4000',
+    'spacebetween'  => '',      // Conditional defaults
+    'effect'        => 'slide', // Only for heroes layout
+    'speed'         => '300',
+    'context'       => '',
   ), $atts);
 
-  // Store context globally for filters, if needed
-  $GLOBALS['bs_swiper_context'] = $atts['context'];
+  // Set conditional defaults based on layout
+  if ($atts['layout'] === 'heroes') {
+    if (empty($atts['spacebetween'])) {
+      $atts['spacebetween'] = '0'; // Default for heroes
+    }
+    if (empty($atts['slidesperview'])) {
+      $atts['slidesperview'] = '1'; // Force single slide for heroes
+    }
+  } else {
+    // columns layout defaults
+    if (empty($atts['spacebetween'])) {
+      $atts['spacebetween'] = '24'; // Default for columns
+    }
+    if (empty($atts['effect'])) {
+      $atts['effect'] = 'slide'; // Force slide effect for columns
+    }
+  }
 
-  $context = $atts['context'];
+  // Store context globally for filters
+  $GLOBALS['bs_swiper_context'] = $atts['context'];
 
   $options = array(
     'post_type'      => sanitize_text_field($atts['type']),
@@ -66,9 +85,10 @@ function bootscore_swiper($atts) {
     'post_parent'    => is_numeric($atts['post_parent']) ? (int) $atts['post_parent'] : '',
   );
 
+  // Handle taxonomy query
   $tax = trim(sanitize_text_field($atts['tax']));
   $terms = trim(sanitize_text_field($atts['terms']));
-  if ($tax && $terms) {
+  if ($tax != '' && $terms != '') {
     $terms = array_map('trim', explode(',', $terms));
     $terms = array_filter($terms);
     $terms = array_unique($terms);
@@ -80,6 +100,7 @@ function bootscore_swiper($atts) {
     ));
   }
 
+  // Handle specific post IDs
   if (!empty($atts['id'])) {
     $ids = array_map('intval', explode(',', $atts['id']));
     $ids = array_filter($ids);
@@ -87,45 +108,55 @@ function bootscore_swiper($atts) {
     $options['post__in'] = $ids;
   }
 
-  // Handle slidesperview attribute and map to breakpoints
+  // Handle slidesperview attribute ONLY for columns layout
   $breakpoints = [];
-  $bps = [0, 576, 768, 992, 1200, 1400]; // xs, sm, md, lg, xl, 2xl
+  if ($atts['layout'] === 'columns') {
+    $bps = [0, 576, 768, 992, 1200, 1400];
 
-  if (!empty($atts['slidesperview'])) {
-    $slidesperview = array_map('intval', explode(',', $atts['slidesperview']));
-
-    foreach ($slidesperview as $i => $val) {
-      if (isset($bps[$i])) {
-        $breakpoints[$bps[$i]] = ['slidesPerView' => $val];
+    if (!empty($atts['slidesperview'])) {
+      $slidesperview = array_map('intval', explode(',', $atts['slidesperview']));
+      foreach ($slidesperview as $i => $val) {
+        if (isset($bps[$i])) {
+          $breakpoints[$bps[$i]] = ['slidesPerView' => $val];
+        }
       }
+    } else {
+      // Default breakpoints for columns
+      $breakpoints = [
+        0    => ['slidesPerView' => 1],
+        576  => ['slidesPerView' => 1],
+        768  => ['slidesPerView' => 2],
+        992  => ['slidesPerView' => 3],
+        1200 => ['slidesPerView' => 4],
+        1400 => ['slidesPerView' => 4],
+      ];
     }
   } else {
-    // Default: 1 slide on xs/sm, 2 on md, 3 on lg, 4 on xl+, etc.
+    // Heroes layout - single slide only
     $breakpoints = [
       0    => ['slidesPerView' => 1],
       576  => ['slidesPerView' => 1],
-      768  => ['slidesPerView' => 2],
-      992  => ['slidesPerView' => 3],
-      1200 => ['slidesPerView' => 4],
-      1400 => ['slidesPerView' => 4],
+      768  => ['slidesPerView' => 1],
+      992  => ['slidesPerView' => 1],
+      1200 => ['slidesPerView' => 1],
+      1400 => ['slidesPerView' => 1],
     ];
   }
 
-  // Handle loop parameter
+  // Handle parameters
   $loop = ($atts['loop'] === 'true');
-  
-  // Handle autoplay parameters
   $autoplay = ($atts['autoplay'] === 'true');
   $delay = is_numeric($atts['delay']) ? (int) $atts['delay'] : 4000;
-
-  // Handle spacebetween parameter
-  $spaceBetween = is_numeric($atts['spacebetween']) ? (int) $atts['spacebetween'] : 20;
-
-  // Handle effect parameter - validate against allowed effects
+  $spaceBetween = is_numeric($atts['spacebetween']) ? (int) $atts['spacebetween'] : ($atts['layout'] === 'heroes' ? 0 : 24);
+  
+  // Handle effect parameter - only for heroes layout
   $allowed_effects = array('slide', 'fade', 'cube', 'coverflow', 'flip', 'cards', 'creative');
-  $effect = in_array(strtolower($atts['effect']), $allowed_effects) ? strtolower($atts['effect']) : 'slide';
-
-  // Handle speed parameter
+  if ($atts['layout'] === 'heroes') {
+    $effect = in_array(strtolower($atts['effect']), $allowed_effects) ? strtolower($atts['effect']) : 'slide';
+  } else {
+    $effect = 'slide'; // Force slide effect for columns
+  }
+  
   $speed = is_numeric($atts['speed']) ? (int) $atts['speed'] : 300;
 
   $data_breakpoints = htmlspecialchars(json_encode($breakpoints), ENT_QUOTES, 'UTF-8');
@@ -141,9 +172,7 @@ function bootscore_swiper($atts) {
 
     <!-- Swiper -->
     <?php
-    // The wrapper is used to place navigation arrows outside the slides
-    // @link https://stackoverflow.com/questions/41855877/css-how-to-have-swiper-slider-arrows-outside-of-slider-that-takes-up-12-column
-    $wrapper_classes = 'bs-swiper-wrapper';
+    $wrapper_classes = 'bs-swiper-wrapper bs-swiper-' . $atts['layout'];
     $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper', 'position-relative mb-3', 'bs-swiper-columns');
 
     // Add woocommerce class if type is product
@@ -151,11 +180,13 @@ function bootscore_swiper($atts) {
         $wrapper_classes .= ' woocommerce';
     }
 
-    if ($atts['navigation'] === 'true') {
+    // Add px-5 padding ONLY for columns layout
+    if ($atts['layout'] === 'columns' && $atts['navigation'] === 'true') {
       $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
     }
 
-    if ($atts['pagination'] === 'true') {
+    //if ($atts['pagination'] === 'true') {
+    if ($atts['layout'] === 'columns' && $atts['pagination'] === 'true') {
       $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
     }
 
@@ -168,8 +199,8 @@ function bootscore_swiper($atts) {
 
     <div class="<?= $wrapper_classes ?>"<?= $wrapper_attributes ?>>
       
-      <!-- Main Swiper Container - CLEANED UP -->
-      <div class="bs-swiper-columns swiper" 
+      <!-- Main Swiper Container -->
+      <div class="swiper bs-swiper-container" 
            data-swiper-breakpoints="<?= $data_breakpoints; ?>"
            data-swiper-loop="<?= $data_loop; ?>"
            data-swiper-autoplay="<?= $data_autoplay; ?>"
@@ -180,28 +211,25 @@ function bootscore_swiper($atts) {
         <div class="swiper-wrapper">
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
-              <?php if ($atts['type'] === 'product') : ?>
-                  
-                <!-- WooCommerce Product Template -->
-                <?php
-                  // Load product template (allow child/theme override in /bs-swiper/)
-                  // Pass $atts as $atts_local to the template
-                  bs_swiper_get_template('columns-wc-products.php', array('atts_local' => $atts));
-                ?>
-              <?php else : ?>
-                  <!-- Default Post Template -->
-                  <?php
-                    // Load post template (allow child/theme override in /bs-swiper/)
-                    // Pass $atts as $atts_local to the template
-                    bs_swiper_get_template('columns.php', array('atts_local' => $atts));
-                  ?>
-              <?php endif; ?>
+            <?php
+            // Determine template based on layout and type
+            $template_suffix = '';
+            $template_name = $atts['layout']; // columns or heroes
+            
+            if ($atts['type'] === 'product') {
+                $template_suffix = '-wc-products';
+            }
+            
+            $template_file = $template_name . $template_suffix . '.php';
+            
+            // Load template (allow child/theme override in /bs-swiper/)
+            bs_swiper_get_template($template_file, array('atts_local' => $atts));
+            ?>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
-      <!-- End Main Swiper Container -->
 
-      <!-- Navigation and Pagination OUTSIDE the swiper container -->
+      <!-- Navigation and Pagination -->
       <?php if ($atts['pagination'] === 'true') : ?>
         <div class="swiper-pagination"></div>
       <?php endif; ?>
