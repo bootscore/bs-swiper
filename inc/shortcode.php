@@ -185,7 +185,8 @@ function bootscore_swiper($atts) {
       $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-x', 'px-5', 'bs-swiper-columns');
     }
 
-    if ($atts['pagination'] === 'true') {
+    //if ($atts['pagination'] === 'true') {
+    if ($atts['layout'] === 'columns' && $atts['pagination'] === 'true') {
       $wrapper_classes .= ' ' . apply_filters('bootscore/bs-swiper/class/wrapper/padding-bottom', 'pb-5', 'bs-swiper-columns');
     }
 
