@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Update checker
  */
-require 'update/plugin-update-checker.php';
+require 'inc/update/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
