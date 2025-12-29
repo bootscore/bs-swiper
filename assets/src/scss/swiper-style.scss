@@ -1,7 +1,7 @@
 /*!
  * bs Swiper
  * 
- * @version 5.8.8
+ * @version 6.0.0
  */
 
 
@@ -10,8 +10,14 @@
   --swiper-pagination-bullet-inactive-color: var(--#{$prefix}body-color);
 }
 
+.bs-swiper-heroes {
+  --swiper-theme-color: var(--#{$prefix}white);
+  --swiper-pagination-bullet-inactive-color: var(--#{$prefix}white);
+}
 
-// Cards
+
+// Cards, Still needed? For related posts?
+/*
 .cards,
 .cards-autoplay {
 
@@ -24,22 +30,20 @@
     margin-top: calc(-#{$spacer * 1.5} - (var(--swiper-navigation-size) / 2));
   }
 }
+*/
 
 
-// Heroes
-.heroes,
-.heroes-fade {
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: var(--swiper-navigation-light-color, $white);
-  }
+// Pagination Bullets
+.swiper-pagination-bullet {
+  //width: $spacer * .3125;
+  //height: $spacer * .3125;
+  transition: width .2s ease-in-out, height .2s ease-in-out, background-color .2s ease-in-out, opacity .2s ease-in-out;
+  border-radius: var(--#{$prefix}border-radius-pill);
+  opacity: .4;
 
-  .swiper-pagination-bullet {
-    background: var(--swiper-pagination-bullet-inactive-light-color, $white);
-
-    &-active {
-      background: var(--swiper-pagination-bullet-active-light-color, $white);
-    }
+  &-active {
+    width: $spacer *1.5;
+    opacity: 1;
   }
 }
