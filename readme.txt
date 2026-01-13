@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing, dzembak
 
-Stable tag: 5.8.11
-Tested up to: 6.8
+Stable tag: 5.8.12
+Tested up to: 6.9
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -125,6 +125,17 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.12 - January 08 2026 =
+
+#### Improvements
+
+- Escape HTML in filters and restructure plugin files
+
+#### Updates
+
+- Swiper 12.0.3
+- Tested up to WP 6.9
 
 = 5.8.11 - September 01 2025 =
 
