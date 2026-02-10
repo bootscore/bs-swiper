@@ -19,6 +19,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Load required files
  */
-require_once('inc/enqueue.php');          // Enqueue scripts and styles
-require_once('inc/locate-template.php');  // Allow template overrides in child-theme
-require_once('inc/shortcode.php');        // Shortcode for columns and heroes
+require_once plugin_dir_path( __FILE__ ) . 'inc/enqueue.php';             // Enqueue scripts and styles
+require_once plugin_dir_path( __FILE__ ) . 'inc/locate-template.php';     // Allow template overrides in child-theme
+require_once plugin_dir_path( __FILE__ ) . 'inc/shortcode.php';           // Shortcode for columns and heroes
+
+
+// Temporary, add this file to locate_template
+require_once plugin_dir_path( __FILE__ ) . 'templates/related-posts.php'; // Related posts
