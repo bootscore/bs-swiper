@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.8.12
+ * @version  5.8.13
  *
 */
 
@@ -76,7 +76,7 @@ function bootscore_related_posts() {
                   <?php the_title('<h3 class="card-title h6 text-truncate">', '</h3>'); ?>
 
                   <p class="card-text small text-truncate">
-                    <?= strip_tags(get_the_excerpt()); ?>
+                    <?= esc_html(wp_strip_all_tags(get_the_excerpt())); ?>
                   </p>
 
                   <p class="card-text small mt-auto">
