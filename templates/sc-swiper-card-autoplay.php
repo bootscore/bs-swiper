@@ -8,7 +8,7 @@
  *
  * @author   Bootscore
  * @package  bs Swiper
- * @version  5.7.2
+ * @version  5.8.13
  *
  * Posts: 
  * [bs-swiper-card-autoplay type="post" category="cars, boats" order="ASC" orderby="date" posts="6"]
@@ -135,7 +135,7 @@ function bootscore_swiper_autoplay($atts) {
                 <?php if ($atts['excerpt'] == 'true') : ?>
                   <p class="card-text">
                     <a class="text-body text-decoration-none" href="<?php the_permalink(); ?>">
-                      <?= strip_tags(get_the_excerpt()); ?>
+                      <?= esc_html(wp_strip_all_tags(get_the_excerpt())); ?>
                     </a>
                   </p>
                 <?php endif; ?>

@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing, dzembak
 
-Stable tag: 5.8.12
-Tested up to: 6.9
+Stable tag: 5.8.13
+Tested up to: 7.0
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -125,6 +125,17 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.8.13 - May 21 2026 =
+
+#### Bugfix
+
+- Added missing `esc_html` to `excerpt`
+
+#### Updates
+
+- Swiper 12.1.4
+- Tested up tp WP 7.0
 
 = 5.8.12 - January 08 2026 =
 
