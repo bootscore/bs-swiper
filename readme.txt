@@ -2,8 +2,8 @@
 
 Contributors: Bastian Kreiter, torricelli, Sean Emerson, Dog Byte Marketing, dzembak
 
-Stable tag: 5.8.13
-Tested up to: 7.0
+Stable tag: 5.9.0
+Tested up to: 7.1
 Requires at least: 5.0
 Requires PHP: 7.4
 License: MIT License
@@ -125,6 +125,23 @@ showhidden="true" Shows products hidden from catalog (Default: false)
         
 
 == Changelog ==
+
+= 5.9.0 - November 05 2026 =
+
+#### Improvements
+
+- Enabled Swiper's built-in A11y module.
+- Keyboard navigation across all four slider variants.
+- Verified WooCommerce compatibility using the product post type with the existing Swiper shortcode. Product queries and slider functionality work as expected.
+
+#### Bugfix
+
+- Prevented keyboard focus traps and conflicting keyboard handlers.
+- Fixed Tab and Shift+Tab navigation in loop mode.
+
+#### Updates
+
+- Swiper to version 14.3.0.
 
 = 5.8.13 - May 21 2026 =
 
